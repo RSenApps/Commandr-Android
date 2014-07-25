@@ -8,6 +8,8 @@ Website: http://Commandr.RSenApps.com
 
 Play Store: https://play.google.com/store/apps/details?id=com.RSen.Commandr
 
+XDA: http://forum.xda-developers.com/android/apps-games/app-commandr-google-t2806098/post53926039
+
 Donate: Paypal Button on main site http://www.RSenApps.com
 
 Contributing
