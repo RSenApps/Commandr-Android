@@ -10,10 +10,10 @@
 
 #Specifies to write out some more information during processing. If the program terminates with an exception, this option will print out the entire stack trace, instead of just the exception message.
 -dontwarn
-
+-dontobfuscate
 #The -optimizations option disables some arithmetic simplifications that Dalvik 1.0 and 1.5 can't handle. Note that the Dalvik VM also can't handle aggressive overloading (of static fields).
 #To understand or change this check http://proguard.sourceforge.net/index.html#/manual/optimizations.html
--optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*, !code/allocation/variable
 
 #To repackage classes on a single package
 #-repackageclasses ''

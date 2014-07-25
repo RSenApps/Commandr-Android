@@ -159,7 +159,6 @@ public class SetupActivity extends Activity {
                     openSettings.setVisibility(View.GONE);
                     limited.setVisibility(View.GONE);
                     done.setVisibility(View.VISIBLE);
-                    ((SetupActivity) getActivity()).mSectionsPagerAdapter.addItem(new PassthroughFragment());
 
                 }
             }
