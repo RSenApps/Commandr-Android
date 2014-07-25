@@ -4,7 +4,9 @@ Commandr for Google Now (Android)
 Add commands to Google Now, no root required!
 
 Website: http://Commandr.RSenApps.com
+
 Play Store: https://play.google.com/store/apps/details?id=com.RSen.Commandr
+
 Donate: Paypal Button on main site http://www.RSenApps.com
 
 Contributing
