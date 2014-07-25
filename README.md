@@ -32,6 +32,17 @@ Add better integration with Tasker:
  
 Please email me at RSenApps@gmail.com if you have any questions!
 
+Acknowledgements
+================
+
+Special thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!
+
+Thanks to the following libraries:
+ - Card Library by gabrielmariotti github.com/gabrielmariotti/cardslib
+ - ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations
+ - AndroidStaggeredGrid by etsy  github.com/etsy/AndroidStaggeredGrid
+ - SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint
+
 License
 ================
 The MIT License (MIT)
