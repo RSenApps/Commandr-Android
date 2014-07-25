@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+~ Copyright (c) 2014, Apptentive, Inc. All Rights Reserved.
+~ Please refer to the LICENSE file for the terms and conditions
+~ under which redistribution and use of this file is permitted.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none"
+        android:paddingLeft="@dimen/apptentive_activity_side_padding"
+        android:paddingRight="@dimen/apptentive_activity_side_padding">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/apptentive_activity_vertical_padding"
+            android:paddingTop="@dimen/apptentive_activity_vertical_padding">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/apptentive_dialog_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/apptentive_thank_you"
+                    android:textColor="@color/apptentive_dialog_title_text"
+                    android:textSize="@dimen/apptentive_text_large"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/body"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_vertical|left"
+                    android:textColor="@color/apptentive_dialog_body_text"
+                    android:textSize="@dimen/apptentive_text_medium" />
+
+                <Button
+                    android:id="@+id/rate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/apptentive_dialog_positive_button"
+                    android:textColor="@drawable/apptentive_dialog_positive_button_text"
+                    android:textSize="@dimen/apptentive_text_medium" />
+
+                <Button
+                    android:id="@+id/remind"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/apptentive_dialog_negative_button"
+                    android:text="@string/apptentive_rating_remind"
+                    android:textColor="@drawable/apptentive_dialog_negative_button_text"
+                    android:textSize="@dimen/apptentive_text_medium" />
+
+                <Button
+                    android:id="@+id/decline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/apptentive_dialog_negative_button"
+                    android:text="@string/apptentive_no_thanks"
+                    android:textColor="@drawable/apptentive_dialog_negative_button_text"
+                    android:textSize="@dimen/apptentive_text_medium" />
+            </LinearLayout>
+        </FrameLayout>
+    </ScrollView>
+</LinearLayout>

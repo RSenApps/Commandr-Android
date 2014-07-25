@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <!-- You can popolate your elements with CardHeader#setupInnerViewElements() method -->
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/card_header_simple_title_margin_left"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/card_text_color_header"
+        android:textSize="@dimen/card_header_simple_title_text_size"
+
+
+        />
+
+    <Switch
+        android:id="@+id/toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/title"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp" />
+
+
+</RelativeLayout>

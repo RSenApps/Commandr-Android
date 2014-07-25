@@ -1,0 +1,27 @@
+<resources>
+
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    -->
+    <style name="Theme.Actionbar" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_actionbar
+        </item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Actionbar</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Actionbar</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Actionbar</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Actionbar</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Actionbar</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_actionbar</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_actionbar
+        </item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Actionbar
+        </item>
+        <!-- Light.DarkActionBar specific -->
+        <item name="android:actionBarWidgetTheme">@style/Theme.Actionbar.Widget</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+</resources>

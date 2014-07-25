@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2013, Apptentive, Inc. All Rights Reserved.
+  ~ Please refer to the LICENSE file for the terms and conditions
+  ~ under which redistribution and use of this file is permitted.
+  -->
+
+<resources>
+    <color name="apptentive_text_message_text">#000000</color>
+    <color name="apptentive_message_sender_text">#222222</color>
+    <color name="apptentive_message_center_timestamp">#999999</color>
+    <color name="apptentive_message_center_header_text_shadow">#AA000000</color>
+
+    <color name="apptentive_message_auto_separator">#BBBBBB</color>
+    <color name="apptentive_message_auto_text">#000000</color>
+
+    <color name="apptentive_dialog_background">#FFFFFF</color>
+    <color name="apptentive_dialog_title_text">#000000</color>
+    <color name="apptentive_dialog_body_text">#444444</color>
+    <color name="apptentive_dialog_form_text">#000000</color>
+
+    <color name="apptentive_dialog_button_negative">#DDDDDD</color>
+    <color name="apptentive_dialog_button_negative_text">#000000</color>
+    <color name="apptentive_dialog_button_negative_disabled">#EBEBEB</color>
+    <color name="apptentive_dialog_button_negative_disabled_text">#B9B9B9</color>
+    <color name="apptentive_dialog_button_negative_focused">#B3B3B3</color>
+    <color name="apptentive_dialog_button_negative_focused_text">#000000</color>
+    <color name="apptentive_dialog_button_negative_pressed">#B3B3B3</color>
+    <color name="apptentive_dialog_button_negative_pressed_text">#000000</color>
+    <color name="apptentive_dialog_button_negative_border_focused">#25A5CF</color>
+
+    <color name="apptentive_dialog_button_positive">#56B8D8</color>
+    <color name="apptentive_dialog_button_positive_text">#000000</color>
+    <color name="apptentive_dialog_button_positive_disabled">#D6E9F0</color>
+    <color name="apptentive_dialog_button_positive_disabled_text">#9BB8C2</color>
+    <color name="apptentive_dialog_button_positive_focused">#2699BF</color>
+    <color name="apptentive_dialog_button_positive_focused_text">#000000</color>
+    <color name="apptentive_dialog_button_positive_pressed">#2699BF</color>
+    <color name="apptentive_dialog_button_positive_pressed_text">#000000</color>
+    <color name="apptentive_dialog_button_positive_border_focused">#00769D</color>
+
+    <color name="apptentive_activity_frame">#99000000</color>
+    <color name="apptentive_activity_background">#FFFFFF</color>
+
+    <color name="apptentive_survey_title_text">#000000</color>
+    <color name="apptentive_survey_separator">#56B8D8</color>
+    <color name="apptentive_survey_content_background">#D7D7D7</color>
+    <color name="apptentive_survey_question_background">#FFFFFF</color>
+    <color name="apptentive_survey_question_instruction_text">#000000</color>
+    <color name="apptentive_survey_question_instruction_text_valid">#56B8D8</color>
+    <color name="apptentive_survey_question_instruction_background_valid">#D6E9F0</color>
+    <color name="apptentive_survey_question_instruction_text_invalid">#BB6F6F</color>
+    <color name="apptentive_survey_question_instruction_background_invalid">#EEDDDD</color>
+    <color name="apptentive_survey_question_text">#000000</color>
+    <color name="apptentive_survey_question_answer_text">#000000</color>
+    <color name="apptentive_survey_question_separator">#DDDDDD</color>
+    <color name="apptentive_survey_answer_text">#000000</color>
+    <color name="apptentive_survey_footer_background">@android:color/transparent</color>
+    <color name="apptentive_survey_thank_you_dialog_border">#56B8D8</color>
+
+    <color name="apptentive_branding_text">#000000</color>
+
+    <color name="apptentive_about_title">#000000</color>
+    <color name="apptentive_about_text">#000000</color>
+    <color name="apptentive_about_link">#004444</color>
+    <color name="apptentive_about_version">#AAAAAA</color>
+</resources>

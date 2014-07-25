@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2012, Apptentive, Inc. All Rights Reserved.
+  ~ Please refer to the LICENSE file for the terms and conditions
+  ~ under which redistribution and use of this file is permitted.
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/apptentive_dialog_button_negative_pressed_text" android:state_pressed="true" />
+    <item android:color="@color/apptentive_dialog_button_negative_focused_text" android:state_focused="true" />
+    <item android:color="@color/apptentive_dialog_button_negative_disabled_text" android:state_enabled="false" />
+    <item android:color="@color/apptentive_dialog_button_negative_text" />
+</selector>

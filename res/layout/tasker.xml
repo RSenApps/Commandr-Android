@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<it.gmariotti.cardslib.library.view.CardGridView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_list_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:columnWidth="250dp"
+    android:fitsSystemWindows="true"
+    android:horizontalSpacing="2dp"
+    android:numColumns="auto_fit"
+    android:paddingTop="10dp"
+    android:scrollbarStyle="outsideOverlay"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="3dp"
+    card:item_margin="4dp" />
