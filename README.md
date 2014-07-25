@@ -37,11 +37,11 @@ Acknowledgements
 
 Special thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!
 
-Thanks to the following libraries:
- - Card Library by gabrielmariotti github.com/gabrielmariotti/cardslib
- - ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations
- - AndroidStaggeredGrid by etsy  github.com/etsy/AndroidStaggeredGrid
- - SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint
+Commandr would not be possible without the following open source libraries:
+ - Card Library by gabrielmariotti http://www.github.com/gabrielmariotti/cardslib
+ - ListViewAnimations by nhaarman http://www.github.com/nhaarman/ListViewAnimations
+ - AndroidStaggeredGrid by etsy  http://www.github.com/etsy/AndroidStaggeredGrid
+ - SystemBarTint by jgilfelt http://www.github.com/jgilfelt/SystemBarTint
 
 License
 ================
