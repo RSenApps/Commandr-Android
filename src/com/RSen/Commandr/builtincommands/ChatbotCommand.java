@@ -2,9 +2,17 @@ package com.RSen.Commandr.builtincommands;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
+import com.RSen.Commandr.util.PandoraBotsUtil;
+import com.RSen.Commandr.util.SMSUtils;
+import com.RSen.Commandr.util.SmsMmsMessage;
+import com.RSen.Commandr.util.TTSService;
+
+import java.util.ArrayList;
 
 /**
  * @author Ryan Senanayake
@@ -13,15 +21,14 @@ import com.RSen.Commandr.core.MostWantedCommand;
  * @version 1.0
  *          5/28/14
  */
-public class PlayPlaylistCommand extends MostWantedCommand {
+public class ChatbotCommand extends MostWantedCommand {
 
     private static String TITLE;
     private static String DEFAULT_PHRASE;
     private Context context;
-
-    public PlayPlaylistCommand(Context ctx) {
-        DEFAULT_PHRASE = ctx.getString(R.string.play_playlist_phrase);
-        TITLE = ctx.getString(R.string.google_music_playlist);
+    public ChatbotCommand(Context ctx) {
+        DEFAULT_PHRASE = ctx.getString(R.string.chatbot_phrases);
+        TITLE = ctx.getString(R.string.chatbot_title);
         context = ctx;
     }
 
@@ -30,10 +37,8 @@ public class PlayPlaylistCommand extends MostWantedCommand {
      */
     @Override
     public void execute(Context context, String predicate) {
-        Intent i = new Intent(context, PlayPlaylistActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        i.putExtra("playlistname", predicate);
-        context.startActivity(i);
+        Toast.makeText(context, context.getString(R.string.fetch_response), Toast.LENGTH_LONG).show();
+            PandoraBotsUtil.askPandorabots(context, predicate);
     }
 
     /**
@@ -41,7 +46,11 @@ public class PlayPlaylistCommand extends MostWantedCommand {
      */
     @Override
     public boolean isAvailable(Context context) {
-        return true;
+        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+    }
+    @Override
+    public String getPredicateHint() {
+        return context.getString(R.string.chatbot_predicate_hint);
     }
 
     @Override
@@ -54,13 +63,5 @@ public class PlayPlaylistCommand extends MostWantedCommand {
         return DEFAULT_PHRASE;
     }
 
-    @Override
-    public String getPredicateHint() {
-        return context.getString(R.string.playlist_predicate_hint);
-    }
 
-    @Override
-    public boolean isHandlingGoogleNowReset() {
-        return true;
-    }
 }

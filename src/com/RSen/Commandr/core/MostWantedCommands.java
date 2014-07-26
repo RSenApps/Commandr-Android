@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.RSen.Commandr.builtincommands.BluetoothCommand;
 import com.RSen.Commandr.builtincommands.BluetoothOffCommand;
+import com.RSen.Commandr.builtincommands.ChatbotCommand;
 import com.RSen.Commandr.builtincommands.FlashlightCommand;
 import com.RSen.Commandr.builtincommands.FlashlightOffCommand;
 import com.RSen.Commandr.builtincommands.GPSCommand;
@@ -40,7 +41,7 @@ public class MostWantedCommands {
             commands = new MostWantedCommand[]{new FlashlightCommand(context), new FlashlightOffCommand(context),
                     new WifiCommand(context), new WifiOffCommand(context), new GPSCommand(context), new GPSOffCommand(context), new BluetoothCommand(context),
                     new BluetoothOffCommand(context), new PauseMusicCommand(context), new ResumeMusicCommand(context), new NextMusicCommand(context), new PreviousMusicCommand(context)
-                    , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context)};
+                    , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context)};
         }
         return commands;
     }

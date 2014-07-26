@@ -101,5 +101,11 @@
     <string name="action_settings">Settings</string>
     <string name="note">note</string>
     <string name="done">Done</string>
+    <string name="chatbot_phrases">chat</string>
+    <string name="chatbot_title">Chatbot</string>
+    <string name="chatbot_predicate_hint">conversation</string>
+    <string name="playlist_predicate_hint">name</string>
+    <string name="chatbot_response_failed">Sorry, Commandr is currently unable to interface with the Chatbot</string>
+    <string name="fetch_response">Fetching response...</string>
 
 </resources>
