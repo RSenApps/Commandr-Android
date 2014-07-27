@@ -44,7 +44,7 @@ public class MostWantedCommands {
             commands = new MostWantedCommand[]{new FlashlightCommand(context), new FlashlightOffCommand(context),
                     new WifiCommand(context), new WifiOffCommand(context), new GPSCommand(context), new GPSOffCommand(context), new BluetoothCommand(context),
                     new BluetoothOffCommand(context), new PauseMusicCommand(context), new ResumeMusicCommand(context), new NextMusicCommand(context), new PreviousMusicCommand(context)
-                    , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context), new LampshadeIOCommand(context), new CellularDataCommand(context), new CellularDataOffCommand(context)};
+                    , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context), new CellularDataCommand(context), new CellularDataOffCommand(context)};
         }
         return commands;
     }
