@@ -24,7 +24,6 @@ public class CommandInterpreter {
 
             if (TaskerCommands.execute(context, interceptedCommand)) {
                 commandExecuted = true;
-                GoogleNowUtil.resetGoogleNow(context);
             }
             if (!commandExecuted) {
                 String passThroughPkg = PreferenceManager.getDefaultSharedPreferences(context).getString("passthrough_pkg", "");

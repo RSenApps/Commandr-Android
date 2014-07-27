@@ -139,10 +139,14 @@ public class TaskerCommands {
         if (TaskerIntent.testStatus(context).equals(TaskerIntent.Status.OK)) {
             if (taskerCommands != null) {
                 for (TaskerCommand cmd : taskerCommands) {
-                    if (interceptedCommand.toLowerCase().trim().equals(cmd.activationName.toLowerCase().trim()) && cmd.isEnabled) {
-                        cmd.execute(context, "");
-                        commandExecuted = true;
+                    String[] activationPhrases = cmd.activationName.toLowerCase().split(",");
+                    for (String activationPhrase : activationPhrases) {
+                        if (interceptedCommand.toLowerCase().trim().equals(activationPhrase.trim()) && cmd.isEnabled) {
+                            cmd.execute(context, "");
+                            commandExecuted = true;
+                        }
                     }
+
                 }
             }
 
