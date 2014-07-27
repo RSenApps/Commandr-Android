@@ -22,7 +22,7 @@ public class PlayPlaylistActivity extends Activity {
         } else {
 
             if (playlists.containsKey(playlistName)) {
-                playPlaylist(playlists.get(playlistName));//1-based last-added is always first
+                playPlaylist(playlists.get(playlistName));
 
             } else {
                 Toast.makeText(this, "Playlist not found", Toast.LENGTH_LONG).show();

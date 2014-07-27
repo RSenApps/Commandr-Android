@@ -110,5 +110,9 @@
     <string name="lampshade_phrases">control my lights</string>
     <string name="lampshade_title">LampShade.io</string>
     <string name="lampshade_predicate">Lampshade Command</string>
+    <string name="data_phrases">turn on data</string>
+    <string name="data_title">Cellular Data On</string>
+    <string name="data_off_phrases">turn off data</string>
+    <string name="data_off_title">Cellular Data Off</string>
 
 </resources>
