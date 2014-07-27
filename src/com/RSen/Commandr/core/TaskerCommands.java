@@ -57,7 +57,7 @@ public class TaskerCommands {
                 }
             }
             if (!commandAlreadyAdded) {
-                taskerCommands.add(new TaskerCommand(command, command));
+                taskerCommands.add(0, new TaskerCommand(command, command));
             }
         }
         //remove old commands

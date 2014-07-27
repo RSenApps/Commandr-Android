@@ -107,5 +107,8 @@
     <string name="playlist_predicate_hint">name</string>
     <string name="chatbot_response_failed">Sorry, Commandr is currently unable to interface with the Chatbot</string>
     <string name="fetch_response">Fetching response...</string>
+    <string name="lampshade_phrases">control my lights</string>
+    <string name="lampshade_title">LampShade.io</string>
+    <string name="lampshade_predicate">Lampshade Command</string>
 
 </resources>

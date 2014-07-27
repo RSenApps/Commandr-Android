@@ -9,6 +9,7 @@ import com.RSen.Commandr.builtincommands.FlashlightCommand;
 import com.RSen.Commandr.builtincommands.FlashlightOffCommand;
 import com.RSen.Commandr.builtincommands.GPSCommand;
 import com.RSen.Commandr.builtincommands.GPSOffCommand;
+import com.RSen.Commandr.builtincommands.LampshadeIOCommand;
 import com.RSen.Commandr.builtincommands.NextMusicCommand;
 import com.RSen.Commandr.builtincommands.PauseMusicCommand;
 import com.RSen.Commandr.builtincommands.PlayPlaylistCommand;
@@ -41,7 +42,7 @@ public class MostWantedCommands {
             commands = new MostWantedCommand[]{new FlashlightCommand(context), new FlashlightOffCommand(context),
                     new WifiCommand(context), new WifiOffCommand(context), new GPSCommand(context), new GPSOffCommand(context), new BluetoothCommand(context),
                     new BluetoothOffCommand(context), new PauseMusicCommand(context), new ResumeMusicCommand(context), new NextMusicCommand(context), new PreviousMusicCommand(context)
-                    , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context)};
+                    , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context), new LampshadeIOCommand(context)};
         }
         return commands;
     }

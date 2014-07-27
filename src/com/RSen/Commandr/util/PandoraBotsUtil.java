@@ -3,6 +3,8 @@ package com.RSen.Commandr.util;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 
@@ -17,7 +19,7 @@ import java.net.URI;
 import java.net.URLEncoder;
 public class PandoraBotsUtil {
     public static String defaultCustid = "0";
-    public static String custid = defaultCustid;
+    public static String custid;
     public static String responseFailed;
     public static String defaultBotId = "ca1e07391e34280c";
     public static String defaultHost = "www.pandorabots.com";
@@ -29,13 +31,15 @@ public class PandoraBotsUtil {
         }
 
         protected void onPostExecute(String response) {
+            Toast.makeText(context, response, Toast.LENGTH_LONG).show();
+            PreferenceManager.getDefaultSharedPreferences(context).edit().putString("custid", custid).commit();
             Intent i = new Intent(context, TTSService.class);
             i.putExtra("toSpeak", response);
             context.startService(i);
         }
     }
     public static void askPandorabots(Context context, String input) {
-
+        custid = PreferenceManager.getDefaultSharedPreferences(context).getString("custid", "0");
         responseFailed = context.getString(R.string.chatbot_response_failed);
         PandoraBotsUtil.context = context;
         new PandoraBotsTask().execute(input);
