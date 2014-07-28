@@ -41,13 +41,6 @@ public class ChatbotCommand extends MostWantedCommand {
             PandoraBotsUtil.askPandorabots(context, predicate);
     }
 
-    /**
-     * It is enabled if the phone has a flash feature
-     */
-    @Override
-    public boolean isAvailable(Context context) {
-        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
-    }
     @Override
     public String getPredicateHint() {
         return context.getString(R.string.chatbot_predicate_hint);
