@@ -42,6 +42,11 @@ public class ChatbotCommand extends MostWantedCommand {
     }
 
     @Override
+    public boolean isAvailable(Context context) {
+        return true;
+    }
+
+    @Override
     public String getPredicateHint() {
         return context.getString(R.string.chatbot_predicate_hint);
     }
