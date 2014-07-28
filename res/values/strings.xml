@@ -114,5 +114,14 @@
     <string name="data_title">Cellular Data On</string>
     <string name="data_off_phrases">turn off data</string>
     <string name="data_off_title">Cellular Data Off</string>
+    <string name="unread_gmail_phrases">read unread gmail</string>
+    <string name="unread_gmail_title">Read Unread Gmail</string>
+    <string name="fetching_gmail">Fetching Gmail...</string>
+    <string name="no_unread">There are no unread messages. </string>
+    <string name="one_unread">There is one unread message. </string>
+    <string name="there_are">There are </string>
+    <string name="unread_messages"> unread messages. </string>
+    <string name="sent"> sent </string>
+    <string name="error_gmail">There was an error communicating with GMail</string>
 
 </resources>

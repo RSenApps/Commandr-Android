@@ -7,6 +7,7 @@ buildscript {
     }
 }
 apply plugin: 'com.android.application'
+
 repositories {
     mavenCentral()
 }
@@ -20,6 +21,8 @@ dependencies {
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     compile 'com.android.support:support-v13:19.+'
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'com.google.apis:google-api-services-gmail:v1-rev6-1.19.0'
+    compile 'javax.mail:mail:1.4.7'
 }
 
 android {
@@ -95,4 +98,17 @@ android {
         }
 
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+
 }

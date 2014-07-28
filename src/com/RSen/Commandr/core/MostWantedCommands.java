@@ -16,6 +16,7 @@ import com.RSen.Commandr.builtincommands.NextMusicCommand;
 import com.RSen.Commandr.builtincommands.PauseMusicCommand;
 import com.RSen.Commandr.builtincommands.PlayPlaylistCommand;
 import com.RSen.Commandr.builtincommands.PreviousMusicCommand;
+import com.RSen.Commandr.builtincommands.ReadUnreadGmailCommand;
 import com.RSen.Commandr.builtincommands.ReadUnreadSMSCommand;
 import com.RSen.Commandr.builtincommands.ResumeMusicCommand;
 import com.RSen.Commandr.builtincommands.WifiCommand;
@@ -44,7 +45,7 @@ public class MostWantedCommands {
             commands = new MostWantedCommand[]{new FlashlightCommand(context), new FlashlightOffCommand(context),
                     new WifiCommand(context), new WifiOffCommand(context), new GPSCommand(context), new GPSOffCommand(context), new BluetoothCommand(context),
                     new BluetoothOffCommand(context), new PauseMusicCommand(context), new ResumeMusicCommand(context), new NextMusicCommand(context), new PreviousMusicCommand(context)
-                    , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context), new CellularDataCommand(context), new CellularDataOffCommand(context)};
+                    , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context), new CellularDataCommand(context), new CellularDataOffCommand(context), new ReadUnreadGmailCommand(context)};
         }
         return commands;
     }

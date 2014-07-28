@@ -1,18 +1,11 @@
 package com.RSen.Commandr.builtincommands;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
 import com.RSen.Commandr.util.PandoraBotsUtil;
-import com.RSen.Commandr.util.SMSUtils;
-import com.RSen.Commandr.util.SmsMmsMessage;
-import com.RSen.Commandr.util.TTSService;
-
-import java.util.ArrayList;
 
 /**
  * @author Ryan Senanayake

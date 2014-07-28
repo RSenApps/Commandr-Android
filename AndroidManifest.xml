@@ -19,6 +19,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
 
     <permission
         android:name="com.RSen.Commandr.permission.C2D_MESSAGE"
@@ -71,6 +72,12 @@
         </activity>
         <activity
             android:name=".builtincommands.FlashlightActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".builtincommands.ReadUnreadGmailActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTop"
             android:taskAffinity=""

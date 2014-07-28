@@ -4,11 +4,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
-import com.RSen.Commandr.util.PandoraBotsUtil;
 
 /**
  * @author Ryan Senanayake

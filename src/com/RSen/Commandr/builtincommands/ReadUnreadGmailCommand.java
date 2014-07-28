@@ -1,10 +1,11 @@
 package com.RSen.Commandr.builtincommands;
 
 import android.content.Context;
+import android.content.Intent;
+import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
-import com.RSen.Commandr.util.CellularDataUtil;
 
 /**
  * @author Ryan Senanayake
@@ -13,14 +14,14 @@ import com.RSen.Commandr.util.CellularDataUtil;
  * @version 1.0
  *          5/28/14
  */
-public class CellularDataCommand extends MostWantedCommand {
+public class ReadUnreadGmailCommand extends MostWantedCommand {
 
     private static String TITLE;
     private static String DEFAULT_PHRASE;
 
-    public CellularDataCommand(Context ctx) {
-        DEFAULT_PHRASE = ctx.getString(R.string.data_phrases);
-        TITLE = ctx.getString(R.string.data_title);
+    public ReadUnreadGmailCommand(Context ctx) {
+        DEFAULT_PHRASE = ctx.getString(R.string.unread_gmail_phrases);
+        TITLE = ctx.getString(R.string.unread_gmail_title);
     }
 
     /**
@@ -28,7 +29,10 @@ public class CellularDataCommand extends MostWantedCommand {
      */
     @Override
     public void execute(Context context, String predicate) {
-        CellularDataUtil.setMobileDataEnabled(context, true);
+        Toast.makeText(context, context.getString(R.string.fetching_gmail), Toast.LENGTH_LONG).show();
+       Intent i = new Intent(context, ReadUnreadGmailActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
     }
 
     /**
@@ -49,5 +53,8 @@ public class CellularDataCommand extends MostWantedCommand {
         return DEFAULT_PHRASE;
     }
 
-
+    @Override
+    public boolean isHandlingGoogleNowReset() {
+        return true;
+    }
 }
