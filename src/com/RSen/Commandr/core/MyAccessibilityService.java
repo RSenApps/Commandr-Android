@@ -11,7 +11,7 @@ public class MyAccessibilityService extends AccessibilityService {
     static final String TAG = "accessibility";
     static final long timeOut = 500;
     long lastCommand = 0;
-
+    private static MyAccessibilityService thisService;
     public MyAccessibilityService() {
     }
 
@@ -53,9 +53,13 @@ public class MyAccessibilityService extends AccessibilityService {
     @Override
     protected void onServiceConnected() {
         super.onServiceConnected();
+        thisService = this;
         lastCommand = 0;
     }
-
+    public static MyAccessibilityService getInstance()
+    {
+        return thisService;
+    }
     @Override
     public void onAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
         try {

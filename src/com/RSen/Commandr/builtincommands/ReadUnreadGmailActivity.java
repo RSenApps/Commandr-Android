@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 
 import com.RSen.Commandr.R;
+import com.RSen.Commandr.core.MyAccessibilityService;
 import com.RSen.Commandr.util.GoogleNowUtil;
 import com.RSen.Commandr.util.TTSService;
 import com.google.android.gms.auth.GoogleAuthUtil;
@@ -152,6 +153,13 @@ public class ReadUnreadGmailActivity extends Activity {
             Intent i = new Intent(ReadUnreadGmailActivity.this, TTSService.class);
             i.putExtra("toSpeak", result);
             startService(i);
+            try {
+                GoogleNowUtil.resetGoogleNow(MyAccessibilityService.getInstance());
+            }
+            catch (Exception e)
+            {
+                GoogleNowUtil.resetGoogleNow(ReadUnreadGmailActivity.this);
+            }
             finish();
         }
 

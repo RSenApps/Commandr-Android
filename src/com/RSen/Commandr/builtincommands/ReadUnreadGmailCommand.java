@@ -34,7 +34,6 @@ public class ReadUnreadGmailCommand extends MostWantedCommand {
         Intent i = new Intent(context, ReadUnreadGmailActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
-        GoogleNowUtil.resetGoogleNow(context);
     }
 
     /**
