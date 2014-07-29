@@ -22,7 +22,6 @@ dependencies {
     compile 'com.android.support:support-v13:19.+'
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile 'com.google.apis:google-api-services-gmail:v1-rev6-1.19.0'
-    compile 'javax.mail:mail:1.4.7'
 }
 
 android {
@@ -86,10 +85,10 @@ android {
 
         }
         release {
-            runProguard true
+            runProguard false
             signingConfig signingConfigs.productionConfig
 
-            proguardFile 'proguard-android.txt'
+            // proguardFile 'proguard-android.txt'
             applicationVariants.all { variant ->
                 def file = variant.outputFile
 

@@ -1,6 +1,5 @@
 -optimizationpasses 5
-
--libraryjars \libs\Parse-1.5.1.jar
+-libraryjars libs/Parse-1.5.1.jar
 -keepattributes SourceFile,LineNumberTable
 #Specifies not to ignore non-public library classes. As of version 4.5, this is the default setting
 -dontskipnonpubliclibraryclasses
@@ -11,6 +10,7 @@
 #Specifies to write out some more information during processing. If the program terminates with an exception, this option will print out the entire stack trace, instead of just the exception message.
 -dontwarn
 -dontobfuscate
+-dontoptimize
 #The -optimizations option disables some arithmetic simplifications that Dalvik 1.0 and 1.5 can't handle. Note that the Dalvik VM also can't handle aggressive overloading (of static fields).
 #To understand or change this check http://proguard.sourceforge.net/index.html#/manual/optimizations.html
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*, !code/allocation/variable
@@ -22,20 +22,61 @@
 #-keepattributes *Annotation*
 
 #Keep classes that are referenced on the AndroidManifest
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
 -keep public class * extends android.app.Activity
+-dontwarn com.parse.ParseFacebookUtils
+-dontwarn com.parse.auth.FacebookAuthenticationProvider
+-dontwarn com.parse.auth.FacebookAuthenticationProvider*
 -keep public class * extends android.app.Application
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
 -keep public class com.android.vending.licensing.ILicensingService
 
--keepattributes *Annotation*
+-keep public class mydatapackage.** {
+  public void set*(***);
+  public *** get*();
+}
+-keep class javax.** {*;}
+-keep class com.sun.** {*;}
+-keep class myjava.** {*;}
+-keep class org.apache.harmony.** {*;}
+-keep public class Mail {*;}
+-dontwarn java.awt.**
+-dontwarn java.beans.Beans
+-dontwarn javax.security.**
+-keep class javamail.** {*;}
+-keep class javax.mail.** {*;}
+-keep class javax.activation.** {*;}
+-keep class sun.misc.** {*;}
+-keep class com.sun.mail.dsn.** {*;}
+-keep class com.sun.mail.handlers.** {*;}
+-keep class com.sun.mail.smtp.** {*;}
+-keep class com.sun.mail.util.** {*;}
+-keep class com.sun.activation.** {*;}
+-keep class mailcap.** {*;}
+-keep class mimetypes.** {*;}
+-dontwarn com.google.android.gms.**
+-dontwarn org.parse.**
+-dontwarn com.google.common.cache.**
+-dontwarn com.google.common.primitives.**
+-keep class myjava.awt.datatransfer.** {*;}
+-keep class org.apache.harmony.awt.** {*;}
+-keep class org.apache.harmony.misc.** {*;}
+-keepnames class com.fasterxml.jackson.** { *; }
+-dontwarn com.fasterxml.jackson.databind.**
 #To remove debug logs:
 -assumenosideeffects class android.util.Log {
     public static *** d(...);
     public static *** v(...);
 }
--keepattributes Signature
+-keepclassmembers class * {
+  @com.google.api.client.util.Key <fields>;
+}
+-keepattributes *Annotation*,EnclosingMethod,Signature,RuntimeVisibleAnnotations,AnnotationDefault,RuntimeVisibleAnnotations
+
 #To avoid changing names of methods invoked on layout's onClick.
 # Uncomment and add specific method names if using onClick on layouts
 -keepclassmembers class * {
@@ -46,7 +87,6 @@
 -keepclasseswithmembernames class * {
     native <methods>;
 }
--keepattributes SourceFile,LineNumberTable
 -keep class com.apptentive.android.sdk.** { *; }
 #To maintain custom components names that are used on layouts XML.
 #Uncomment if having any problem with the approach below
