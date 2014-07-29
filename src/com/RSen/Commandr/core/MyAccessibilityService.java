@@ -19,7 +19,6 @@ public class MyAccessibilityService extends AccessibilityService {
         int accessibilityEnabled = 0;
         final String service = "com.RSen.Commandr/com.RSen.Commandr.core.MyAccessibilityService";
 
-        boolean accessibilityFound = false;
         try {
             accessibilityEnabled = Settings.Secure.getInt(mContext.getApplicationContext().getContentResolver(), android.provider.Settings.Secure.ACCESSIBILITY_ENABLED);
             Log.v(TAG, "accessibilityEnabled = " + accessibilityEnabled);
@@ -48,7 +47,7 @@ public class MyAccessibilityService extends AccessibilityService {
             Log.v(TAG, "***ACCESSIBILIY IS DISABLED***");
         }
 
-        return accessibilityFound;
+        return false;
     }
 
     @Override

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 
 import com.RSen.Commandr.R;
+import com.RSen.Commandr.util.GoogleNowUtil;
 import com.RSen.Commandr.util.TTSService;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.UserRecoverableAuthException;

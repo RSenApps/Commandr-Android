@@ -9,6 +9,11 @@
         android:key="notetoselfrequired"
         android:summary="@string/note_to_self_required_description"
         android:title="@string/note_to_self_required" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="closegoogle"
+        android:summary="@string/return_previous_app_summary"
+        android:title="@string/return_previous_app_title" />
     <Preference
         android:key="mostWanted"
         android:summary="@string/configure_built_in"

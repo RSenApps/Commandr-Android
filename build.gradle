@@ -29,8 +29,8 @@ android {
     compileSdkVersion 19
     buildToolsVersion "19.1.0"
     defaultConfig {
-        versionCode 8
-        versionName '2.4'
+        versionCode 9
+        versionName '2.5'
     }
 
     lintOptions {

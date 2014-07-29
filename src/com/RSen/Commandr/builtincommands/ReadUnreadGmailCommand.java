@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
+import com.RSen.Commandr.util.GoogleNowUtil;
 
 /**
  * @author Ryan Senanayake
@@ -33,6 +34,7 @@ public class ReadUnreadGmailCommand extends MostWantedCommand {
         Intent i = new Intent(context, ReadUnreadGmailActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
+        GoogleNowUtil.resetGoogleNow(context);
     }
 
     /**

@@ -114,7 +114,7 @@
     <string name="data_title">Cellular Data On</string>
     <string name="data_off_phrases">turn off data</string>
     <string name="data_off_title">Cellular Data Off</string>
-    <string name="unread_gmail_phrases">read unread gmail</string>
+    <string name="unread_gmail_phrases">read unread gmail, unread gmail</string>
     <string name="unread_gmail_title">Read Unread Gmail</string>
     <string name="fetching_gmail">Fetching Gmail...</string>
     <string name="no_unread">There are no unread messages. </string>
@@ -131,5 +131,7 @@
     <string name="commandr_configured_successfully">Commandr configured successfully</string>
     <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases:</string>
     <string name="tasker_edit_activity_blurb">Commandr configured to listen for phrase: </string>
+    <string name="return_previous_app_title">Return to Previous App</string>
+    <string name="return_previous_app_summary">Return to the previous app after a command or keep Google Now open</string>
 
 </resources>
