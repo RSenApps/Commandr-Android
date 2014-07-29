@@ -20,6 +20,7 @@ public class LampshadeIOCommand extends MostWantedCommand {
     private static String TITLE;
     private static String DEFAULT_PHRASE;
     private Context context;
+
     public LampshadeIOCommand(Context ctx) {
         DEFAULT_PHRASE = ctx.getString(R.string.lampshade_phrases);
         TITLE = ctx.getString(R.string.lampshade_title);
@@ -44,6 +45,7 @@ public class LampshadeIOCommand extends MostWantedCommand {
     public boolean isAvailable(Context context) {
         return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
     }
+
     @Override
     public String getPredicateHint() {
         return context.getString(R.string.lampshade_predicate);

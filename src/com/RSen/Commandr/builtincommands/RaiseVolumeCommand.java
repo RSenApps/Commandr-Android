@@ -1,7 +1,6 @@
 package com.RSen.Commandr.builtincommands;
 
 import android.content.Context;
-import android.content.Intent;
 import android.media.AudioManager;
 
 import com.RSen.Commandr.R;

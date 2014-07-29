@@ -127,5 +127,9 @@
     <string name="raise_volume_title">Raise Volume</string>
     <string name="lower_volume_phrase">lower volume</string>
     <string name="lower_volume_title">Lower Volume</string>
+    <string name="tasker_edit_activity_label">Commandr Plugin</string>
+    <string name="commandr_configured_successfully">Commandr configured successfully</string>
+    <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases:</string>
+    <string name="tasker_edit_activity_blurb">Commandr configured to listen for phrase: </string>
 
 </resources>

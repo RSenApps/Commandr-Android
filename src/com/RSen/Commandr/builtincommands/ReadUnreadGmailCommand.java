@@ -30,7 +30,7 @@ public class ReadUnreadGmailCommand extends MostWantedCommand {
     @Override
     public void execute(Context context, String predicate) {
         Toast.makeText(context, context.getString(R.string.fetching_gmail), Toast.LENGTH_LONG).show();
-       Intent i = new Intent(context, ReadUnreadGmailActivity.class);
+        Intent i = new Intent(context, ReadUnreadGmailActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
     }

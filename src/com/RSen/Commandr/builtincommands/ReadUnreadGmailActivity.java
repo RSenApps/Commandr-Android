@@ -65,7 +65,7 @@ public class ReadUnreadGmailActivity extends Activity {
 
         if (!accountFound) {
             Intent googlePicker = AccountPicker.newChooseAccountIntent(null,
-                    null, new String[] { GoogleAuthUtil.GOOGLE_ACCOUNT_TYPE },
+                    null, new String[]{GoogleAuthUtil.GOOGLE_ACCOUNT_TYPE},
                     true, null, null, null, null);
             startActivityForResult(googlePicker, 1);
         }
@@ -117,19 +117,21 @@ public class ReadUnreadGmailActivity extends Activity {
                     }
                 }
                 String toSpeak;
-                switch (messages.size())
-                {
-                    case 0: toSpeak = getString(R.string.no_unread) + " "; break;
-                    case 1: toSpeak = getString(R.string.one_unread) + " "; break;
-                    default: toSpeak = getString(R.string.there_are) + " " + messages.size() + " " + getString(R.string.unread_messages) + " "; break;
+                switch (messages.size()) {
+                    case 0:
+                        toSpeak = getString(R.string.no_unread) + " ";
+                        break;
+                    case 1:
+                        toSpeak = getString(R.string.one_unread) + " ";
+                        break;
+                    default:
+                        toSpeak = getString(R.string.there_are) + " " + messages.size() + " " + getString(R.string.unread_messages) + " ";
+                        break;
                 }
-                for (Message message : messages)
-                {
+                for (Message message : messages) {
                     message = mailService.users().messages().get("me", message.getId()).setFormat("full").setFields("payload, snippet").execute();
-                    for (MessagePartHeader header : message.getPayload().getHeaders())
-                    {
-                        if (header.getName().equals("From"))
-                        {
+                    for (MessagePartHeader header : message.getPayload().getHeaders()) {
+                        if (header.getName().equals("From")) {
                             toSpeak += header.getValue().split("<")[0].trim().replace("\\", "").replace("\"", "") + " " + getString(R.string.sent) + " ";
                         }
                     }

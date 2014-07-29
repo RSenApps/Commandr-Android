@@ -18,8 +18,8 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <permission
         android:name="com.RSen.Commandr.permission.C2D_MESSAGE"
@@ -45,7 +45,7 @@
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="Commandr">
-        <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -60,7 +60,7 @@
             android:launchMode="singleInstance"
             android:noHistory="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
-        <intent-filter>
+            <intent-filter>
                 <action android:name="com.google.android.gm.action.AUTO_SEND" />
                 <action android:name="android.intent.action.SEND" />
 
@@ -86,7 +86,7 @@
             android:name=".ui.activity.TaskerActivity"
             android:label="Tasker Commands"
             android:parentActivityName=".ui.activity.MainActivity">
-        <meta-data
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
@@ -94,7 +94,7 @@
             android:name=".ui.activity.MostWantedCommandsActivity"
             android:label="@string/title_activity_most_wanted_commands"
             android:parentActivityName=".ui.activity.MainActivity">
-        <meta-data
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.RSen.Commandr.MainActivity" />
         </activity>
@@ -102,7 +102,7 @@
             android:name=".ui.activity.VotingActivity"
             android:label="Command Voting"
             android:parentActivityName=".ui.activity.MostWantedCommandsActivity">
-        <meta-data
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.RSen.Commandr.MostWantedCommandsActivity" />
         </activity>
@@ -116,14 +116,14 @@
             android:theme="@style/Apptentive.Theme.Transparent" />
 
         <receiver android:name="com.apptentive.android.sdk.comm.NetworkStateReceiver">
-        <intent-filter>
+            <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
         <receiver
             android:name=".util.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
-        <intent-filter>
+            <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
                 <category android:name="com.RSen.Commandr" />
@@ -148,7 +148,7 @@
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
-        <intent-filter>
+            <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
 
@@ -161,6 +161,50 @@
             android:name=".builtincommands.PlayPlaylistActivity"
             android:label="@string/title_activity_play_playlist"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- This is the "edit" Activity. Note that Locale will reject plug-in Activities for the following reasons: - Missing "android:label=[...]" - Missing "android:icon=[...]" - The Activity isn't exported (e.g. android:exported="false") - The Activity isn't enabled (e.g. android:enabled="false") - The Activity requires permissions not available to Locale -->
+
+
+        -
+        <activity
+            android:name=".tasker.EditActivity"
+            android:label="@string/tasker_edit_activity_label"
+            android:icon="@drawable/ic_launcher"
+            android:theme="@android:style/Theme.Holo.Light.Dialog"
+            android:exported="true">
+
+            <!-- this Intent filter allows the plug-in to be discovered by Locale -->
+
+
+            -
+            <intent-filter>
+
+                <action android:name="net.dinglisch.android.tasker.ACTION_EDIT_EVENT" />
+
+
+            </intent-filter>
+
+        </activity>
+
+        <!-- This is the "query" BroadcastReceiver. Note that Locale will reject plug-in BroadcastReceivers for the following reasons: - The BroadcastReceiver isn't exported (e.g. android:exported="false") - The BroadcastReceiver isn't enabled (e.g. android:enabled="false") - The BroadcastReceiver requires permissions not available to Locale - There are multiple BroadcastReceivers for com.twofortyfouram.locale.intent.action.QUERY_CONDITION -->
+
+
+        -
+        <receiver
+            android:name=".tasker.QueryReceiver"
+            android:exported="true"
+            android:process=":background">
+
+            <!-- this Intent filter allows the plug-in to discovered by Locale and be queried -->
+
+
+            -
+            <intent-filter>
+
+                <action android:name="com.twofortyfouram.locale.intent.action.QUERY_CONDITION" />
+
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>

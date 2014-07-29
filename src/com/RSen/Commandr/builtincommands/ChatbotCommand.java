@@ -19,6 +19,7 @@ public class ChatbotCommand extends MostWantedCommand {
     private static String TITLE;
     private static String DEFAULT_PHRASE;
     private Context context;
+
     public ChatbotCommand(Context ctx) {
         DEFAULT_PHRASE = ctx.getString(R.string.chatbot_phrases);
         TITLE = ctx.getString(R.string.chatbot_title);
@@ -31,7 +32,7 @@ public class ChatbotCommand extends MostWantedCommand {
     @Override
     public void execute(Context context, String predicate) {
         Toast.makeText(context, context.getString(R.string.fetch_response), Toast.LENGTH_LONG).show();
-            PandoraBotsUtil.askPandorabots(context, predicate);
+        PandoraBotsUtil.askPandorabots(context, predicate);
     }
 
     @Override

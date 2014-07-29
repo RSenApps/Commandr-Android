@@ -2,11 +2,13 @@ package com.RSen.Commandr.core;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import com.RSen.Commandr.R;
-import com.RSen.Commandr.util.GoogleNowUtil;
+import com.RSen.Commandr.tasker.EditActivity;
+import com.RSen.Commandr.tasker.TaskerPlugin;
 
 /**
  * Created by Ryan on 7/5/2014.
@@ -15,6 +17,13 @@ public class CommandInterpreter {
     //continuous from accessibility, don't always show no command found...
     public static boolean interpret(Context context, String interceptedCommand, boolean continuous) {
         boolean commandExecuted = false;
+        Intent taskerActionPlugin = new Intent("com.twofortyfouram.locale.intent.action.REQUEST_QUERY").putExtra("com.twofortyfouram.locale.intent.extra.ACTIVITY",
+                EditActivity.class.getName());
+        Bundle bundle = new Bundle();
+        bundle.putString("interceptedCommand", interceptedCommand);
+        TaskerPlugin.Event.addPassThroughMessageID(taskerActionPlugin);
+        TaskerPlugin.Event.addPassThroughData(taskerActionPlugin, bundle);
+        context.sendBroadcast(taskerActionPlugin);
         if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("enabled", true)) {
 
             if (interceptedCommand == null || interceptedCommand.equals("TEST")) {
