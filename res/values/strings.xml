@@ -123,5 +123,9 @@
     <string name="unread_messages"> unread messages. </string>
     <string name="sent"> sent </string>
     <string name="error_gmail">There was an error communicating with GMail</string>
+    <string name="raise_volume_phrase">raise volume</string>
+    <string name="raise_volume_title">Raise Volume</string>
+    <string name="lower_volume_phrase">lower volume</string>
+    <string name="lower_volume_title">Lower Volume</string>
 
 </resources>
