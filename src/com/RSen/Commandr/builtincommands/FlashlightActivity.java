@@ -61,7 +61,6 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
             turnOnOrOff(onOrOff);
 
         } else if (onOrOff) {
-            moveTaskToBack(true);
             GoogleNowUtil.resetGoogleNow(this);
         } else {
             finish();
@@ -113,8 +112,6 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
                 GoogleNowUtil.resetGoogleNow(this);
                 return;
             }
-            //move the task to the back (pause it) so that the user does not have to dismiss it manually...
-            moveTaskToBack(true);
         } else {
             // finish the activity because it can now be safely closed
             finish();
@@ -130,8 +127,8 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
         if (onOrOff != currentlyOn) {
             currentlyOn = onOrOff;
             turnOnOrOff(onOrOff);
+            GoogleNowUtil.resetGoogleNow(this);
         } else if (onOrOff) {
-            moveTaskToBack(true);
             GoogleNowUtil.resetGoogleNow(this);
         } else {
             finish();
