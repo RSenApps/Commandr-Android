@@ -62,7 +62,6 @@ public class SettingsFragment extends PreferenceFragment {
                         return false;
                     }
                 });
-                getPreferenceScreen().removePreference(findPreference("closegoogle"));
             } else {
                 getPreferenceScreen().removePreference(findPreference("notetoselfrequired"));
             }

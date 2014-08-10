@@ -59,12 +59,12 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
         if (onOrOff != currentlyOn) {
             currentlyOn = onOrOff;
             turnOnOrOff(onOrOff);
-
-        } else if (onOrOff) {
-            GoogleNowUtil.resetGoogleNow(this);
-        } else {
-            finish();
         }
+        else if (!onOrOff) {
+            finish();
+
+        }
+        GoogleNowUtil.resetGoogleNow(this);
     }
 
     /**
@@ -99,7 +99,6 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
             if (!params.getSupportedFlashModes().contains(Parameters.FLASH_MODE_TORCH)) {
                 Toast.makeText(this, getString(R.string.no_flashlight_access), Toast.LENGTH_LONG).show();
                 finish();
-                GoogleNowUtil.resetGoogleNow(this);
                 return;
             }
             params.setFlashMode(Parameters.FLASH_MODE_TORCH);
@@ -109,13 +108,11 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
             } catch (Exception e) {
                 Toast.makeText(this, getString(R.string.no_flashlight_access), Toast.LENGTH_LONG).show();
                 finish();
-                GoogleNowUtil.resetGoogleNow(this);
                 return;
             }
         } else {
             // finish the activity because it can now be safely closed
             finish();
-            GoogleNowUtil.resetGoogleNow(this);
         }
     }
 
@@ -127,13 +124,11 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
         if (onOrOff != currentlyOn) {
             currentlyOn = onOrOff;
             turnOnOrOff(onOrOff);
-            GoogleNowUtil.resetGoogleNow(this);
-        } else if (onOrOff) {
-            GoogleNowUtil.resetGoogleNow(this);
-        } else {
+        } else if (!onOrOff) {
             finish();
-            GoogleNowUtil.resetGoogleNow(this);
+
         }
+        GoogleNowUtil.resetGoogleNow(this);
     }
 
     /**
