@@ -22,16 +22,16 @@ dependencies {
     compile 'com.android.support:support-v13:19.+'
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile 'com.google.apis:google-api-services-gmail:v1-rev6-1.19.0'
+    compile 'com.google.android.gms:play-services:+'
 }
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    buildToolsVersion '19.1.0'
     defaultConfig {
         versionCode 9
         versionName '2.5'
     }
-
     lintOptions {
         disable 'AndroidLintMissingTranslation'
         abortOnError false
@@ -82,12 +82,10 @@ android {
     }
     buildTypes {
         debug {
-
         }
         release {
             runProguard false
             signingConfig signingConfigs.productionConfig
-
             // proguardFile 'proguard-android.txt'
             applicationVariants.all { variant ->
                 def file = variant.outputFile
@@ -95,7 +93,6 @@ android {
                 variant.outputFile = new File(file.parent, file.name.replace(".apk", "-" + defaultConfig.getVersionName() + ".apk")) // manifestParser.getVersionName(android.sourceSets.main.manifest.srcFile)
             }
         }
-
     }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'
@@ -109,5 +106,6 @@ android {
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
     }
-
+    productFlavors {
+    }
 }
