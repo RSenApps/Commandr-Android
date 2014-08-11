@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.Toast;
@@ -48,24 +51,11 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("flashlight", "oncreate");
         setContentView(R.layout.activity_flashlight);
         currentlyOn = false;
     }
 
-    @Override
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        boolean onOrOff = getIntent().getBooleanExtra("onOrOff", false);
-        if (onOrOff != currentlyOn) {
-            currentlyOn = onOrOff;
-            turnOnOrOff(onOrOff);
-        }
-        else if (!onOrOff) {
-            finish();
-
-        }
-        GoogleNowUtil.resetGoogleNow(this);
-    }
 
     /**
      * Either turns on or off the flashlight
@@ -110,25 +100,29 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
                 finish();
                 return;
             }
+
         } else {
             // finish the activity because it can now be safely closed
             finish();
+            GoogleNowUtil.resetGoogleNow(this);
         }
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
-        // called in the case that the Activity is already created (paused)
         super.onNewIntent(intent);
-        boolean onOrOff = intent.getBooleanExtra("onOrOff", false);
+        setIntent(getIntent().putExtra("onOrOff", intent.getBooleanExtra("onOrOff", false)));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        boolean onOrOff = getIntent().getBooleanExtra("onOrOff", false);
         if (onOrOff != currentlyOn) {
             currentlyOn = onOrOff;
             turnOnOrOff(onOrOff);
-        } else if (!onOrOff) {
-            finish();
 
         }
-        GoogleNowUtil.resetGoogleNow(this);
     }
 
     /**
@@ -166,6 +160,7 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
         } catch (Exception e) {
             e.printStackTrace();
         }
+        GoogleNowUtil.resetGoogleNow(this);
     }
 
     /**

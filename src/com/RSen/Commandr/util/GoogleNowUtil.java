@@ -67,7 +67,7 @@ public class GoogleNowUtil {
                         return true;
                     }
                 });
-                handler.sendEmptyMessageDelayed(0, 500);
+                handler.sendEmptyMessageDelayed(0, 1000);
 
             }
         } catch (PackageManager.NameNotFoundException e) {
