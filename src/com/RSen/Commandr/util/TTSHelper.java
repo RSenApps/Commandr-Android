@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 
+import java.util.HashMap;
 import java.util.Locale;
 
 /**
@@ -30,6 +31,7 @@ public class TTSHelper extends UtteranceProgressListener implements TextToSpeech
             tts.stop();
             tts.shutdown();
         }
+
     }
 
     @Override
@@ -53,7 +55,9 @@ public class TTSHelper extends UtteranceProgressListener implements TextToSpeech
     }
 
     private void speakOut() {
-        tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "UniqueID");
+        tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, map);
 
 
     }

@@ -139,5 +139,7 @@
     <string name="tasker_edit_activity_blurb">Commandr configured to listen for phrase: </string>
     <string name="return_previous_app_title">Return to Previous App</string>
     <string name="return_previous_app_summary">Return to the previous app after a command or keep Google Now open</string>
+    <string name="commandr_speaking">Commandr Speaking...</string>
+    <string name="stop">Stop</string>
 
 </resources>
