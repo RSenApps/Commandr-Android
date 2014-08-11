@@ -123,6 +123,12 @@ ListViewAnimations di nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
     <string name="unread_messages">messaggi non letti.</string>
     <string name="sent">inviato</string>
     <string name="error_gmail">C\'è stato un errore di comunicazione con Gmail</string>
+    <string name="wolfram_title">Scorciatoia vocale WolframAlpha</string>
+    <string name="wolfram_phrases">wolfram</string>
+    <string name="wolfram_hint">coda</string>
+    <string name="volume_percentage_title">Percentuale volume</string>
+    <string name="volume_percentage_phrases">volume</string>
+    <string name="volume_percentage_hint">x</string>
     <string name="raise_volume_phrase">aumenta volume</string>
     <string name="raise_volume_title">Aumenta il volume</string>
     <string name="lower_volume_phrase">abbassa volume</string>
@@ -133,5 +139,11 @@ ListViewAnimations di nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
     <string name="tasker_edit_activity_blurb">Commandr è configurato per ascoltare la frase:</string>
     <string name="return_previous_app_title">Ritorna all\'app precedente</string>
     <string name="return_previous_app_summary">Torna all\'app precedente dopo un comando o mantieni Google Now aperto</string>
+    <string name="commandr_speaking">Commandr sta parlando...</string>
+    <string name="stop">Stop</string>
+    <string name="unlock_phrases">sblocca telefono</string>
+    <string name="unlock_title">Sblocca telefono</string>
+    <string name="lock_phrases">blocca telefono</string>
+    <string name="lock_title">Blocca telefono</string>
 
 </resources>

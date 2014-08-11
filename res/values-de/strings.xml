@@ -99,17 +99,17 @@ ListViewAnimations von nhaarman github.com/nhaarman/ListViewAnimations\nAndroidS
     <string name="hello_world">Hallo Welt!</string>
     <string name="action_settings">Einstellungen</string>
     <string name="note">notiz</string>
-    <string name="done">Done</string>
-    <string name="chatbot_phrases">chat</string>
+    <string name="done">Fertig</string>
+    <string name="chatbot_phrases">Chat</string>
     <string name="chatbot_title">Chatbot</string>
-    <string name="chatbot_predicate_hint">conversation</string>
-    <string name="playlist_predicate_hint">name</string>
+    <string name="chatbot_predicate_hint">Unterhaltung</string>
+    <string name="playlist_predicate_hint">Name</string>
     <string name="chatbot_response_failed">Sorry, Commandr is currently unable to interface with the Chatbot</string>
     <string name="fetch_response">Fetching response...</string>
     <string name="lampshade_phrases">control my lights</string>
     <string name="lampshade_title">LampShade.io</string>
     <string name="lampshade_predicate">Lampshade Command</string>
-    <string name="data_phrases">turn on data</string>
+    <string name="data_phrases">Datenverbindung einschalten</string>
     <string name="data_title">Cellular Data On</string>
     <string name="data_off_phrases">turn off data</string>
     <string name="data_off_title">Cellular Data Off</string>
@@ -120,8 +120,14 @@ ListViewAnimations von nhaarman github.com/nhaarman/ListViewAnimations\nAndroidS
     <string name="one_unread">There is one unread message. </string>
     <string name="there_are">There are </string>
     <string name="unread_messages"> unread messages. </string>
-    <string name="sent"> sent </string>
+    <string name="sent"> Gesendet</string>
     <string name="error_gmail">There was an error communicating with GMail</string>
+    <string name="wolfram_title">WolframAlpha voice shortcut</string>
+    <string name="wolfram_phrases">wolfram</string>
+    <string name="wolfram_hint">query</string>
+    <string name="volume_percentage_title">Volume Percentage</string>
+    <string name="volume_percentage_phrases">volume </string>
+    <string name="volume_percentage_hint">x</string>
     <string name="raise_volume_phrase">raise volume</string>
     <string name="raise_volume_title">Raise Volume</string>
     <string name="lower_volume_phrase">lower volume</string>
@@ -132,5 +138,11 @@ ListViewAnimations von nhaarman github.com/nhaarman/ListViewAnimations\nAndroidS
     <string name="tasker_edit_activity_blurb">Commandr configured to listen for phrase: </string>
     <string name="return_previous_app_title">Return to Previous App</string>
     <string name="return_previous_app_summary">Return to the previous app after a command or keep Google Now open</string>
+    <string name="commandr_speaking">Commandr Speaking...</string>
+    <string name="stop">Stop</string>
+    <string name="unlock_phrases">unlock phone</string>
+    <string name="unlock_title">Unlock Phone</string>
+    <string name="lock_phrases">lock phone</string>
+    <string name="lock_title">Lock Phone</string>
 
 </resources>
