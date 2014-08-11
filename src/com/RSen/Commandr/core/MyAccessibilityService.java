@@ -1,11 +1,15 @@
 package com.RSen.Commandr.core;
 
 import android.accessibilityservice.AccessibilityService;
+import android.app.Activity;
+import android.app.KeyguardManager;
 import android.content.Context;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
+
+import com.RSen.Commandr.util.KeyguardUtil;
 
 public class MyAccessibilityService extends AccessibilityService {
     static final String TAG = "accessibility";
@@ -56,6 +60,13 @@ public class MyAccessibilityService extends AccessibilityService {
         thisService = this;
         lastCommand = 0;
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        KeyguardUtil.unlock(this);
+    }
+
     public static MyAccessibilityService getInstance()
     {
         return thisService;

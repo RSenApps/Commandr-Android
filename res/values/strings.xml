@@ -141,5 +141,9 @@
     <string name="return_previous_app_summary">Return to the previous app after a command or keep Google Now open</string>
     <string name="commandr_speaking">Commandr Speaking...</string>
     <string name="stop">Stop</string>
+    <string name="unlock_phrases">unlock phone</string>
+    <string name="unlock_title">Unlock Phone</string>
+    <string name="lock_phrases">lock phone</string>
+    <string name="lock_title">Lock Phone</string>
 
 </resources>
