@@ -52,12 +52,12 @@ public class GoogleNowUtil {
                                 }
                                 catch (Exception e)
                                 {
-                                    i = new Intent();
-                                    i.setPackage(packageName);
-                                    i.setAction(Intent.ACTION_MAIN);
-                                    i.addCategory(Intent.CATEGORY_LAUNCHER);
-                                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    context.startActivity(i);
+                                    Intent LaunchIntent = context.getPackageManager().getLaunchIntentForPackage(packageName);
+                                    try {
+                                        context.startActivity(LaunchIntent);
+                                    }
+                                    catch (Exception e1)
+                                    {}
                                 }
                                 break;
                             }
