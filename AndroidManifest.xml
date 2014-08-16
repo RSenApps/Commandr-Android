@@ -77,7 +77,7 @@
             android:excludeFromRecents="true"
             android:launchMode="singleTop"
             android:taskAffinity=""
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            android:theme="@android:style/Theme.Holo.Light.Dialog" />
         <activity
             android:name=".builtincommands.ReadUnreadGmailActivity"
             android:excludeFromRecents="true"

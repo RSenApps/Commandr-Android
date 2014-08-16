@@ -11,8 +11,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.RSen.Commandr.R;
@@ -54,9 +57,37 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
         Log.d("flashlight", "oncreate");
         setContentView(R.layout.activity_flashlight);
         currentlyOn = false;
+        setFinishOnTouchOutside(false);
+        // Make us non-modal, so that others can receive touch events.
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
+
+        // ...but notify us that it happened.
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH, WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH);
+
+        findViewById(R.id.turnOff).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        // If we've received a touch notification that the user has touched
+        // outside the app, finish the activity.
+        if (MotionEvent.ACTION_OUTSIDE == event.getAction()) {
+            moveTaskToBack(true);
+            return true;
+        }
 
+        // Delegate everything else to Activity.
+        return super.onTouchEvent(event);
+    }
     /**
      * Either turns on or off the flashlight
      *
@@ -160,7 +191,6 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
         } catch (Exception e) {
             e.printStackTrace();
         }
-        GoogleNowUtil.resetGoogleNow(this);
     }
 
     /**

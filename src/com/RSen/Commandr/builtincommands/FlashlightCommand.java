@@ -3,9 +3,12 @@ package com.RSen.Commandr.builtincommands;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.os.Message;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
+import com.RSen.Commandr.util.GoogleNowUtil;
 
 /**
  * @author Ryan Senanayake
@@ -28,11 +31,20 @@ public class FlashlightCommand extends MostWantedCommand {
      * Execute this command (turn on flashlight)
      */
     @Override
-    public void execute(Context context, String predicate) {
-        Intent i = new Intent(context, FlashlightActivity.class);
-        i.putExtra("onOrOff", true);
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(i);
+    public void execute(final Context context, String predicate) {
+        GoogleNowUtil.resetGoogleNowOnly(context);
+        Handler handler = new Handler(new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message message) {
+                Intent i = new Intent(context, FlashlightActivity.class);
+                i.putExtra("onOrOff", true);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+                return true;
+            }
+        });
+        handler.sendEmptyMessageDelayed(0, 500);
+
     }
 
     /**

@@ -19,8 +19,8 @@ import com.RSen.Commandr.core.MyAccessibilityService;
  */
 public class GoogleNowUtil {
     private static final String GOOGLE_PKG = "com.google.android.googlequicksearchbox";
-    public static void resetGoogleNow(final Context context) {
-        final String home_pkg = getHomePkg(context);
+    public static void resetGoogleNowOnly(Context context)
+    {
         Intent i;
         PackageManager manager = context.getPackageManager();
         try {
@@ -30,49 +30,55 @@ public class GoogleNowUtil {
             i.addCategory(Intent.CATEGORY_LAUNCHER);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
             context.startActivity(i);
-            if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("closegoogle", true))
-            {
-                Handler handler = new Handler(new Handler.Callback() {
-                    @Override
-                    public boolean handleMessage(Message message) {
-                        //service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_BACK);
-                        ActivityManager am = (ActivityManager) context.getSystemService(Activity.ACTIVITY_SERVICE);
-                        for (ActivityManager.RunningTaskInfo task : am.getRunningTasks(10))
-                        {
-                            String packageName = task.topActivity.getPackageName();
-                            Log.d("running", packageName);
-                            if (!packageName.equals(context.getPackageName()) && !packageName.equals(GOOGLE_PKG) && !packageName.equals(home_pkg) && !packageName.equals("com.android.systemui"))
-                            {
-                                String className = task.topActivity.getClassName();
-                                Intent i = new Intent();
-                                i.setClassName(packageName, className);
-                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                try {
-                                    context.startActivity(i);
-                                }
-                                catch (Exception e)
-                                {
-                                    Intent LaunchIntent = context.getPackageManager().getLaunchIntentForPackage(packageName);
-                                    try {
-                                        context.startActivity(LaunchIntent);
-                                    }
-                                    catch (Exception e1)
-                                    {}
-                                }
-                                break;
-                            }
-
-                        }
-
-                        return true;
-                    }
-                });
-                handler.sendEmptyMessageDelayed(0, 1000);
-
-            }
         } catch (PackageManager.NameNotFoundException e) {
 
         }
+    }
+
+    public static void resetGoogleNow(final Context context) {
+        final String home_pkg = getHomePkg(context);
+        resetGoogleNowOnly(context);
+        if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("closegoogle", true))
+        {
+            Handler handler = new Handler(new Handler.Callback() {
+                @Override
+                public boolean handleMessage(Message message) {
+                    //service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_BACK);
+                    ActivityManager am = (ActivityManager) context.getSystemService(Activity.ACTIVITY_SERVICE);
+                    for (ActivityManager.RunningTaskInfo task : am.getRunningTasks(10))
+                    {
+                        String packageName = task.topActivity.getPackageName();
+                        Log.d("running", packageName);
+                        if (!packageName.equals(context.getPackageName()) && !packageName.equals(GOOGLE_PKG) && !packageName.equals(home_pkg) && !packageName.equals("com.android.systemui"))
+                        {
+                            String className = task.topActivity.getClassName();
+                            Intent i = new Intent();
+                            i.setClassName(packageName, className);
+                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            try {
+                                context.startActivity(i);
+                            }
+                            catch (Exception e)
+                            {
+                                Intent LaunchIntent = context.getPackageManager().getLaunchIntentForPackage(packageName);
+                                try {
+                                    context.startActivity(LaunchIntent);
+                                }
+                                catch (Exception e1)
+                                {}
+                            }
+                            break;
+                        }
+
+                    }
+
+                    return true;
+                }
+            });
+            handler.sendEmptyMessageDelayed(0, 1000);
+
+        }
+
 
     }
     private static String getHomePkg(Context context)
