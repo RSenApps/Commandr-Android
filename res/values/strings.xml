@@ -145,5 +145,12 @@
     <string name="unlock_title">Unlock Phone</string>
     <string name="lock_phrases">lock phone</string>
     <string name="lock_title">Lock Phone</string>
+    <string name="title_activity_take_picture">Take a Picture</string>
+    <string name="take_picture_phrases">take a picture</string>
+    <string name="take_a_picture">Take a Picture</string>
+    <string name="smile">Smile!</string>
+    <string name="taken_with_commandr">Taken with Commandr</string>
+    <string name="take_selfie_phrase">take a selfie</string>
+    <string name="take_selfie_title">Take a Selfie</string>
 
 </resources>
