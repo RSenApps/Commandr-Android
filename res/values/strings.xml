@@ -81,7 +81,7 @@
     <string name="suggestion_submitted">Thank you. Your suggestion has been added to the bottom of the list!</string>
     <string name="accessibility_description">This accessibility service will allow Commandr to listen to any text entered in Google Now. Commandr will not store any information and will only perform an action for a preconfigured command.</string>
     <string name="setup_accessibility_top">Google Now provides no third-party API. Instead Commandr has to listen to Google Now via an accessiblity service. This service will only give Commandr the ability to listen to text entered into Google Now and this information is not stored. If you are not comfortable with this, you may also use a limited version of Commandr which requires you to say \"Note to Self\" before every command.</string>
-    <string name="setup_accessibility_bold">In System Settings, please enable Commandr\'s accessibility service</string>
+    <string name="setup_accessibility_bold">In System Settings, please enable Commandr\'s accessibility service. DO NOT accidentally enable Talkback</string>
     <string name="open_settings">Open Settings</string>
     <string name="limited">Use Limited Version</string>
     <string name="default_already_set">Default already setup...</string>
@@ -139,5 +139,18 @@
     <string name="tasker_edit_activity_blurb">Commandr configured to listen for phrase: </string>
     <string name="return_previous_app_title">Return to Previous App</string>
     <string name="return_previous_app_summary">Return to the previous app after a command or keep Google Now open</string>
+    <string name="commandr_speaking">Commandr Speaking...</string>
+    <string name="stop">Stop</string>
+    <string name="unlock_phrases">unlock phone</string>
+    <string name="unlock_title">Unlock Phone</string>
+    <string name="lock_phrases">lock phone</string>
+    <string name="lock_title">Lock Phone</string>
+    <string name="title_activity_take_picture">Take a Picture</string>
+    <string name="take_picture_phrases">take a picture</string>
+    <string name="take_a_picture">Take a Picture</string>
+    <string name="smile">Smile!</string>
+    <string name="taken_with_commandr">Taken with Commandr</string>
+    <string name="take_selfie_phrase">take a selfie</string>
+    <string name="take_selfie_title">Take a Selfie</string>
 
 </resources>

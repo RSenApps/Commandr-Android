@@ -3,10 +3,13 @@ package com.RSen.Commandr.core;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
 import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.tasker.TaskerIntent;
+import com.RSen.Commandr.util.GoogleNowUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -131,18 +134,26 @@ public class TaskerCommands {
      * @param interceptedCommand The command phrase to execute
      * @return True if command executed, otherwise false
      */
-    public static boolean execute(Context context, String interceptedCommand) {
+    public static boolean execute(final Context context, String interceptedCommand) {
         if (taskerCommands == null) {
             load(context);
         }
         boolean commandExecuted = false;
         if (TaskerIntent.testStatus(context).equals(TaskerIntent.Status.OK)) {
             if (taskerCommands != null) {
-                for (TaskerCommand cmd : taskerCommands) {
+                for (final TaskerCommand cmd : taskerCommands) {
                     String[] activationPhrases = cmd.activationName.toLowerCase().split(",");
                     for (String activationPhrase : activationPhrases) {
                         if (interceptedCommand.toLowerCase().trim().equals(activationPhrase.trim()) && cmd.isEnabled) {
-                            cmd.execute(context, "");
+                            GoogleNowUtil.resetGoogleNow(context);
+                            Handler handler = new Handler(new Handler.Callback() {
+                                @Override
+                                public boolean handleMessage(Message message) {
+                                    cmd.execute(context, "");
+                                    return true;
+                                }
+                            });
+                            handler.sendEmptyMessageDelayed(0, 2000);
                             commandExecuted = true;
                         }
                     }

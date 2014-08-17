@@ -17,14 +17,14 @@ import com.RSen.Commandr.util.GoogleNowUtil;
  * @version 1.0
  *          5/28/14
  */
-public class FlashlightCommand extends MostWantedCommand {
+public class TakePictureCommand extends MostWantedCommand {
 
     private static String TITLE;
     private static String DEFAULT_PHRASE;
 
-    public FlashlightCommand(Context ctx) {
-        DEFAULT_PHRASE = ctx.getString(R.string.flashlight_phrases);
-        TITLE = ctx.getString(R.string.flashlight_title);
+    public TakePictureCommand(Context ctx) {
+        DEFAULT_PHRASE = ctx.getString(R.string.take_picture_phrases);
+        TITLE = ctx.getString(R.string.take_a_picture);
     }
 
     /**
@@ -32,18 +32,10 @@ public class FlashlightCommand extends MostWantedCommand {
      */
     @Override
     public void execute(final Context context, String predicate) {
-        GoogleNowUtil.resetGoogleNowOnly(context);
-        Handler handler = new Handler(new Handler.Callback() {
-            @Override
-            public boolean handleMessage(Message message) {
-                Intent i = new Intent(context, FlashlightActivity.class);
-                i.putExtra("onOrOff", true);
-                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(i);
-                return true;
-            }
-        });
-        handler.sendEmptyMessageDelayed(0, 500);
+
+        Intent i = new Intent(context, TakePictureActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
 
     }
 
@@ -52,7 +44,7 @@ public class FlashlightCommand extends MostWantedCommand {
      */
     @Override
     public boolean isAvailable(Context context) {
-        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);
     }
 
     @Override

@@ -8,8 +8,14 @@ import android.content.Intent;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.RSen.Commandr.R;
@@ -48,26 +54,40 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("flashlight", "oncreate");
         setContentView(R.layout.activity_flashlight);
         currentlyOn = false;
+        setFinishOnTouchOutside(false);
+        // Make us non-modal, so that others can receive touch events.
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
+
+        // ...but notify us that it happened.
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH, WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH);
+
+        findViewById(R.id.turnOff).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        boolean onOrOff = getIntent().getBooleanExtra("onOrOff", false);
-        if (onOrOff != currentlyOn) {
-            currentlyOn = onOrOff;
-            turnOnOrOff(onOrOff);
-
-        } else if (onOrOff) {
-            moveTaskToBack(true);
-            GoogleNowUtil.resetGoogleNow(this);
-        } else {
-            finish();
-        }
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        // If we've received a touch notification that the user has touched
+        // outside the app, finish the activity.
+        if (MotionEvent.ACTION_OUTSIDE == event.getAction()) {
+            moveTaskToBack(true);
+            return true;
+        }
 
+        // Delegate everything else to Activity.
+        return super.onTouchEvent(event);
+    }
     /**
      * Either turns on or off the flashlight
      *
@@ -100,7 +120,6 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
             if (!params.getSupportedFlashModes().contains(Parameters.FLASH_MODE_TORCH)) {
                 Toast.makeText(this, getString(R.string.no_flashlight_access), Toast.LENGTH_LONG).show();
                 finish();
-                GoogleNowUtil.resetGoogleNow(this);
                 return;
             }
             params.setFlashMode(Parameters.FLASH_MODE_TORCH);
@@ -110,11 +129,9 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
             } catch (Exception e) {
                 Toast.makeText(this, getString(R.string.no_flashlight_access), Toast.LENGTH_LONG).show();
                 finish();
-                GoogleNowUtil.resetGoogleNow(this);
                 return;
             }
-            //move the task to the back (pause it) so that the user does not have to dismiss it manually...
-            moveTaskToBack(true);
+
         } else {
             // finish the activity because it can now be safely closed
             finish();
@@ -124,18 +141,18 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
 
     @Override
     protected void onNewIntent(Intent intent) {
-        // called in the case that the Activity is already created (paused)
         super.onNewIntent(intent);
-        boolean onOrOff = intent.getBooleanExtra("onOrOff", false);
+        setIntent(getIntent().putExtra("onOrOff", intent.getBooleanExtra("onOrOff", false)));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        boolean onOrOff = getIntent().getBooleanExtra("onOrOff", false);
         if (onOrOff != currentlyOn) {
             currentlyOn = onOrOff;
             turnOnOrOff(onOrOff);
-        } else if (onOrOff) {
-            moveTaskToBack(true);
-            GoogleNowUtil.resetGoogleNow(this);
-        } else {
-            finish();
-            GoogleNowUtil.resetGoogleNow(this);
+
         }
     }
 

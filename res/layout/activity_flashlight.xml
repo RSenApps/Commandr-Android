@@ -1,13 +1,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearlayout"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    tools:context=".builtincommands.FlashlightActivity">
 
     <SurfaceView
         android:id="@+id/PREVIEW"
         android:layout_width="1dip"
         android:layout_centerInParent="true"
         android:layout_height="1dip" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/flashlight_activated"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView"
+        android:id="@+id/turnOff"
+        android:layout_marginTop="8dp"
+        android:text="@string/turn_off"/>
 
 </RelativeLayout>
