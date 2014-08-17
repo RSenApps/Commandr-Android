@@ -124,7 +124,7 @@
     <string name="unread_messages"> unread messages. </string>
     <string name="sent"> sent </string>
     <string name="error_gmail">There was an error communicating with GMail</string>
-    <string name="wolfram_title">WolframAlpha redirect</string>
+    <string name="wolfram_title">WolframAlpha</string>
     <string name="wolfram_phrases">wolfram</string>
     <string name="wolfram_hint">query</string>
     <string name="volume_percentage_title">Volume Percentage</string>
@@ -159,5 +159,9 @@
     <string name="taken_with_commandr">Taken with Commandr</string>
     <string name="take_selfie_phrase">take a selfie</string>
     <string name="take_selfie_title">Take a Selfie</string>
+    <string name="reboot_failed">Reboot failed!</string>
+    <string name="boot_recovery_failed">Boot to recovery failed!</string>
+    <string name="shutdown_failed">System shutdown failed!</string>
+    <string name="wolfram_redirect_failed">Wolfram redirect failed</string>
 
 </resources>

@@ -39,13 +39,22 @@ public class WolframRedirectCommand extends MostWantedCommand {
 
         Toast.makeText(context, context.getString(R.string.wolfram_redirect), Toast.LENGTH_SHORT).show();
         try {
-
-           String query = URLEncoder.encode(predicate, "utf-8");
-            String url = "http://www.wolframalpha.com/input/?i=" + query;
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(i);
+            try {
+                String query = URLEncoder.encode(predicate, "utf-8");
+                String url = "wolframalpha://?i=" + query;
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+            }
+            catch (Exception e) {
+                String query = URLEncoder.encode(predicate, "utf-8");
+                String url = "http://www.wolframalpha.com/input/?i=" + query;
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+            }
         /*
         Intent i = new Intent(context, WolframRedirectActivity.class);
         i.putExtra(WOLFRAM_QUERY,predicate);
@@ -53,9 +62,9 @@ public class WolframRedirectCommand extends MostWantedCommand {
         context.startActivity(i);
         */
         }
-            catch (UnsupportedEncodingException e){
+            catch (Exception e){
                 e.printStackTrace();
-                Toast.makeText(context, "Wolfram redirect failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getString(R.string.wolfram_redirect_failed), Toast.LENGTH_SHORT).show();
 
             }
     }
