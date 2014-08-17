@@ -30,8 +30,6 @@ public class RebootIntoRecoveryRootOnly extends MostWantedCommand {
      */
     @Override
     public void execute(final Context context, String predicate) {
-        Toast.makeText(context, "Boot to recovery 1111!", Toast.LENGTH_SHORT).show();
-
         // Unfortunately I cannot find a way to force the system only broadcast of reboot using root, so this reboots IMMEDIATELY! Without warning other apps.
         if (RebootIntoRecoveryRootOnly.this.context instanceof Activity) {
             new Thread(new Runnable() {
