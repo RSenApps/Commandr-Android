@@ -165,6 +165,9 @@
             android:name=".builtincommands.PlayPlaylistActivity"
             android:label="@string/title_activity_play_playlist"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".builtincommands.RootCommandActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!-- This is the "edit" Activity. Note that Locale will reject plug-in Activities for the following reasons: - Missing "android:label=[...]" - Missing "android:icon=[...]" - The Activity isn't exported (e.g. android:exported="false") - The Activity isn't enabled (e.g. android:enabled="false") - The Activity requires permissions not available to Locale -->
 
         -
