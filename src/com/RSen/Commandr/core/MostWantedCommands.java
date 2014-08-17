@@ -56,7 +56,7 @@ public class MostWantedCommands {
                     new WifiCommand(context), new WifiOffCommand(context), new GPSCommand(context), new GPSOffCommand(context), new BluetoothCommand(context),
                     new BluetoothOffCommand(context), new PauseMusicCommand(context), new ResumeMusicCommand(context), new NextMusicCommand(context), new PreviousMusicCommand(context)
                     , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context), new CellularDataCommand(context), new CellularDataOffCommand(context), new ReadUnreadGmailCommand(context)
-                    , new RaiseVolumeCommand(context), new LowerVolumeCommand(context),new VolumePercentage(context), new WolframRedirectCommand(context), new UnlockCommand(context), new LockCommand(context), new TakePictureCommand(context), new TakeSelfieCommand(context), new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context), new RestartNowRootOnly(context)};
+                    , new RaiseVolumeCommand(context), new LowerVolumeCommand(context),new VolumePercentage(context), new WolframRedirectCommand(context), new UnlockCommand(context), new LockCommand(context), new TakePictureCommand(context), new TakeSelfieCommand(context), new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context), new RestartNowRootOnly(context), new WolframRedirectCommand(context)};
         }
         return commands;
     }

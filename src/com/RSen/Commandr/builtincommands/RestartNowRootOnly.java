@@ -43,7 +43,7 @@ public class RestartNowRootOnly extends MostWantedCommand {
                     } catch (Exception ex) {
                         ((Activity) RestartNowRootOnly.this.context).runOnUiThread(new Runnable() {
                             public void run() {
-                                Toast.makeText(context, "Reboot failed!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, context.getString(R.string.reboot_failed), Toast.LENGTH_SHORT).show();
                             }
                         });
                         ex.printStackTrace();
@@ -51,7 +51,7 @@ public class RestartNowRootOnly extends MostWantedCommand {
                 }
             }, "RestartNowRootOnly ").start();
         } else {
-            Toast.makeText(context, "Reboot failed! (Not started from activity)", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getString(R.string.reboot_failed), Toast.LENGTH_SHORT).show();
         }
     }
 

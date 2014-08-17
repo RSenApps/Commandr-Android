@@ -43,7 +43,7 @@ public class ShutdownNowRootOnly extends MostWantedCommand {
                     } catch (Exception ex) {
                         ((Activity) ShutdownNowRootOnly.this.context).runOnUiThread(new Runnable() {
                             public void run() {
-                                Toast.makeText(context, "System shutdown failed!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, context.getString(R.string.shutdown_failed), Toast.LENGTH_SHORT).show();
 
                             }
                         });
@@ -52,7 +52,7 @@ public class ShutdownNowRootOnly extends MostWantedCommand {
                 }
             }, "Shutdown NOW").start();
         } else {
-            Toast.makeText(context, "System shutdown failed! (Not started from activity)", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getString(R.string.shutdown_failed), Toast.LENGTH_SHORT).show();
         }
     }
 
