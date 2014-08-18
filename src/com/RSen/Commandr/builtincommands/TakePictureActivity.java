@@ -303,11 +303,13 @@ public class TakePictureActivity extends Activity {
             super(context);
             mCamera = camera;
             // get Camera parameters
-            Camera.Parameters params = mCamera.getParameters();
-            // set the focus mode
-            params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
-            // set Camera parameters
-            mCamera.setParameters(params);
+            if (mCamera.getParameters().getSupportedFocusModes().contains(Camera.Parameters.FOCUS_MODE_AUTO)) {
+                Camera.Parameters params = mCamera.getParameters();
+                // set the focus mode
+                params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+                // set Camera parameters
+                mCamera.setParameters(params);
+            }
             // Install a SurfaceHolder.Callback so we get notified when the
             // underlying surface is created and destroyed.
             mHolder = getHolder();
