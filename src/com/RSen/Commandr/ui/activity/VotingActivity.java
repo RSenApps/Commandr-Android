@@ -79,6 +79,7 @@ public class VotingActivity extends ApptentiveActivity {
         progress.setVisibility(View.VISIBLE);
         ParseQuery<ParseObject> query = ParseQuery.getQuery("VotingCommand");
         query.addDescendingOrder("votes");
+        query.setLimit(1000);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(final List<ParseObject> parseObjects, ParseException e) {
