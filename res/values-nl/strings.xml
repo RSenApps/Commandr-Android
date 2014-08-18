@@ -117,18 +117,25 @@ github.com/nhaarman/ListviewAnimations\nAndroidStaggeredGrid by etsy github.com/
     <string name="unread_gmail_phrases">lees ongelezen gmail, ongelezen gmail</string>
     <string name="unread_gmail_title">Lees ongelezen Gmail</string>
     <string name="fetching_gmail">Gmail ophalen...</string>
+    <string name="wolfram_redirect">Redirecting...</string>
     <string name="no_unread">Er zijn geen ongelezen berichten.</string>
     <string name="one_unread">Er is één ongelezen bericht.</string>
     <string name="there_are">Er zijn</string>
     <string name="unread_messages">ongelezen berichten.</string>
     <string name="sent">verzonden</string>
     <string name="error_gmail">Er is een fout opgetreden bij het communiceren met Gmail</string>
-    <string name="wolfram_title">WolframAlpha stem snelkoppeling</string>
+    <string name="wolfram_title">Wolfram Alpha</string>
     <string name="wolfram_phrases">wolfram</string>
     <string name="wolfram_hint">opvraag</string>
     <string name="volume_percentage_title">Volume percentage</string>
     <string name="volume_percentage_phrases">Volume</string>
     <string name="volume_percentage_hint">x</string>
+    <string name="shutdown_title">Shutdown (Root Only)</string>
+    <string name="shutdown_phrases">shut down now, turn off phone</string>
+    <string name="reboot_title">Restart Phone (Root Only)</string>
+    <string name="reboot_phrases">reboot now, restart phone now</string>
+    <string name="reboot_recovery_title">Reboot into Recovery (Root Only)</string>
+    <string name="reboot_recovery_phrases">reboot into recovery now</string>
     <string name="raise_volume_phrase">volume verhogen</string>
     <string name="raise_volume_title">Volume verhogen</string>
     <string name="lower_volume_phrase">volume verlagen</string>
@@ -145,5 +152,16 @@ github.com/nhaarman/ListviewAnimations\nAndroidStaggeredGrid by etsy github.com/
     <string name="unlock_title">Ontgrendel de telefoon</string>
     <string name="lock_phrases">vergrendel de telefoon</string>
     <string name="lock_title">Vergrendel de telefoon</string>
+    <string name="title_activity_take_picture">Take a Picture</string>
+    <string name="take_picture_phrases">take a picture</string>
+    <string name="take_a_picture">Take a Picture</string>
+    <string name="smile">Smile!</string>
+    <string name="taken_with_commandr">Taken with Commandr</string>
+    <string name="take_selfie_phrase">take a selfie</string>
+    <string name="take_selfie_title">Take a Selfie</string>
+    <string name="wolfram_redirect_failed">Wolfram redirect failed</string>
+    <string name="root_command_failed">Root Command Failed</string>
+    <string name="show_ads">Show Ads</string>
+    <string name="show_ads_description">Trying to help pay for college so if possible, please don\'t disable them :)</string>
 
 </resources>

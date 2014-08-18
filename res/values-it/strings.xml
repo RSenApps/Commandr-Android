@@ -117,18 +117,25 @@ ListViewAnimations di nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
     <string name="unread_gmail_phrases">leggi gmail non lette, gmail non lette</string>
     <string name="unread_gmail_title">Leggi Gmail non lette</string>
     <string name="fetching_gmail">Raggiungendo Gmail...</string>
+    <string name="wolfram_redirect">Reindirizzamento...</string>
     <string name="no_unread">Non ci sono messaggi non letti.</string>
     <string name="one_unread">C\'è un messaggio non letto.</string>
     <string name="there_are">Ci sono</string>
     <string name="unread_messages">messaggi non letti.</string>
     <string name="sent">inviato</string>
     <string name="error_gmail">C\'è stato un errore di comunicazione con Gmail</string>
-    <string name="wolfram_title">Scorciatoia vocale WolframAlpha</string>
+    <string name="wolfram_title">Wolfram Alpha</string>
     <string name="wolfram_phrases">wolfram</string>
     <string name="wolfram_hint">coda</string>
     <string name="volume_percentage_title">Percentuale volume</string>
     <string name="volume_percentage_phrases">volume</string>
     <string name="volume_percentage_hint">x</string>
+    <string name="shutdown_title">Spegni (solo con Root)</string>
+    <string name="shutdown_phrases">spegni ora, spegni telefono</string>
+    <string name="reboot_title">Riavvia telefono (solo con Root)</string>
+    <string name="reboot_phrases">riavvia ora, riavvia telefono ora</string>
+    <string name="reboot_recovery_title">Riavvia in Recovery (solo con Root)</string>
+    <string name="reboot_recovery_phrases">riavvia in recovery ora</string>
     <string name="raise_volume_phrase">aumenta volume</string>
     <string name="raise_volume_title">Aumenta il volume</string>
     <string name="lower_volume_phrase">abbassa volume</string>
@@ -145,5 +152,16 @@ ListViewAnimations di nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
     <string name="unlock_title">Sblocca telefono</string>
     <string name="lock_phrases">blocca telefono</string>
     <string name="lock_title">Blocca telefono</string>
+    <string name="title_activity_take_picture">Scatta una foto</string>
+    <string name="take_picture_phrases">scatta una foto</string>
+    <string name="take_a_picture">Scatta una foto</string>
+    <string name="smile">Sorridi!</string>
+    <string name="taken_with_commandr">Scattata con Commandr</string>
+    <string name="take_selfie_phrase">scatta un selfie</string>
+    <string name="take_selfie_title">Scatta un selfie</string>
+    <string name="wolfram_redirect_failed">Reindirizzamento a Wolfram Alpha fallito!</string>
+    <string name="root_command_failed">Comando Root fallito</string>
+    <string name="show_ads">Mostra annunci</string>
+    <string name="show_ads_description">Cercare di aiutarmi a pagare il college se possibile. Per favore, non disattivateli :)</string>
 
 </resources>

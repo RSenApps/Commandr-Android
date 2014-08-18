@@ -117,18 +117,25 @@ ListViewAnimations por nhaarman github.com/nhaarman/ListViewAnimations\nAndroidS
     <string name="unread_gmail_phrases">read unread gmail, unread gmail</string>
     <string name="unread_gmail_title">Read Unread Gmail</string>
     <string name="fetching_gmail">Fetching Gmail...</string>
+    <string name="wolfram_redirect">Redirecting...</string>
     <string name="no_unread">There are no unread messages. </string>
     <string name="one_unread">There is one unread message. </string>
     <string name="there_are">There are </string>
     <string name="unread_messages"> unread messages. </string>
     <string name="sent"> sent </string>
     <string name="error_gmail">There was an error communicating with GMail</string>
-    <string name="wolfram_title">WolframAlpha voice shortcut</string>
+    <string name="wolfram_title">Wolfram Alpha</string>
     <string name="wolfram_phrases">wolfram</string>
     <string name="wolfram_hint">query</string>
     <string name="volume_percentage_title">Volume Percentage</string>
     <string name="volume_percentage_phrases">volume </string>
     <string name="volume_percentage_hint">x</string>
+    <string name="shutdown_title">Shutdown (Root Only)</string>
+    <string name="shutdown_phrases">shut down now, turn off phone</string>
+    <string name="reboot_title">Restart Phone (Root Only)</string>
+    <string name="reboot_phrases">reboot now, restart phone now</string>
+    <string name="reboot_recovery_title">Reboot into Recovery (Root Only)</string>
+    <string name="reboot_recovery_phrases">reboot into recovery now</string>
     <string name="raise_volume_phrase">raise volume</string>
     <string name="raise_volume_title">Raise Volume</string>
     <string name="lower_volume_phrase">lower volume</string>
@@ -145,5 +152,16 @@ ListViewAnimations por nhaarman github.com/nhaarman/ListViewAnimations\nAndroidS
     <string name="unlock_title">Unlock Phone</string>
     <string name="lock_phrases">lock phone</string>
     <string name="lock_title">Lock Phone</string>
+    <string name="title_activity_take_picture">Take a Picture</string>
+    <string name="take_picture_phrases">take a picture</string>
+    <string name="take_a_picture">Take a Picture</string>
+    <string name="smile">Smile!</string>
+    <string name="taken_with_commandr">Taken with Commandr</string>
+    <string name="take_selfie_phrase">take a selfie</string>
+    <string name="take_selfie_title">Take a Selfie</string>
+    <string name="wolfram_redirect_failed">Wolfram redirect failed</string>
+    <string name="root_command_failed">Root Command Failed</string>
+    <string name="show_ads">Show Ads</string>
+    <string name="show_ads_description">Trying to help pay for college so if possible, please don\'t disable them :)</string>
 
 </resources>

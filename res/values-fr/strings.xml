@@ -25,7 +25,7 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
     <string name="open_dialog">Ouvrir pop-up</string>
     <string name="choose_preferred">Choisissez votre application de notes préférée</string>
     <string name="lets_test">Testons</string>
-    <string name="welcome">Commandr pour Google Now</string>
+    <string name="welcome">Bienvenu dans Commandr pour Google Now</string>
     <string name="command_name">Nom de la commande :</string>
     <string name="what_do">Qu\'est ce qu\'elle ferait ?</string>
     <string name="suggest_new_command">Suggérez des nouvelles commandes</string>
@@ -120,18 +120,25 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
     <string name="unread_gmail_phrases">Lire gmail, lire message gmail</string>
     <string name="unread_gmail_title">Lire Gmail non lus</string>
     <string name="fetching_gmail">Récupération de Gmail...</string>
+    <string name="wolfram_redirect">Weiterleitung...</string>
     <string name="no_unread">Il n\'y a pas de messages non lus.</string>
     <string name="one_unread">Il y a un message non lu.</string>
     <string name="there_are">Il y a</string>
     <string name="unread_messages">messages non lus.</string>
     <string name="sent">envoyé</string>
     <string name="error_gmail">Il y a eu une erreur lors de la communication avec Gmail</string>
-    <string name="wolfram_title">WolframAlpha voice shortcut</string>
+    <string name="wolfram_title">Wolfram Alpha</string>
     <string name="wolfram_phrases">wolfram</string>
-    <string name="wolfram_hint">query</string>
-    <string name="volume_percentage_title">Volume Percentage</string>
-    <string name="volume_percentage_phrases">volume </string>
+    <string name="wolfram_hint">question</string>
+    <string name="volume_percentage_title">Volume Pourcentage </string>
+    <string name="volume_percentage_phrases">volume</string>
     <string name="volume_percentage_hint">x</string>
+    <string name="shutdown_title">Shutdown (Root Only)</string>
+    <string name="shutdown_phrases">shut down now, turn off phone</string>
+    <string name="reboot_title">Restart Phone (Root Only)</string>
+    <string name="reboot_phrases">reboot now, restart phone now</string>
+    <string name="reboot_recovery_title">Reboot into Recovery (Root Only)</string>
+    <string name="reboot_recovery_phrases">reboot into recovery now</string>
     <string name="raise_volume_phrase">augmenter le volume, augmenter le son</string>
     <string name="raise_volume_title">Augmenter le volume</string>
     <string name="lower_volume_phrase">baisser le volume, baisser le son</string>
@@ -148,5 +155,16 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
     <string name="unlock_title">Unlock Phone</string>
     <string name="lock_phrases">lock phone</string>
     <string name="lock_title">Lock Phone</string>
+    <string name="title_activity_take_picture">Take a Picture</string>
+    <string name="take_picture_phrases">take a picture</string>
+    <string name="take_a_picture">Take a Picture</string>
+    <string name="smile">Smile!</string>
+    <string name="taken_with_commandr">Taken with Commandr</string>
+    <string name="take_selfie_phrase">take a selfie</string>
+    <string name="take_selfie_title">Take a Selfie</string>
+    <string name="wolfram_redirect_failed">Wolfram redirect failed</string>
+    <string name="root_command_failed">Root Command Failed</string>
+    <string name="show_ads">Show Ads</string>
+    <string name="show_ads_description">Trying to help pay for college so if possible, please don\'t disable them :)</string>
 
 </resources>
