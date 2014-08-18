@@ -51,17 +51,14 @@ public final class QueryReceiver extends BroadcastReceiver {
                     String[] activationPhrases = searchPhrase.split(",");
                     boolean matchFound = false;
                     for (String activationPhrase : activationPhrases) {
-                        if (activationPhrase.toLowerCase().trim().equals(lastPhrase.toLowerCase().trim()))
-                        {
+                        if (activationPhrase.toLowerCase().trim().equals(lastPhrase.toLowerCase().trim())) {
                             matchFound = true;
                             break;
                         }
                     }
-                    if (matchFound)
-                    {
+                    if (matchFound) {
                         setResultCode(LocaleIntent.RESULT_CONDITION_SATISFIED);
-                    }
-                    else {
+                    } else {
                         setResultCode(LocaleIntent.RESULT_CONDITION_UNSATISFIED);
                     }
                 }

@@ -3,12 +3,9 @@ package com.RSen.Commandr.builtincommands;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Handler;
-import android.os.Message;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
-import com.RSen.Commandr.util.GoogleNowUtil;
 
 /**
  * @author Ryan Senanayake

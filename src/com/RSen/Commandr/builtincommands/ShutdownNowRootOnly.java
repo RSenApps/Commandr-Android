@@ -1,9 +1,7 @@
 package com.RSen.Commandr.builtincommands;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;

@@ -17,11 +17,9 @@ public class TTSService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent.getAction() != null && intent.getAction().equals("STOP"))
-        {
+        if (intent.getAction() != null && intent.getAction().equals("STOP")) {
             stopSelf();
-        }
-        else {
+        } else {
             Notification.Builder builder = new Notification.Builder(this);
             builder.setContentTitle(getString(R.string.commandr_speaking));
             builder.setContentIntent(PendingIntent.getActivity(this, 12343,

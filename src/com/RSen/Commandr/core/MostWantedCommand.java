@@ -10,10 +10,10 @@ public abstract class MostWantedCommand extends Command {
     @Override
     public abstract void execute(Context context, String predicate);
 
-    protected boolean isOnByDefault()
-    {
+    protected boolean isOnByDefault() {
         return true;
     }
+
     @Override
     public boolean isEnabled(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(getTitle(), isOnByDefault()) && isAvailable(context);

@@ -42,8 +42,7 @@ public class MostWantedCommandsActivity extends Activity {
             AdMobExtras extras = new AdMobExtras(bundle);
             AdRequest adRequest = new AdRequest.Builder().addTestDevice("E9439BFF2245E1BC1DD0FDB28EA467F9").addTestDevice("49924C4BF3738C69A7497A524D092901").addNetworkExtras(extras).build();
             adView.loadAd(adRequest);
-        }
-        else {
+        } else {
             adView.setVisibility(View.GONE);
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

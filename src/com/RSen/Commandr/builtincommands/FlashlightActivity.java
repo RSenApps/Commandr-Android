@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -76,6 +74,7 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
     public void onBackPressed() {
         moveTaskToBack(true);
     }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         // If we've received a touch notification that the user has touched
@@ -88,6 +87,7 @@ public class FlashlightActivity extends Activity implements SurfaceHolder.Callba
         // Delegate everything else to Activity.
         return super.onTouchEvent(event);
     }
+
     /**
      * Either turns on or off the flashlight
      *

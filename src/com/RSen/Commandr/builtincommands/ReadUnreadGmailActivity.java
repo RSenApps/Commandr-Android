@@ -155,9 +155,7 @@ public class ReadUnreadGmailActivity extends Activity {
             startService(i);
             try {
                 GoogleNowUtil.resetGoogleNow(MyAccessibilityService.getInstance());
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 GoogleNowUtil.resetGoogleNow(ReadUnreadGmailActivity.this);
             }
             finish();

@@ -21,7 +21,7 @@ public class VolumePercentage extends MostWantedCommand {
     public VolumePercentage(Context ctx) {
         DEFAULT_PHRASE = ctx.getString(R.string.volume_percentage_phrases);
         TITLE = ctx.getString(R.string.volume_percentage_title);
-        context=ctx;
+        context = ctx;
 
     }
 

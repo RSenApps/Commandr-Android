@@ -1,8 +1,6 @@
 package com.RSen.Commandr.core;
 
 import android.accessibilityservice.AccessibilityService;
-import android.app.Activity;
-import android.app.KeyguardManager;
 import android.content.Context;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -16,6 +14,7 @@ public class MyAccessibilityService extends AccessibilityService {
     static final long timeOut = 500;
     long lastCommand = 0;
     private static MyAccessibilityService thisService;
+
     public MyAccessibilityService() {
     }
 
@@ -67,10 +66,10 @@ public class MyAccessibilityService extends AccessibilityService {
         KeyguardUtil.unlock(this);
     }
 
-    public static MyAccessibilityService getInstance()
-    {
+    public static MyAccessibilityService getInstance() {
         return thisService;
     }
+
     @Override
     public void onAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
         try {

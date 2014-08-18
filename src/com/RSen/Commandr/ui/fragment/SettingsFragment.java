@@ -7,7 +7,6 @@ import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Toast;
 
@@ -63,8 +62,7 @@ public class SettingsFragment extends PreferenceFragment {
                     AdMobExtras extras = new AdMobExtras(bundle);
                     AdRequest adRequest = new AdRequest.Builder().addTestDevice("49924C4BF3738C69A7497A524D092901").addNetworkExtras(extras).build();
                     adView.loadAd(adRequest);
-                }
-                else {
+                } else {
                     adView.setVisibility(View.GONE);
                 }
                 return true;

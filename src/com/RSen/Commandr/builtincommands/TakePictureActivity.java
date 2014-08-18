@@ -15,7 +15,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -32,12 +31,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TakePictureActivity extends Activity{
+public class TakePictureActivity extends Activity {
     private Camera mCamera;
     private CameraPreview mPreview;
     private TextView countdownTV;
     private static int orientation;
     private static boolean frontFacingCamera;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,12 +59,13 @@ public class TakePictureActivity extends Activity{
         preview.addView(mPreview);
 
     }
+
     private boolean timerCancelled = false;
     CountDownTimer timer = new CountDownTimer(3000, 1000) {
 
         @Override
         public void onTick(long l) {
-            countdownTV.setText(((int) l/1000) + "");
+            countdownTV.setText(((int) l / 1000) + "");
             timerCancelled = false;
 
         }
@@ -78,20 +79,20 @@ public class TakePictureActivity extends Activity{
             }
         }
     };
-    public void shootSound()
-    {
+
+    public void shootSound() {
         MediaPlayer _shootMP = null;
         AudioManager meng = (AudioManager) TakePictureActivity.this.getSystemService(Context.AUDIO_SERVICE);
-        int volume = meng.getStreamVolume( AudioManager.STREAM_NOTIFICATION);
+        int volume = meng.getStreamVolume(AudioManager.STREAM_NOTIFICATION);
 
-        if (volume != 0)
-        {
+        if (volume != 0) {
             if (_shootMP == null)
                 _shootMP = MediaPlayer.create(TakePictureActivity.this, Uri.parse("file:///system/media/audio/ui/camera_click.ogg"));
             if (_shootMP != null)
                 _shootMP.start();
         }
     }
+
     private Camera.PictureCallback mPicture = new Camera.PictureCallback() {
 
         @Override
@@ -99,7 +100,7 @@ public class TakePictureActivity extends Activity{
 
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
             Date date = new Date();
-            insertImage(getContentResolver(), BitmapFactory.decodeByteArray(data, 0, data.length, null),"Commandr " + dateFormat.format(date) , getString(R.string.taken_with_commandr));
+            insertImage(getContentResolver(), BitmapFactory.decodeByteArray(data, 0, data.length, null), "Commandr " + dateFormat.format(date), getString(R.string.taken_with_commandr));
             finish();
             GoogleNowUtil.resetGoogleNow(TakePictureActivity.this);
 
@@ -107,9 +108,9 @@ public class TakePictureActivity extends Activity{
     };
 
     public String insertImage(ContentResolver cr,
-                                           Bitmap source,
-                                           String title,
-                                           String description) {
+                              Bitmap source,
+                              String title,
+                              String description) {
 
         ContentValues values = new ContentValues();
         values.put(MediaStore.Images.Media.TITLE, title);
@@ -167,6 +168,7 @@ public class TakePictureActivity extends Activity{
      * A copy of the Android internals StoreThumbnail method, it used with the insertImage to
      * populate the android.provider.MediaStore.Images.Media#insertImage with all the correct
      * meta data. The StoreThumbnail method is private so it must be duplicated here.
+     *
      * @see android.provider.MediaStore.Images.Media (StoreThumbnail private method)
      */
     private static final Bitmap storeThumbnail(
@@ -192,10 +194,10 @@ public class TakePictureActivity extends Activity{
         );
 
         ContentValues values = new ContentValues(4);
-        values.put(MediaStore.Images.Thumbnails.KIND,kind);
-        values.put(MediaStore.Images.Thumbnails.IMAGE_ID,(int)id);
-        values.put(MediaStore.Images.Thumbnails.HEIGHT,thumb.getHeight());
-        values.put(MediaStore.Images.Thumbnails.WIDTH,thumb.getWidth());
+        values.put(MediaStore.Images.Thumbnails.KIND, kind);
+        values.put(MediaStore.Images.Thumbnails.IMAGE_ID, (int) id);
+        values.put(MediaStore.Images.Thumbnails.HEIGHT, thumb.getHeight());
+        values.put(MediaStore.Images.Thumbnails.WIDTH, thumb.getWidth());
 
         Uri url = cr.insert(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, values);
 
@@ -210,14 +212,16 @@ public class TakePictureActivity extends Activity{
             return null;
         }
     }
-    /** A safe way to get an instance of the Camera object. */
-    public static Camera getCameraInstance(boolean frontCamera){
+
+    /**
+     * A safe way to get an instance of the Camera object.
+     */
+    public static Camera getCameraInstance(boolean frontCamera) {
         Camera c = null;
         try {
             if (!frontCamera) {
                 c = Camera.open(); // attempt to get a Camera instance
-            }
-            else {
+            } else {
                 Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
                 int cameraCount = Camera.getNumberOfCameras();
                 for (int camIdx = 0; camIdx < cameraCount; camIdx++) {
@@ -231,12 +235,12 @@ public class TakePictureActivity extends Activity{
                 }
 
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             // Camera is not available (in use or does not exist)
         }
         return c; // returns null if camera is unavailable
     }
+
     public static void setCameraDisplayOrientation(Activity activity,
                                                    int cameraId, android.hardware.Camera camera) {
         android.hardware.Camera.CameraInfo info =
@@ -246,10 +250,18 @@ public class TakePictureActivity extends Activity{
                 .getRotation();
         int degrees = 0;
         switch (rotation) {
-            case Surface.ROTATION_0: degrees = 0; break;
-            case Surface.ROTATION_90: degrees = 90; break;
-            case Surface.ROTATION_180: degrees = 180; break;
-            case Surface.ROTATION_270: degrees = 270; break;
+            case Surface.ROTATION_0:
+                degrees = 0;
+                break;
+            case Surface.ROTATION_90:
+                degrees = 90;
+                break;
+            case Surface.ROTATION_180:
+                degrees = 180;
+                break;
+            case Surface.ROTATION_270:
+                degrees = 270;
+                break;
         }
         orientation = info.orientation;
         int result;
@@ -262,6 +274,7 @@ public class TakePictureActivity extends Activity{
         orientation = result;
         camera.setDisplayOrientation(result);
     }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -269,8 +282,8 @@ public class TakePictureActivity extends Activity{
     }
 
 
-    private void releaseCamera(){
-        if (mCamera != null){
+    private void releaseCamera() {
+        if (mCamera != null) {
             mCamera.release();        // release the camera for other applications
             mCamera = null;
             timerCancelled = true;
@@ -278,7 +291,10 @@ public class TakePictureActivity extends Activity{
             mPreview.getHolder().removeCallback(mPreview);
         }
     }
-    /** A basic Camera preview class */
+
+    /**
+     * A basic Camera preview class
+     */
     public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
         private SurfaceHolder mHolder;
         private Camera mCamera;
@@ -320,7 +336,7 @@ public class TakePictureActivity extends Activity{
             // If your preview can change or rotate, take care of those events here.
             // Make sure to stop the preview before resizing or reformatting it.
 
-            if (mHolder.getSurface() == null){
+            if (mHolder.getSurface() == null) {
                 // preview surface does not exist
                 return;
             }
@@ -328,7 +344,7 @@ public class TakePictureActivity extends Activity{
             // stop preview before making changes
             try {
                 mCamera.stopPreview();
-            } catch (Exception e){
+            } catch (Exception e) {
                 // ignore: tried to stop a non-existent preview
             }
 
@@ -342,7 +358,7 @@ public class TakePictureActivity extends Activity{
                 mCamera.setPreviewDisplay(mHolder);
                 mCamera.startPreview();
 
-            } catch (Exception e){
+            } catch (Exception e) {
             }
         }
     }

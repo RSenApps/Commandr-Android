@@ -8,7 +8,6 @@ import android.widget.Toast;
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 /**
@@ -20,7 +19,7 @@ public class WolframRedirectCommand extends MostWantedCommand {
     private static String TITLE;
     private static String DEFAULT_PHRASE;
     private Context context;
-   // final static String WOLFRAM_QUERY = "wolfram_query";
+    // final static String WOLFRAM_QUERY = "wolfram_query";
 
 
     public WolframRedirectCommand(Context ctx) {
@@ -46,8 +45,7 @@ public class WolframRedirectCommand extends MostWantedCommand {
                 i.setData(Uri.parse(url));
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 String query = URLEncoder.encode(predicate, "utf-8");
                 String url = "http://www.wolframalpha.com/input/?i=" + query;
                 Intent i = new Intent(Intent.ACTION_VIEW);
@@ -61,12 +59,11 @@ public class WolframRedirectCommand extends MostWantedCommand {
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
         */
-        }
-            catch (Exception e){
-                e.printStackTrace();
-                Toast.makeText(context, context.getString(R.string.wolfram_redirect_failed), Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(context, context.getString(R.string.wolfram_redirect_failed), Toast.LENGTH_SHORT).show();
 
-            }
+        }
     }
 
     @Override
@@ -88,7 +85,6 @@ public class WolframRedirectCommand extends MostWantedCommand {
     public String getDefaultPhrase() {
         return DEFAULT_PHRASE;
     }
-
 
 
     @Override

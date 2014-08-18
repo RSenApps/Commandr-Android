@@ -1,13 +1,9 @@
 package com.RSen.Commandr.builtincommands;
 
-import android.app.Activity;
-import android.app.KeyguardManager;
 import android.content.Context;
-import android.content.pm.PackageManager;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
-import com.RSen.Commandr.util.BluetoothUtil;
 import com.RSen.Commandr.util.KeyguardUtil;
 
 /**

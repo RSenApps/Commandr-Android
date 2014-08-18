@@ -6,7 +6,6 @@ import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
-import com.RSen.Commandr.util.GoogleNowUtil;
 
 /**
  * @author Ryan Senanayake

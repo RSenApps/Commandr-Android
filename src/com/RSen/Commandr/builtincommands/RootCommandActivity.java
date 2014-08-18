@@ -1,17 +1,10 @@
 package com.RSen.Commandr.builtincommands;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.widget.Toast;
 
 import com.RSen.Commandr.R;
-
-import java.util.HashMap;
 
 public class RootCommandActivity extends Activity {
 
