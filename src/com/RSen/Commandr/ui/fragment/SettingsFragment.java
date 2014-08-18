@@ -7,6 +7,8 @@ import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.Toast;
 
 import com.RSen.Commandr.R;
@@ -15,6 +17,9 @@ import com.RSen.Commandr.tasker.TaskerIntent;
 import com.RSen.Commandr.ui.activity.MostWantedCommandsActivity;
 import com.RSen.Commandr.ui.activity.SetupActivity;
 import com.RSen.Commandr.ui.activity.TaskerActivity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.mediation.admob.AdMobExtras;
 
 
 /**
@@ -42,7 +47,29 @@ public class SettingsFragment extends PreferenceFragment {
                 return true;
             }
         });
-
+        findPreference("ads").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object o) {
+                AdView adView = (AdView) getActivity().findViewById(R.id.adView);
+                if ((Boolean) o) {
+                    adView.setVisibility(View.VISIBLE);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("color_bg", "4285f4");
+                    bundle.putString("color_bg_top", "4285f4");
+                    bundle.putString("color_border", "4285f4");
+                    bundle.putString("color_link", "EEEEEE");
+                    bundle.putString("color_text", "FFFFFF");
+                    bundle.putString("color_url", "EEEEEE");
+                    AdMobExtras extras = new AdMobExtras(bundle);
+                    AdRequest adRequest = new AdRequest.Builder().addTestDevice("49924C4BF3738C69A7497A524D092901").addNetworkExtras(extras).build();
+                    adView.loadAd(adRequest);
+                }
+                else {
+                    adView.setVisibility(View.GONE);
+                }
+                return true;
+            }
+        });
     }
 
     @Override

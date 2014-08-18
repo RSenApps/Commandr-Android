@@ -207,6 +207,8 @@
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
             android:label="@string/title_activity_take_picture" >
         </activity>
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
     </application>
 
 </manifest>

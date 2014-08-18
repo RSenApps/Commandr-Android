@@ -4,6 +4,7 @@
     xmlns:card="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:clipToPadding="false"
     android:fitsSystemWindows="true">
 
@@ -24,13 +25,24 @@
         android:layout_marginLeft="4dip"
         android:layout_marginRight="4dip"
         android:background="?android:attr/dividerVertical" />
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="#4285f4"
+        android:id="@+id/adContainer"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+        <com.google.android.gms.ads.AdView android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adUnitId="ca-app-pub-4305158976407453/3360704725"
+            ads:adSize="SMART_BANNER"/>
+    </FrameLayout>
     <it.gmariotti.cardslib.library.view.CardGridView
         android:id="@+id/card_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/divider"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/adContainer"
         android:clipToPadding="false"
         android:columnWidth="250dp"
         android:horizontalSpacing="2dp"

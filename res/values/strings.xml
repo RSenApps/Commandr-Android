@@ -161,5 +161,7 @@
     <string name="take_selfie_title">Take a Selfie</string>
     <string name="wolfram_redirect_failed">Wolfram redirect failed</string>
     <string name="root_command_failed">Root Command Failed</string>
+    <string name="show_ads">Show Ads</string>
+    <string name="show_ads_description">Trying to help pay for college so if possible, please don\'t disable them :)</string>
 
 </resources>

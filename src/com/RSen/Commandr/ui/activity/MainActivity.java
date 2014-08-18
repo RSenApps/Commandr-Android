@@ -17,12 +17,16 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.ui.fragment.SettingsFragment;
 import com.RSen.Commandr.util.QustomDialogBuilder;
 import com.apptentive.android.sdk.Apptentive;
 import com.apptentive.android.sdk.ApptentiveActivity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.mediation.admob.AdMobExtras;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -97,6 +101,24 @@ public class MainActivity extends ApptentiveActivity {
             finish();
         }
         setContentView(R.layout.main);
+        // Look up the AdView as a resource and load a request.
+        AdView adView = (AdView) this.findViewById(R.id.adView);
+        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("ads", true)) {
+            adView.setVisibility(View.VISIBLE);
+            Bundle bundle = new Bundle();
+            bundle.putString("color_bg", "4285f4");
+            bundle.putString("color_bg_top", "4285f4");
+            bundle.putString("color_border", "4285f4");
+            bundle.putString("color_link", "EEEEEE");
+            bundle.putString("color_text", "FFFFFF");
+            bundle.putString("color_url", "EEEEEE");
+            AdMobExtras extras = new AdMobExtras(bundle);
+            AdRequest adRequest = new AdRequest.Builder().addTestDevice("E9439BFF2245E1BC1DD0FDB28EA467F9").addTestDevice("49924C4BF3738C69A7497A524D092901").addNetworkExtras(extras).build();
+            adView.loadAd(adRequest);
+        }
+        else {
+            adView.setVisibility(View.GONE);
+        }
         // Create new fragment and transaction
 
         SettingsFragment newFragment = new SettingsFragment();

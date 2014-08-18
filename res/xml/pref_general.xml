@@ -22,6 +22,10 @@
         android:key="taskerCommands"
         android:summary="@string/configure_tasker"
         android:title="@string/tasker_commands" />
-
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="ads"
+        android:title="@string/show_ads"
+        android:summary="@string/show_ads_description" />
 
 </PreferenceScreen>

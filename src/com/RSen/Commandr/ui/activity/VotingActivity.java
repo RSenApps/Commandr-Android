@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,9 @@ import com.RSen.Commandr.R;
 import com.RSen.Commandr.ui.card.MostWantedVotingCard;
 import com.RSen.Commandr.util.QustomDialogBuilder;
 import com.apptentive.android.sdk.ApptentiveActivity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.mediation.admob.AdMobExtras;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 import com.parse.FindCallback;
 import com.parse.Parse;
@@ -37,6 +41,24 @@ public class VotingActivity extends ApptentiveActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.voting);
+        AdView adView = (AdView) this.findViewById(R.id.adView);
+        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("ads", true)) {
+            adView.setVisibility(View.VISIBLE);
+            Bundle bundle = new Bundle();
+            bundle.putString("color_bg", "4285f4");
+            bundle.putString("color_bg_top", "4285f4");
+            bundle.putString("color_border", "4285f4");
+            bundle.putString("color_link", "EEEEEE");
+            bundle.putString("color_text", "FFFFFF");
+            bundle.putString("color_url", "EEEEEE");
+            AdMobExtras extras = new AdMobExtras(bundle);
+            AdRequest adRequest = new AdRequest.Builder().addTestDevice("E9439BFF2245E1BC1DD0FDB28EA467F9").addTestDevice("49924C4BF3738C69A7497A524D092901").addNetworkExtras(extras).build();
+            adView.loadAd(adRequest);
+        }
+        else {
+            adView.setVisibility(View.GONE);
+        }
+
         progress = (ProgressBar) findViewById(R.id.progressBar);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             // create our manager instance after the content view is set
