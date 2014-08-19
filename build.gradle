@@ -15,6 +15,7 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile project(':apptentive-android-sdk')
+    compile project(':Donations')
     compile 'com.github.gabrielemariotti.cards:library:1.7.3'
     compile 'com.google.android.gms:play-services:5.0.77'
     compile 'com.github.gabrielemariotti.cards:library-extra:1.7.3'
@@ -107,5 +108,8 @@ android {
         exclude 'META-INF/LGPL2.1'
     }
     productFlavors {
+        google {
+            buildConfigField "boolean", "DONATIONS_GOOGLE", "true"
+        }
     }
 }

@@ -24,6 +24,7 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <permission
         android:name="com.RSen.Commandr.permission.C2D_MESSAGE"
@@ -209,6 +210,10 @@
         </activity>
         <activity android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity
+            android:name=".ui.activity.DonationsActivity"
+            android:label="Donations" >
+        </activity>
     </application>
 
 </manifest>

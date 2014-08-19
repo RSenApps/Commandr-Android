@@ -27,5 +27,8 @@
         android:key="ads"
         android:title="@string/show_ads"
         android:summary="@string/show_ads_description" />
-
+    <Preference
+        android:key="donate"
+        android:title="@string/donate"
+        android:summary="@string/donate_description" />
 </PreferenceScreen>

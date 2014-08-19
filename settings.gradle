@@ -1,1 +1,2 @@
 include ':apptentive-android-sdk'
+include ':Donations'

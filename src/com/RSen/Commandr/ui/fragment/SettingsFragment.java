@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MyAccessibilityService;
 import com.RSen.Commandr.tasker.TaskerIntent;
+import com.RSen.Commandr.ui.activity.DonationsActivity;
 import com.RSen.Commandr.ui.activity.MostWantedCommandsActivity;
 import com.RSen.Commandr.ui.activity.SetupActivity;
 import com.RSen.Commandr.ui.activity.TaskerActivity;
@@ -43,6 +44,15 @@ public class SettingsFragment extends PreferenceFragment {
             public boolean onPreferenceClick(Preference arg0) {
                 // Create new fragment and transaction
                 startActivity(new Intent(getActivity(), MostWantedCommandsActivity.class));
+                return true;
+            }
+        });
+        findPreference("donate").setOnPreferenceClickListener(new OnPreferenceClickListener() {
+
+            @Override
+            public boolean onPreferenceClick(Preference arg0) {
+                // Create new fragment and transaction
+                startActivity(new Intent(getActivity(), DonationsActivity.class));
                 return true;
             }
         });
