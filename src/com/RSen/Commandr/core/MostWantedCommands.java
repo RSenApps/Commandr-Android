@@ -23,6 +23,8 @@ import com.RSen.Commandr.builtincommands.ReadUnreadSMSCommand;
 import com.RSen.Commandr.builtincommands.RebootIntoRecoveryRootOnly;
 import com.RSen.Commandr.builtincommands.RestartNowRootOnly;
 import com.RSen.Commandr.builtincommands.ResumeMusicCommand;
+import com.RSen.Commandr.builtincommands.RotationLockOffCommand;
+import com.RSen.Commandr.builtincommands.RotationLockOnCommand;
 import com.RSen.Commandr.builtincommands.SendWhatsappCommand;
 import com.RSen.Commandr.builtincommands.ShutdownNowRootOnly;
 import com.RSen.Commandr.builtincommands.SilenceRingerCommand;
@@ -57,9 +59,13 @@ public class MostWantedCommands {
         if (commands == null) {
             commands = new MostWantedCommand[]{new FlashlightCommand(context), new FlashlightOffCommand(context),
                     new WifiCommand(context), new WifiOffCommand(context), new GPSCommand(context), new GPSOffCommand(context), new BluetoothCommand(context),
-                    new BluetoothOffCommand(context), new PauseMusicCommand(context), new ResumeMusicCommand(context), new NextMusicCommand(context), new PreviousMusicCommand(context)
-                    , new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context), new CellularDataCommand(context), new CellularDataOffCommand(context), new ReadUnreadGmailCommand(context)
-                    , new RaiseVolumeCommand(context), new LowerVolumeCommand(context), new SilenceRingerCommand(context), new UnsilenceRingerCommand(context), new VolumePercentage(context), new UnlockCommand(context), new LockCommand(context), new TakePictureCommand(context), new TakeSelfieCommand(context), new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context), new RestartNowRootOnly(context), new WolframRedirectCommand(context), new SendWhatsappCommand(context)};
+                    new BluetoothOffCommand(context), new PauseMusicCommand(context), new ResumeMusicCommand(context), new NextMusicCommand(context),
+                    new PreviousMusicCommand(context), new ReadUnreadSMSCommand(context), new PlayPlaylistCommand(context), new ChatbotCommand(context),
+                    new CellularDataCommand(context), new CellularDataOffCommand(context), new ReadUnreadGmailCommand(context), new RaiseVolumeCommand(context),
+                    new LowerVolumeCommand(context), new SilenceRingerCommand(context), new UnsilenceRingerCommand(context), new VolumePercentage(context),
+                    new UnlockCommand(context), new LockCommand(context), new TakePictureCommand(context), new TakeSelfieCommand(context),
+                    new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context), new RestartNowRootOnly(context),
+                    new WolframRedirectCommand(context), new SendWhatsappCommand(context), new RotationLockOnCommand(context), new RotationLockOffCommand(context)};
         }
         return commands;
     }

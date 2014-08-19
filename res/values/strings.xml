@@ -174,4 +174,8 @@
     <string name="send_whatsapp_title">Send Whatsapp</string>
     <string name="message">message</string>
     <string name="install_whatsapp">First install Whatsapp...</string>
+    <string name="enable_rotation_lock_phrase">enable rotation lock</string>
+    <string name="enable_rotation_lock_title">Enable Rotation Lock</string>
+    <string name="rotation_lock_off_phrase">disable rotation lock</string>
+    <string name="rotation_lock_off_title">Disable Rotation Lock</string>
 </resources>
