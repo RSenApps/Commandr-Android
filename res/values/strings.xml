@@ -170,4 +170,8 @@
     <string name="silence_ringer_title">Silence Ringer</string>
     <string name="unsilence_ringer_title">Unsilence Ringer</string>
     <string name="unsilence_ringer_phrase">unsilence ringer</string>
+    <string name="send_whatsapp_phrase">send whatsapp</string>
+    <string name="send_whatsapp_title">Send Whatsapp</string>
+    <string name="message">message</string>
+    <string name="install_whatsapp">First install Whatsapp...</string>
 </resources>
