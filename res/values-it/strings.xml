@@ -163,5 +163,19 @@ ListViewAnimations di nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
     <string name="root_command_failed">Comando Root fallito</string>
     <string name="show_ads">Mostra annunci</string>
     <string name="show_ads_description">Cercare di aiutarmi a pagare il college se possibile. Per favore, non disattivateli :)</string>
-
+    <string name="donation_paypal_item">Donation</string>
+    <string name="donate">Donate</string>
+    <string name="donate_description">Through Google Wallet, Paypal, or Flattr</string>
+    <string name="silence_ringer_phrase">silence ringer</string>
+    <string name="silence_ringer_title">Silence Ringer</string>
+    <string name="unsilence_ringer_title">Unsilence Ringer</string>
+    <string name="unsilence_ringer_phrase">unsilence ringer</string>
+    <string name="send_whatsapp_phrase">send whatsapp</string>
+    <string name="send_whatsapp_title">Send Whatsapp</string>
+    <string name="message">message</string>
+    <string name="install_whatsapp">First install Whatsapp...</string>
+    <string name="enable_rotation_lock_phrase">enable rotation lock</string>
+    <string name="enable_rotation_lock_title">Enable Rotation Lock</string>
+    <string name="rotation_lock_off_phrase">disable rotation lock</string>
+    <string name="rotation_lock_off_title">Disable Rotation Lock</string>
 </resources>
