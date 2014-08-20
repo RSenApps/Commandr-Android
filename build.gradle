@@ -17,21 +17,20 @@ dependencies {
     compile project(':apptentive-android-sdk')
     compile project(':Donations')
     compile 'com.github.gabrielemariotti.cards:library:1.7.3'
-    compile 'com.google.android.gms:play-services:5.0.77'
+    compile 'com.google.android.gms:play-services:5.0.89'
     compile 'com.github.gabrielemariotti.cards:library-extra:1.7.3'
     // You must install or update the Support Repository through the SDK manager to use this dependency.
-    compile 'com.android.support:support-v13:19.+'
+    compile 'com.android.support:support-v13:19.1.0'
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile 'com.google.apis:google-api-services-gmail:v1-rev6-1.19.0'
-    compile 'com.google.android.gms:play-services:+'
 }
 
 android {
     compileSdkVersion 19
     buildToolsVersion '19.1.0'
     defaultConfig {
-        versionCode 12
-        versionName '2.7'
+        versionCode 13
+        versionName '2.8'
     }
     lintOptions {
         disable 'AndroidLintMissingTranslation'
