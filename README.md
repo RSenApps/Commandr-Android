@@ -42,6 +42,7 @@ Commandr would not be possible without the following open source libraries:
  - ListViewAnimations by nhaarman http://www.github.com/nhaarman/ListViewAnimations
  - AndroidStaggeredGrid by etsy  http://www.github.com/etsy/AndroidStaggeredGrid
  - SystemBarTint by jgilfelt http://www.github.com/jgilfelt/SystemBarTint
+ - Android Donations Lib by dschuermann http://www.github.com/dschuermann/android-donations-lib
 
 License
 ================
