@@ -1,14 +1,8 @@
 package com.RSen.Commandr.util;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
-import android.provider.Settings;
 import android.util.Log;
 
 import java.lang.reflect.Method;

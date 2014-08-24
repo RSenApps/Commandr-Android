@@ -1,7 +1,6 @@
 package com.RSen.Commandr.builtincommands;
 
 import android.content.Context;
-import android.net.wifi.WifiManager;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
