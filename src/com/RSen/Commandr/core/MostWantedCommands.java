@@ -33,6 +33,8 @@ import com.RSen.Commandr.builtincommands.TakeSelfieCommand;
 import com.RSen.Commandr.builtincommands.UnlockCommand;
 import com.RSen.Commandr.builtincommands.UnsilenceRingerCommand;
 import com.RSen.Commandr.builtincommands.VolumePercentage;
+import com.RSen.Commandr.builtincommands.WifiAPCommand;
+import com.RSen.Commandr.builtincommands.WifiAPOffCommand;
 import com.RSen.Commandr.builtincommands.WifiCommand;
 import com.RSen.Commandr.builtincommands.WifiOffCommand;
 import com.RSen.Commandr.builtincommands.WolframRedirectCommand;
@@ -65,7 +67,8 @@ public class MostWantedCommands {
                     new LowerVolumeCommand(context), new SilenceRingerCommand(context), new UnsilenceRingerCommand(context), new VolumePercentage(context),
                     new UnlockCommand(context), new LockCommand(context), new TakePictureCommand(context), new TakeSelfieCommand(context),
                     new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context), new RestartNowRootOnly(context),
-                    new WolframRedirectCommand(context), new SendWhatsappCommand(context), new RotationLockOnCommand(context), new RotationLockOffCommand(context)};
+                    new WolframRedirectCommand(context), new SendWhatsappCommand(context), new RotationLockOnCommand(context), new RotationLockOffCommand(context),
+                    new WifiAPCommand(context), new WifiAPOffCommand(context)};
         }
         return commands;
     }
