@@ -20,8 +20,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.RSen.Commandr.R;
+import com.RSen.Commandr.core.MostWantedCommand;
+import com.RSen.Commandr.core.MostWantedCommands;
+import com.RSen.Commandr.core.TaskerCommand;
+import com.RSen.Commandr.core.TaskerCommands;
 import com.RSen.Commandr.ui.fragment.SettingsFragment;
 import com.RSen.Commandr.util.QustomDialogBuilder;
+import com.RSen.Commandr.util.WearUtil;
 import com.apptentive.android.sdk.Apptentive;
 import com.apptentive.android.sdk.ApptentiveActivity;
 import com.google.android.gms.ads.AdRequest;
@@ -29,7 +34,12 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.mediation.admob.AdMobExtras;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.wearable.DataApi;
+import com.google.android.gms.wearable.PutDataMapRequest;
+import com.google.android.gms.wearable.PutDataRequest;
+import com.google.android.gms.wearable.Wearable;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.io.IOException;
@@ -100,6 +110,8 @@ public class MainActivity extends ApptentiveActivity {
             startActivity(i);
             finish();
         }
+        WearUtil.updateCommandList(this);
+
         setContentView(R.layout.main);
         // Look up the AdView as a resource and load a request.
         AdView adView = (AdView) this.findViewById(R.id.adView);

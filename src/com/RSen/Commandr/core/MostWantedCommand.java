@@ -3,6 +3,8 @@ package com.RSen.Commandr.core;
 import android.content.Context;
 import android.preference.PreferenceManager;
 
+import com.RSen.Commandr.util.WearUtil;
+
 /**
  * Created by Ryan on 6/27/2014.
  */
@@ -30,6 +32,7 @@ public abstract class MostWantedCommand extends Command {
     }
 
     public void setPhrase(Context context, String phrase) {
+        WearUtil.updateCommandList(context);
         PreferenceManager.getDefaultSharedPreferences(context).edit().putString("phrase" + getTitle(), phrase).commit();
     }
 

@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.tasker.TaskerIntent;
 import com.RSen.Commandr.util.GoogleNowUtil;
+import com.RSen.Commandr.util.WearUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -86,11 +87,23 @@ public class TaskerCommands {
 
         return taskerCommands;
     }
-
+    public static ArrayList<String> getCommandPhrasesList(Context context)
+    {
+        ArrayList<String> returnList = new ArrayList<String>();
+        for (TaskerCommand command : getTaskerCommands(context))
+        {
+            if (command.isEnabled(context)) {
+                returnList.add(command.activationName.split(",")[0]);
+            }
+        }
+        return returnList;
+    }
     public static void save(Context context) {
+
         if (taskerCommands == null) {
             return;
         }
+
         File file = new File(context.getDir("data", context.MODE_PRIVATE), "tasker");
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(file));

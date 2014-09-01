@@ -38,6 +38,9 @@ import com.RSen.Commandr.builtincommands.WifiOffCommand;
 import com.RSen.Commandr.builtincommands.WolframRedirectCommand;
 import com.RSen.Commandr.util.GoogleNowUtil;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 
 /**
  * @author Ryan Senanayake
@@ -98,6 +101,17 @@ public class MostWantedCommands {
             }
         }
         return commandExecuted;
+    }
+    public static ArrayList<String> getCommandPhrasesList(Context context)
+    {
+        ArrayList<String> returnList = new ArrayList<String>();
+        for (MostWantedCommand command : getCommands(context))
+        {
+            if (command.isEnabled(context) && command.getPredicateHint() == null) {
+                returnList.add(command.getPhrase(context).split(",")[0]);
+            }
+        }
+        return returnList;
     }
 
 }
