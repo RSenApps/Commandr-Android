@@ -178,4 +178,8 @@
     <string name="enable_rotation_lock_title">Enable Rotation Lock</string>
     <string name="rotation_lock_off_phrase">disable rotation lock</string>
     <string name="rotation_lock_off_title">Disable Rotation Lock</string>
+    <string name="wifi_ap_on_title">Wireless Hotspot On</string>
+    <string name="wifi_ap_on_phrase">turn on wireless hotspot</string>
+    <string name="wifi_ap_off_title">Wireless Hotspot Off</string>
+    <string name="wifi_ap_off_phrase">turn off wireless hotspot</string>
 </resources>
