@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 
-
 android {
     compileSdkVersion 20
     buildToolsVersion "20.0.0"
@@ -12,10 +11,32 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    final Console console = System.console();
+    if (console != null) {
+        signingConfigs {
+            productionConfig {
+                storeFile file("commandrkeystore.jks")
+                storePassword new String(System.console().readPassword("\n\$ Enter keystore password: "))
+                keyAlias "commandr"
+                keyPassword new String(System.console().readPassword("\n\$ Enter key password: "))
+            }
+        }
+    } else {
+
+        // Building from IDE's "Run" button
+        signingConfigs {
+            productionConfig {
+
+            }
+        }
+
+    }
     buildTypes {
+        debug {
+        }
         release {
             runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.productionConfig
         }
     }
 }

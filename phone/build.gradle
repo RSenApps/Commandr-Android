@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+    compile project(':apptentive-android-sdk')
+    compile project(':Donations')
+    compile 'com.github.gabrielemariotti.cards:library:1.7.3'
+    compile 'com.google.android.gms:play-services:5.0.89'
+    compile 'com.github.gabrielemariotti.cards:library-extra:1.7.3'
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
+    compile 'com.android.support:support-v13:19.1.0'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'com.google.apis:google-api-services-gmail:v1-rev6-1.19.0'
+    wearApp project(':wear')
+}
+
+android {
+
+    compileSdkVersion 19
+    buildToolsVersion '19.1.0'
+    defaultConfig {
+        versionCode 13
+        versionName '2.8'
+        minSdkVersion 16
+        targetSdkVersion 19
+    }
+    lintOptions {
+        disable 'AndroidLintMissingTranslation'
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+
+    }
+    final Console console = System.console();
+    if (console != null) {
+        signingConfigs {
+            productionConfig {
+                storeFile file("commandrkeystore.jks")
+                storePassword new String(System.console().readPassword("\n\$ Enter keystore password: "))
+                keyAlias "commandr"
+                keyPassword new String(System.console().readPassword("\n\$ Enter key password: "))
+            }
+        }
+    } else {
+
+        // Building from IDE's "Run" button
+        signingConfigs {
+            productionConfig {
+
+            }
+        }
+
+    }
+    buildTypes {
+        debug {
+        }
+        release {
+            runProguard false
+            signingConfig signingConfigs.productionConfig
+            // proguardFile 'proguard-android.txt'
+            applicationVariants.all { variant ->
+                def file = variant.outputFile
+
+                variant.outputFile = new File(file.parent, file.name.replace(".apk", "-" + defaultConfig.getVersionName() + ".apk")) // manifestParser.getVersionName(android.sourceSets.main.manifest.srcFile)
+            }
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+    productFlavors {
+        google {
+            buildConfigField "boolean", "DONATIONS_GOOGLE", "true"
+        }
+    }
+}

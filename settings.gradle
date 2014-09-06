@@ -1,2 +1,2 @@
-include ':apptentive-android-sdk', ':wear'
+include ':apptentive-android-sdk', ':wear', ':phone'
 include ':Donations'

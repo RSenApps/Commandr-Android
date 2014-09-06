@@ -107,10 +107,16 @@ public class WearUtil {
                             public void onResult(final DataApi.DataItemResult dataItemResult) {
 
 
-                                DataMap dataMap = DataMapItem.fromDataItem(dataItemResult.getDataItem()).getDataMap();
-                                ArrayList<String> returnList = dataMap.getStringArrayList("MOSTWANTEDCOMMANDS");
-                                returnList.addAll(dataMap.getStringArrayList("TASKERCOMMANDS"));
-                                context.setupListView(returnList);
+                                try {
+                                    DataMap dataMap = DataMapItem.fromDataItem(dataItemResult.getDataItem()).getDataMap();
+                                    ArrayList<String> returnList = dataMap.getStringArrayList("MOSTWANTEDCOMMANDS");
+                                    returnList.addAll(dataMap.getStringArrayList("TASKERCOMMANDS"));
+                                    context.setupListView(returnList);
+                                } catch (Exception e) {
+                                    ArrayList<String> returnList = new ArrayList<String>();
+                                    returnList.add("First, setup Commandr on your phone...");
+                                    context.setupListView(returnList);
+                                }
 
                             }
                         });
