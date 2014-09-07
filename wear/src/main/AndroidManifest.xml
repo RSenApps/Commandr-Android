@@ -22,9 +22,13 @@
         </activity>
         <activity android:name=".NoteToSelfActivity">
             <intent-filter>
+                <action android:name="com.google.android.gm.action.AUTO_SEND" />
                 <action android:name="android.intent.action.SEND" />
-                <category android:name="com.google.android.voicesearch.SELF_NOTE" />
+
                 <data android:mimeType="*/*" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.google.android.voicesearch.SELF_NOTE" />
             </intent-filter>
         </activity>
         <meta-data
