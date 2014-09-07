@@ -1,6 +1,7 @@
 package com.RSen.Commandr.ui.fragment;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -54,6 +55,35 @@ public class SettingsFragment extends PreferenceFragment {
                 // Create new fragment and transaction
                 startActivity(new Intent(getActivity(), DonationsActivity.class));
                 return true;
+            }
+        });
+        findPreference("usexposed").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object o) {
+                PackageManager pm = getActivity().getPackageManager();
+                boolean app_installed = false;
+                try {
+                    pm.getPackageInfo("com.mohammadag.googlesearchapi", PackageManager.GET_ACTIVITIES);
+                    app_installed = true;
+                }
+                catch (PackageManager.NameNotFoundException e) {
+                    app_installed = false;
+                }
+                if (app_installed)
+                {
+                    if (MyAccessibilityService.isAccessibilitySettingsOn(getActivity())) {
+                        Toast.makeText(getActivity(), getActivity().getString(R.string.disable_accessibility), Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS);
+                        startActivityForResult(intent, 2);
+                    }
+                    return true;
+                }
+                else {
+                    Toast.makeText(getActivity(), "Please first install the Xposed Module...", Toast.LENGTH_LONG).show();
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://forum.xda-developers.com/xposed/modules/mod-google-search-api-t2554173"));
+                    startActivity(browserIntent);
+                    return false;
+                }
             }
         });
         findPreference("ads").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {

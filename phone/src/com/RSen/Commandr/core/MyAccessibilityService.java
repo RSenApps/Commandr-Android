@@ -2,6 +2,7 @@ package com.RSen.Commandr.core;
 
 import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -73,11 +74,11 @@ public class MyAccessibilityService extends AccessibilityService {
     @Override
     public void onAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
         try {
-            String command = accessibilityEvent.getText().get(0).toString();
-            if (CommandInterpreter.interpret(this, command, true) && (lastCommand + timeOut) < accessibilityEvent.getEventTime()) {
-                lastCommand = accessibilityEvent.getEventTime();
-
-
+            if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean("usexposed", false)) {
+                String command = accessibilityEvent.getText().get(0).toString();
+                if (CommandInterpreter.interpret(this, command, true) && (lastCommand + timeOut) < accessibilityEvent.getEventTime()) {
+                    lastCommand = accessibilityEvent.getEventTime();
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

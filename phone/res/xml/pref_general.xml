@@ -23,6 +23,11 @@
         android:summary="@string/configure_tasker"
         android:title="@string/tasker_commands" />
     <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="usexposed"
+        android:title="@string/xposed_title"
+        android:summary="@string/xposed_summary" />
+    <CheckBoxPreference
         android:defaultValue="true"
         android:key="ads"
         android:title="@string/show_ads"
