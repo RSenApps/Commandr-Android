@@ -30,7 +30,7 @@ import java.util.List;
  */
 public class WearUtil {
     static GoogleApiClient  mGoogleApiClient;
-    public static void sendCommandMessage(final Activity context, final String command)
+    public static void sendCommandMessage(final Activity context, final String command, final boolean finishOnComplete)
     {
 
         GoogleApiClient.ConnectionCallbacks sendCommandAction = new GoogleApiClient.ConnectionCallbacks() {
@@ -54,6 +54,10 @@ public class WearUtil {
                                    }
                                    intent.putExtra(ConfirmationActivity.EXTRA_MESSAGE, command);
                                    context.startActivity(intent);
+                                   if (finishOnComplete)
+                                   {
+                                       context.finish();
+                                   }
                                }
                            });
                         }

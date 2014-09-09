@@ -32,7 +32,7 @@ public class NoteToSelfActivity extends Activity {
         try {
             String interceptedCommand = getIntent().getExtras().getString(Intent.EXTRA_TEXT); //command phrase sent by Gooogle Now
             if (interceptedCommand != null) {
-                WearUtil.sendCommandMessage(this, interceptedCommand);
+                WearUtil.sendCommandMessage(this, interceptedCommand, false);
             }
             else {
                 finish();

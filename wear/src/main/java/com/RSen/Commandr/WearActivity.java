@@ -43,7 +43,7 @@ public class WearActivity extends Activity  implements WearableListView.ClickLis
 
     @Override
     public void onClick(WearableListView.ViewHolder v) {
-        WearUtil.sendCommandMessage(this, (String) v.itemView.getTag());
+        WearUtil.sendCommandMessage(this, (String) v.itemView.getTag(), true);
 
     }
 
