@@ -23,7 +23,7 @@
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.mohammadag.googlesearchapi.permission.ACCESS_ GGOGLE_SEARCH_API"/>
+    <uses-permission android:name="com.mohammadag.googlesearchapi.permission.ACCESS_GGOGLE_SEARCH_API"/>
 
     <permission
         android:name="com.RSen.Commandr.permission.C2D_MESSAGE"
@@ -218,7 +218,7 @@
                 <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
             </intent-filter>
         </service>
-        <receiver android:name=".core.GoogleXposedReceiver" >
+        <receiver android:enabled="true" android:exported="true" android:name=".core.GoogleXposedReceiver" >
             <intent-filter>
                 <action android:name="com.mohammadag.googlesearchapi.NEW_SEARCH" />
             </intent-filter>

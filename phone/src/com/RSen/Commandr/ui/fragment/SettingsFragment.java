@@ -60,30 +60,35 @@ public class SettingsFragment extends PreferenceFragment {
         findPreference("usexposed").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object o) {
-                PackageManager pm = getActivity().getPackageManager();
-                boolean app_installed = false;
-                try {
-                    pm.getPackageInfo("com.mohammadag.googlesearchapi", PackageManager.GET_ACTIVITIES);
-                    app_installed = true;
-                }
-                catch (PackageManager.NameNotFoundException e) {
-                    app_installed = false;
-                }
-                if (app_installed)
-                {
-                    if (MyAccessibilityService.isAccessibilitySettingsOn(getActivity())) {
-                        Toast.makeText(getActivity(), getActivity().getString(R.string.disable_accessibility), Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS);
-                        startActivityForResult(intent, 2);
+                if ((Boolean) o) {
+                    PackageManager pm = getActivity().getPackageManager();
+                    boolean app_installed = false;
+                    int versionCode = 0;
+                    try {
+                        versionCode = pm.getPackageInfo("com.mohammadag.googlesearchapi", PackageManager.GET_ACTIVITIES).versionCode;
+                        app_installed = true;
+                    } catch (PackageManager.NameNotFoundException e) {
+                        app_installed = false;
                     }
-                    return true;
-                }
-                else {
-                    Toast.makeText(getActivity(), "Please first install the Xposed Module...", Toast.LENGTH_LONG).show();
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://forum.xda-developers.com/xposed/modules/mod-google-search-api-t2554173"));
-                    startActivity(browserIntent);
+                    if (app_installed) {
+                        if (versionCode < 8) {
+                            Toast.makeText(getActivity(), getActivity().getString(R.string.update_xposed), Toast.LENGTH_LONG).show();
+                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://forum.xda-developers.com/showpost.php?p=54661258&postcount=328"));
+                            startActivity(browserIntent);
+                        } else if (MyAccessibilityService.isAccessibilitySettingsOn(getActivity())) {
+                            Toast.makeText(getActivity(), getActivity().getString(R.string.disable_accessibility), Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS);
+                            startActivityForResult(intent, 2);
+                            return true;
+                        }
+                    } else {
+                        Toast.makeText(getActivity(), getActivity().getString(R.string.install_xposed), Toast.LENGTH_LONG).show();
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://forum.xda-developers.com/showpost.php?p=54661258&postcount=328"));
+                        startActivity(browserIntent);
+                    }
                     return false;
                 }
+                return true;
             }
         });
         findPreference("ads").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {

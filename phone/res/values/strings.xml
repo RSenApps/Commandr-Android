@@ -185,4 +185,6 @@
     <string name="xposed_title">Use Xposed (root only)</string>
     <string name="xposed_summary">Only need to enable Xposed if you want to use Commandr from Android Wear without saying take a note before the command</string>
     <string name="disable_accessibility">You can now disable the accessibility service...</string>
+    <string name="update_xposed">Please update to at least version 1.4 of Google Search API (linked in this post)</string>
+    <string name="install_xposed">Please first install the Xposed Module. The one linked on the main thread is not the most updated. Instead download the one in this post (1.4)</string>
 </resources>
