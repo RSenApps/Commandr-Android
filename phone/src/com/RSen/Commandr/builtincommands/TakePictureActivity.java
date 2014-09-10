@@ -119,6 +119,7 @@ public class TakePictureActivity extends Activity {
         values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
         // Add the date meta data to ensure the image is added at the front of the gallery
         values.put(MediaStore.Images.Media.DATE_ADDED, System.currentTimeMillis());
+        values.put(MediaStore.Images.Media.DATE_MODIFIED, System.currentTimeMillis());
         values.put(MediaStore.Images.Media.DATE_TAKEN, System.currentTimeMillis());
         if (frontFacingCamera && orientation == 90) //weird flipped front-facing camera
         {
