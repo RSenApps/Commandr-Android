@@ -7,6 +7,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.media.AudioManager;
@@ -14,7 +15,9 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -24,7 +27,9 @@ import android.widget.TextView;
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.util.GoogleNowUtil;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.text.DateFormat;
@@ -32,17 +37,23 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TakePictureActivity extends Activity {
-    private Camera mCamera;
-    private CameraPreview mPreview;
+    private SurfaceView preview=null;
+    private SurfaceHolder previewHolder=null;
+    private Camera camera=null;
     private TextView countdownTV;
     private static int orientation;
     private static boolean frontFacingCamera;
+    private boolean inPreview = false;
+    private boolean cameraConfigured=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_picture);
-
+        preview=(SurfaceView)findViewById(R.id.camera_preview);
+        previewHolder=preview.getHolder();
+        previewHolder.addCallback(surfaceCallback);
+        previewHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
     }
 
     @Override
@@ -50,13 +61,9 @@ public class TakePictureActivity extends Activity {
         super.onResume();
         frontFacingCamera = getIntent().getBooleanExtra("frontCamera", false);
         // Create an instance of Camera
-        mCamera = getCameraInstance(frontFacingCamera);
-
-        // Create our Preview view and set it as the content of our activity.
-        mPreview = new CameraPreview(this, mCamera);
-        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+        camera = getCameraInstance(frontFacingCamera);
         countdownTV = (TextView) findViewById(R.id.countdown);
-        preview.addView(mPreview);
+        startPreview();
 
     }
 
@@ -72,10 +79,10 @@ public class TakePictureActivity extends Activity {
 
         @Override
         public void onFinish() {
-            if (!timerCancelled) {
+            if (!timerCancelled && camera != null) {
                 countdownTV.setText(getString(R.string.smile));
                 shootSound();
-                mCamera.takePicture(null, null, mPicture);
+                camera.takePicture(null, null, mPicture);
             }
         }
     };
@@ -100,6 +107,7 @@ public class TakePictureActivity extends Activity {
 
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
             Date date = new Date();
+
             insertImage(getContentResolver(), BitmapFactory.decodeByteArray(data, 0, data.length, null), "Commandr " + dateFormat.format(date), getString(R.string.taken_with_commandr));
             finish();
             GoogleNowUtil.resetGoogleNow(TakePictureActivity.this);
@@ -279,74 +287,112 @@ public class TakePictureActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        releaseCamera();              // release the camera immediately on pause event
-    }
-
-
-    private void releaseCamera() {
-        if (mCamera != null) {
-            mCamera.release();        // release the camera for other applications
-            mCamera = null;
-            timerCancelled = true;
-            timer.cancel();
-            mPreview.getHolder().removeCallback(mPreview);
-        }
-    }
-
-    /**
-     * A basic Camera preview class
-     */
-    public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
-        private SurfaceHolder mHolder;
-        private Camera mCamera;
-
-        public CameraPreview(Context context, Camera camera) {
-            super(context);
-            mCamera = camera;
-            // get Camera parameters
-            if (mCamera.getParameters().getSupportedFocusModes().contains(Camera.Parameters.FOCUS_MODE_AUTO)) {
-                Camera.Parameters params = mCamera.getParameters();
-                // set the focus mode
-                params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
-                // set Camera parameters
-                mCamera.setParameters(params);
+        if (camera != null) {
+            if (inPreview) {
+                camera.stopPreview();
             }
-            // Install a SurfaceHolder.Callback so we get notified when the
-            // underlying surface is created and destroyed.
-            mHolder = getHolder();
-            mHolder.addCallback(this);
-            // deprecated setting, but required on Android versions prior to 3.0
-            mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
+            camera.release();
+            camera = null;
+            inPreview = false;
+        }
+        timerCancelled = true;
+        timer.cancel();
+    }
+    private Camera.Size getBestPreviewSize(int width, int height,
+                                           Camera.Parameters parameters) {
+        Camera.Size result=null;
+
+        for (Camera.Size size : parameters.getSupportedPreviewSizes()) {
+            if (size.width <= width && size.height <= height) {
+                if (result == null) {
+                    result=size;
+                }
+                else {
+                    int resultArea=result.width * result.height;
+                    int newArea=size.width * size.height;
+
+                    if (newArea > resultArea) {
+                        result=size;
+                    }
+                }
+            }
         }
 
-        public void surfaceCreated(SurfaceHolder holder) {
-            // The Surface has been created, now tell the camera where to draw the preview.
+        return(result);
+    }
+    private Camera.Size getLargestPictureSize(Camera.Parameters parameters) {
+        Camera.Size result=null;
+
+        for (Camera.Size size : parameters.getSupportedPictureSizes()) {
+            if (result == null) {
+                result=size;
+            }
+            else {
+                int resultArea=result.width * result.height;
+                int newArea=size.width * size.height;
+
+                if (newArea > resultArea) {
+                    result=size;
+                }
+            }
+        }
+
+        return(result);
+    }
+    private void initPreview(int width, int height) {
+        if (camera != null && previewHolder.getSurface() != null) {
             try {
+                camera.setPreviewDisplay(previewHolder);
+            }
+            catch (Throwable t) {
 
-                mCamera.setPreviewDisplay(holder);
-                mCamera.startPreview();
-                timer.start();
-            } catch (IOException e) {
+            }
+
+            if (!cameraConfigured) {
+                Camera.Parameters parameters=camera.getParameters();
+                Camera.Size size=getBestPreviewSize(width, height, parameters);
+                Camera.Size pictureSize=getLargestPictureSize(parameters);
+
+                if (size != null && pictureSize != null) {
+                    if (parameters.getSupportedFocusModes().contains(Camera.Parameters.FOCUS_MODE_AUTO)) {
+
+                        // set the focus mode
+                        parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+                    }
+                    parameters.setPreviewSize(size.width, size.height);
+                    parameters.setPictureSize(pictureSize.width,
+                            pictureSize.height);
+                    parameters.setPictureFormat(ImageFormat.JPEG);
+                    camera.setParameters(parameters);
+                    cameraConfigured=true;
+                }
             }
         }
+    }
+    private void startPreview() {
+        if (cameraConfigured && camera != null) {
+            camera.startPreview();
+            inPreview=true;
+        }
+    }
 
-        public void surfaceDestroyed(SurfaceHolder holder) {
-            // empty. Take care of releasing the Camera preview in your activity.
+    SurfaceHolder.Callback surfaceCallback=new SurfaceHolder.Callback() {
+        public void surfaceCreated(SurfaceHolder holder) {
+            timer.start();
         }
 
-        public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
-            // If your preview can change or rotate, take care of those events here.
-            // Make sure to stop the preview before resizing or reformatting it.
+        public void surfaceChanged(SurfaceHolder holder, int format,
+                                   int width, int height) {
 
-            if (mHolder.getSurface() == null) {
+            if (previewHolder.getSurface() == null) {
                 // preview surface does not exist
                 return;
             }
 
             // stop preview before making changes
             try {
-                mCamera.stopPreview();
+                camera.stopPreview();
             } catch (Exception e) {
                 // ignore: tried to stop a non-existent preview
             }
@@ -357,12 +403,17 @@ public class TakePictureActivity extends Activity {
             // start preview with new settings
 
             try {
-                setCameraDisplayOrientation(TakePictureActivity.this, 0, mCamera);
-                mCamera.setPreviewDisplay(mHolder);
-                mCamera.startPreview();
+                setCameraDisplayOrientation(TakePictureActivity.this, 0, camera);
+                initPreview(width, height);
+                startPreview();
 
             } catch (Exception e) {
             }
         }
-    }
+
+        public void surfaceDestroyed(SurfaceHolder holder) {
+            // no-op
+        }
+    };
+
 }
