@@ -41,7 +41,6 @@ import com.RSen.Commandr.builtincommands.WifiCommand;
 import com.RSen.Commandr.builtincommands.WifiOffCommand;
 import com.RSen.Commandr.builtincommands.WolframRedirectCommand;
 import com.RSen.Commandr.util.GoogleNowUtil;
-import com.RSen.Commandr.builtincommands.SyncCommand;
 import java.util.ArrayList;
 import java.util.Collection;
 

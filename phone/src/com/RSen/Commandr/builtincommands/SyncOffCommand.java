@@ -2,23 +2,22 @@ package com.RSen.Commandr.builtincommands;
 
 import android.content.ContentResolver;
 import android.content.Context;
-
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
 
 /**
- * Created by Daniel on 11/10/2014.
+ * Created by Daniel Quah on 11/10/2014.
  */
 public class SyncOffCommand extends MostWantedCommand {
     private static String TITLE;
     private static String DEFAULT_PHRASE;
 
     public SyncOffCommand(Context ctx) {
-        DEFAULT_PHRASE = ctx.getString(R.string.sync_phrases);
-        TITLE = ctx.getString(R.string.sync_title);
+        DEFAULT_PHRASE = ctx.getString(R.string.sync_off_title);
+        TITLE = ctx.getString(R.string.sync_off_phrases);
     }
     /**
-     * Execute this command (turn on flashlight)
+     * Execute this command (turn sync off)
      */
     @Override
     public void execute(Context context, String predicate) {

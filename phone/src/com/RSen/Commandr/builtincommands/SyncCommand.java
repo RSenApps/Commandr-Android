@@ -18,7 +18,7 @@ public class SyncCommand extends MostWantedCommand {
         TITLE = ctx.getString(R.string.sync_title);
     }
     /**
-     * Execute this command (turn on flashlight)
+     * Execute this command (turn sync on)
      */
     @Override
     public void execute(Context context, String predicate) {
