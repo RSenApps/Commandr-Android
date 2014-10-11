@@ -28,6 +28,8 @@ import com.RSen.Commandr.builtincommands.RotationLockOnCommand;
 import com.RSen.Commandr.builtincommands.SendWhatsappCommand;
 import com.RSen.Commandr.builtincommands.ShutdownNowRootOnly;
 import com.RSen.Commandr.builtincommands.SilenceRingerCommand;
+import com.RSen.Commandr.builtincommands.SyncCommand;
+import com.RSen.Commandr.builtincommands.SyncOffCommand;
 import com.RSen.Commandr.builtincommands.TakePictureCommand;
 import com.RSen.Commandr.builtincommands.TakeSelfieCommand;
 import com.RSen.Commandr.builtincommands.UnlockCommand;
@@ -39,7 +41,7 @@ import com.RSen.Commandr.builtincommands.WifiCommand;
 import com.RSen.Commandr.builtincommands.WifiOffCommand;
 import com.RSen.Commandr.builtincommands.WolframRedirectCommand;
 import com.RSen.Commandr.util.GoogleNowUtil;
-
+import com.RSen.Commandr.builtincommands.SyncCommand;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -71,7 +73,7 @@ public class MostWantedCommands {
                     new UnsilenceRingerCommand(context), new VolumePercentage(context), new UnlockCommand(context), new LockCommand(context),
                     new TakePictureCommand(context), new TakeSelfieCommand(context), new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context),
                     new RestartNowRootOnly(context), new WolframRedirectCommand(context), new SendWhatsappCommand(context), new RotationLockOnCommand(context),
-                    new RotationLockOffCommand(context)};
+                    new RotationLockOffCommand(context), new SyncCommand(context), new SyncOffCommand(context)};
         }
         return commands;
     }
