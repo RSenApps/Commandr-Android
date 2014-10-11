@@ -187,4 +187,10 @@
     <string name="disable_accessibility">You can now disable the accessibility service...</string>
     <string name="update_xposed">Please update to at least version 1.4 of Google Search API (linked in this post)</string>
     <string name="install_xposed">Please first install the Xposed Module. The one linked on the main thread is not the most updated. Instead download the one in this post (1.4)</string>
+    <string name="sync_title">Enable Sync</string>
+    <string name="sync_phrases">Sync on</string>
+    <string name="sync_off_title">Sync off</string>
+    <string name="sync_off_phrases">Disable Sync</string>
+    <string name="good_night_title">Disable WiFi,mobile data and turn on vibration(Night mode)</string>
+    <string name="good_night_phrase">Goodnight</string>
 </resources>

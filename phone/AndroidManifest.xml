@@ -24,7 +24,8 @@
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="com.mohammadag.googlesearchapi.permission.ACCESS_GGOGLE_SEARCH_API"/>
-
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <permission
         android:name="com.RSen.Commandr.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
