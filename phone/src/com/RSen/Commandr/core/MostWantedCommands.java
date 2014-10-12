@@ -2,6 +2,8 @@ package com.RSen.Commandr.core;
 
 import android.content.Context;
 
+import com.RSen.Commandr.builtincommands.AirplaneCommand;
+import com.RSen.Commandr.builtincommands.AirplaneOffCommand;
 import com.RSen.Commandr.builtincommands.BluetoothCommand;
 import com.RSen.Commandr.builtincommands.BluetoothOffCommand;
 import com.RSen.Commandr.builtincommands.CellularDataCommand;
@@ -73,7 +75,8 @@ public class MostWantedCommands {
                     new UnsilenceRingerCommand(context), new VolumePercentage(context), new UnlockCommand(context), new LockCommand(context),
                     new TakePictureCommand(context), new TakeSelfieCommand(context), new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context),
                     new RestartNowRootOnly(context), new WolframRedirectCommand(context), new SendWhatsappCommand(context), new RotationLockOnCommand(context),
-                    new RotationLockOffCommand(context), new SyncCommand(context), new SyncOffCommand(context), new GoodNightCommand(context)};
+                    new RotationLockOffCommand(context), new SyncCommand(context), new SyncOffCommand(context), new GoodNightCommand(context), new AirplaneCommand(context),
+                    new AirplaneOffCommand(context)};
         }
         return commands;
     }

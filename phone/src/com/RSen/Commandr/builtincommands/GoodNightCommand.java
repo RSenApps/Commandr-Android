@@ -32,13 +32,6 @@ public class GoodNightCommand extends MostWantedCommand {
         audio.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
     }
 
-
-
-
-
-
-
-
     /**
          * It is enabled if the phone has a flash feature
          */
