@@ -13,7 +13,7 @@ import android.os.Bundle;
  */
 public class NoteToSelfActivity extends Activity {
     /**
-     * Caled when the activity is created... run the intercepted command
+     * Called when the activity is created... run the intercepted command
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

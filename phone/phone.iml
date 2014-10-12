@@ -13,6 +13,7 @@
         <option name="COMPILE_JAVA_TASK_NAME" value="compileGoogleDebugJava" />
         <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleGoogleDebugTest" />
         <option name="SOURCE_GEN_TASK_NAME" value="generateGoogleDebugSources" />
+        <option name="TEST_SOURCE_GEN_TASK_NAME" value="generateGoogleDebugTestSources" />
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/res" />
       </configuration>
@@ -29,8 +30,8 @@
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/google/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/assets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/rs" isTestSource="false" />
@@ -41,34 +42,34 @@
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/test/google/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/google/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/google/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/google/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/google/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/google/assets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/google/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/google/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/google/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogle/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogle/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogle/assets" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogle/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogle/assets" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogle/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogle/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogle/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/build-types/debug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build-types/debug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build-types/debug/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build-types/debug/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/build-types/debug/assets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/build-types/debug/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/build-types/debug/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/build-types/debug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/assets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
@@ -95,26 +96,26 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="google-oauth-client-1.19.0" level="project" />
-    <orderEntry type="library" exported="" name="google-api-services-gmail-v1-rev6-1.19.0" level="project" />
-    <orderEntry type="library" exported="" name="jsr305-1.3.9" level="project" />
-    <orderEntry type="library" exported="" name="systembartint-1.0.3" level="project" />
-    <orderEntry type="library" exported="" name="Parse-1.5.1" level="project" />
     <orderEntry type="library" exported="" name="library-2.6.0" level="project" />
-    <orderEntry type="library" exported="" name="jackson-core-2.1.3" level="project" />
-    <orderEntry type="library" exported="" name="google-api-client-1.19.0" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-19.1.0" level="project" />
-    <orderEntry type="library" exported="" name="library-1.0.5" level="project" />
-    <orderEntry type="library" exported="" name="play-services-5.0.89" level="project" />
-    <orderEntry type="library" exported="" name="support-v13-19.1.0" level="project" />
-    <orderEntry type="library" exported="" name="library-1.7.3" level="project" />
+    <orderEntry type="library" exported="" name="google-api-services-gmail-v1-rev6-1.19.0" level="project" />
     <orderEntry type="library" exported="" name="google-http-client-1.19.0" level="project" />
-    <orderEntry type="library" exported="" name="google-http-client-jackson2-1.19.0" level="project" />
-    <orderEntry type="library" exported="" name="guava-jdk5-13.0" level="project" />
-    <orderEntry type="library" exported="" name="library-extra-1.7.3" level="project" />
     <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
-    <orderEntry type="module" module-name="Donations" exported="" />
+    <orderEntry type="library" exported="" name="jackson-core-2.1.3" level="project" />
+    <orderEntry type="library" exported="" name="support-v13-19.1.0" level="project" />
+    <orderEntry type="library" exported="" name="library-extra-1.7.3" level="project" />
+    <orderEntry type="library" exported="" name="library-1.7.3" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-19.1.0" level="project" />
+    <orderEntry type="library" exported="" name="Parse-1.5.1" level="project" />
+    <orderEntry type="library" exported="" name="library-1.0.5" level="project" />
+    <orderEntry type="library" exported="" name="jsr305-1.3.9" level="project" />
+    <orderEntry type="library" exported="" name="google-http-client-jackson2-1.19.0" level="project" />
+    <orderEntry type="library" exported="" name="systembartint-1.0.3" level="project" />
+    <orderEntry type="library" exported="" name="google-oauth-client-1.19.0" level="project" />
+    <orderEntry type="library" exported="" name="guava-jdk5-13.0" level="project" />
+    <orderEntry type="library" exported="" name="google-api-client-1.19.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-5.0.89" level="project" />
     <orderEntry type="module" module-name="apptentive-android-sdk" exported="" />
+    <orderEntry type="module" module-name="Donations" exported="" />
   </component>
 </module>
 
