@@ -24,6 +24,9 @@
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="com.mohammadag.googlesearchapi.permission.ACCESS_GGOGLE_SEARCH_API"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+
 
     <permission
         android:name="com.RSen.Commandr.permission.C2D_MESSAGE"
@@ -223,6 +226,15 @@
                 <action android:name="com.mohammadag.googlesearchapi.NEW_SEARCH" />
             </intent-filter>
         </receiver>
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="C" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="30" />
     </application>
 
 </manifest>

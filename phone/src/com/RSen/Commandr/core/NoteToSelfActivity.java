@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import java.io.DataOutputStream;
+
 /**
  * @author Ryan Senanayake
  *         Commandr for Google Now
@@ -13,7 +15,7 @@ import android.os.Bundle;
  */
 public class NoteToSelfActivity extends Activity {
     /**
-     * Caled when the activity is created... run the intercepted command
+     * Called when the activity is created... run the intercepted command
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

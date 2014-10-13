@@ -141,7 +141,7 @@ public class TaskerCommands {
     }
 
     /**
-     * Executes the matching TaskerCommand for a given command prhase
+     * Executes the matching Tasker Command for a given command phrase
      *
      * @param context            Context required to execute commands
      * @param interceptedCommand The command phrase to execute
