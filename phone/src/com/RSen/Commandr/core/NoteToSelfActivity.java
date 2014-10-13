@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import java.io.DataOutputStream;
+
 /**
  * @author Ryan Senanayake
  *         Commandr for Google Now

@@ -193,9 +193,8 @@
     <string name="sync_off_phrases">Disable Sync</string>
     <string name="good_night_title">Disable WiFi,mobile data and turn on vibration(Night mode)</string>
     <string name="good_night_phrase">Goodnight</string>
-    <string name="airplane_title">Enable Airplane mode</string>
+    <string name="airplane_title">Enable Airplane mode(root only)</string>
     <string name="airplane_phrase">Airplane mode on</string>
-    <string name="airplane_off_title">Disable Airplane mode</string>
+    <string name="airplane_off_title">Disable Airplane mode(root only)</string>
     <string name="airplane_off_phrase">Airplane mode off</string>
-
 </resources>
