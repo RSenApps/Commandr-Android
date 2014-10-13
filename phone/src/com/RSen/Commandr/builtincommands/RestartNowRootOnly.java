@@ -5,10 +5,6 @@ import android.content.Intent;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
-
-import java.io.DataOutputStream;
-import java.io.IOException;
-
 /**
  * @author Aaron Disibio
  * @version 1.0 August 16th 14
