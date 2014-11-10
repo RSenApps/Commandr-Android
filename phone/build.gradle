@@ -7,24 +7,24 @@ dependencies {
     compile project(':apptentive-android-sdk')
     compile project(':Donations')
     compile 'com.github.gabrielemariotti.cards:library:1.7.3'
-    compile 'com.google.android.gms:play-services:5.0.89'
+    compile 'com.google.android.gms:play-services:6.1.+'
     compile 'com.github.gabrielemariotti.cards:library-extra:1.7.3'
     // You must install or update the Support Repository through the SDK manager to use this dependency.
-    compile 'com.android.support:support-v13:19.1.0'
-    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'com.android.support:support-v13:+'
+    compile 'com.android.support:appcompat-v7:21.+'
     compile 'com.google.apis:google-api-services-gmail:v1-rev6-1.19.0'
     wearApp project(':wear')
 }
 
 android {
 
-    compileSdkVersion 19
-    buildToolsVersion '19.1.0'
+    compileSdkVersion 21
+    buildToolsVersion '21.0.1'
     defaultConfig {
-        versionCode 13
-        versionName '2.8'
+        versionCode 14
+        versionName '3.0'
         minSdkVersion 16
-        targetSdkVersion 19
+        targetSdkVersion 21
     }
     lintOptions {
         disable 'AndroidLintMissingTranslation'

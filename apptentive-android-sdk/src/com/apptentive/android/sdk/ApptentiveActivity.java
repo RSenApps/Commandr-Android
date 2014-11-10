@@ -7,6 +7,7 @@
 package com.apptentive.android.sdk;
 
 import android.app.Activity;
+import android.support.v7.app.ActionBarActivity;
 
 /**
  * Extend this class instead of Activity to easily integrate Apptentive into your application.
@@ -20,7 +21,7 @@ import android.app.Activity;
  * @author Sky Kelsey
  * @see ApptentiveListActivity
  */
-public class ApptentiveActivity extends Activity {
+public class ApptentiveActivity extends ActionBarActivity {
 
     @Override
     protected void onStart() {

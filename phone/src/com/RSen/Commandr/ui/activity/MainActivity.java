@@ -40,7 +40,6 @@ import com.google.android.gms.wearable.DataApi;
 import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -96,15 +95,7 @@ public class MainActivity extends ApptentiveActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // create our manager instance after the content view is set
-            SystemBarTintManager tintManager = new SystemBarTintManager(this);
-            // enable status bar tint
-            tintManager.setStatusBarTintEnabled(true);
-            // enable navigation bar tint
 
-            tintManager.setStatusBarTintColor(Color.parseColor("#4285f4"));
-        }
         if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean("setup", false)) {
             Intent i = new Intent(this, SetupActivity.class);
             startActivity(i);

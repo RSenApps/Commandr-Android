@@ -1,5 +1,6 @@
 package com.RSen.Commandr.ui.activity;
 
+import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
@@ -25,7 +26,6 @@ import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +41,7 @@ public class VotingActivity extends ApptentiveActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.voting);
+        setupActionBar();
         AdView adView = (AdView) this.findViewById(R.id.adView);
         if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("ads", true)) {
             adView.setVisibility(View.VISIBLE);
@@ -59,15 +60,7 @@ public class VotingActivity extends ApptentiveActivity {
         }
 
         progress = (ProgressBar) findViewById(R.id.progressBar);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // create our manager instance after the content view is set
-            SystemBarTintManager tintManager = new SystemBarTintManager(this);
-            // enable status bar tint
-            tintManager.setStatusBarTintEnabled(true);
-            // enable navigation bar tint
 
-            tintManager.setStatusBarTintColor(Color.parseColor("#4285f4"));
-        }
         Parse.initialize(this, "giwroIjJIvqQCpTB23LsdDYe8HdHCxZwy0fkKksV", "H98VqurfJTM4J05D8Fmht3VyXdbTCb5ghBf8Jkjc");
 
 
@@ -131,6 +124,12 @@ public class VotingActivity extends ApptentiveActivity {
             }
         });
 
+    }
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private void setupActionBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
 

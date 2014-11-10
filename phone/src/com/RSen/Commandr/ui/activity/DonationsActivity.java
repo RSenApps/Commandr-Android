@@ -16,6 +16,7 @@
 
 package com.RSen.Commandr.ui.activity;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -24,14 +25,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarActivity;
 
 import com.RSen.Commandr.BuildConfig;
 import com.RSen.Commandr.R;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import org.sufficientlysecure.donations.DonationsFragment;
 
-public class DonationsActivity extends FragmentActivity {
+public class DonationsActivity extends ActionBarActivity {
 
     /**
      * Google
@@ -61,15 +62,7 @@ public class DonationsActivity extends FragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // create our manager instance after the content view is set
-            SystemBarTintManager tintManager = new SystemBarTintManager(this);
-            // enable status bar tint
-            tintManager.setStatusBarTintEnabled(true);
-            // enable navigation bar tint
 
-            tintManager.setStatusBarTintColor(Color.parseColor("#4285f4"));
-        }
         setContentView(R.layout.donations_activity);
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -101,9 +94,15 @@ public class DonationsActivity extends FragmentActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentByTag("donationsFragment");
+        setupActionBar();
         if (fragment != null) {
             fragment.onActivityResult(requestCode, resultCode, data);
         }
     }
-
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private void setupActionBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
 }

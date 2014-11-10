@@ -5,13 +5,13 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.TaskerCommand;
 import com.RSen.Commandr.core.TaskerCommands;
 import com.RSen.Commandr.ui.card.TaskerCard;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.util.ArrayList;
 
@@ -27,7 +27,7 @@ import it.gmariotti.cardslib.library.view.CardGridView;
  * @version 1.0
  *          5/28/14
  */
-public class TaskerActivity extends Activity {
+public class TaskerActivity extends ActionBarActivity {
     public SwingBottomInAnimationAdapter animCardArrayAdapter;
 
     /**
@@ -37,15 +37,7 @@ public class TaskerActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tasker);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // create our manager instance after the content view is set
-            SystemBarTintManager tintManager = new SystemBarTintManager(this);
-            // enable status bar tint
-            tintManager.setStatusBarTintEnabled(true);
-            // enable navigation bar tint
 
-            tintManager.setStatusBarTintColor(Color.parseColor("#4285f4"));
-        }
         // Show the Up button in the action bar.
         setupActionBar();
         ArrayList<Card> cards = new ArrayList<Card>();
@@ -75,7 +67,7 @@ public class TaskerActivity extends Activity {
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void setupActionBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 

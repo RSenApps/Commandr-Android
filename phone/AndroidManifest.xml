@@ -25,7 +25,6 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="com.mohammadag.googlesearchapi.permission.ACCESS_GGOGLE_SEARCH_API"/>
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
 
 
     <permission
@@ -48,7 +47,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Actionbar" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="Commandr" >
@@ -82,7 +81,7 @@
             android:excludeFromRecents="true"
             android:launchMode="singleTop"
             android:taskAffinity=""
-            android:theme="@android:style/Theme.Holo.Light.Dialog" />
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
             android:name=".builtincommands.ReadUnreadGmailActivity"
             android:excludeFromRecents="true"
@@ -144,7 +143,7 @@
         <activity
             android:name=".ui.activity.SetupActivity"
             android:label="Setup Activity"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <service
             android:name=".util.TTSService"
@@ -179,7 +178,7 @@
             android:exported="true"
             android:icon="@drawable/ic_launcher"
             android:label="@string/tasker_edit_activity_label"
-            android:theme="@android:style/Theme.Holo.Light.Dialog" >
+            android:theme="@style/Theme.AppCompat.Light.Dialog" >
 
             <!-- this Intent filter allows the plug-in to be discovered by Locale -->
 
@@ -214,7 +213,11 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
         <activity
             android:name=".ui.activity.DonationsActivity"
-            android:label="Donations" >
+            android:label="Donations"
+            android:parentActivityName=".ui.activity.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.RSen.Commandr.MainActivity" />
         </activity>
         <service android:name=".core.WearListenerService" >
             <intent-filter>
