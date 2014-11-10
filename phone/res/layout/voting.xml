@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true">
 
@@ -15,22 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
-    <Button
-        android:id="@+id/vote"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="?android:attr/selectableItemBackground"
-        android:text="@string/suggest_new_command" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="2dip"
-        android:layout_above="@id/vote"
-        android:layout_marginLeft="4dip"
-        android:layout_marginRight="4dip"
-        android:background="?android:attr/dividerVertical" />
     <FrameLayout
         android:layout_width="match_parent"
         android:background="#4285f4"
@@ -47,7 +33,7 @@
         android:id="@+id/card_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/divider"
+        android:layout_alignParentBottom="true"
         android:layout_below="@id/adContainer"
         android:clipToPadding="false"
         android:columnWidth="250dp"
@@ -58,6 +44,14 @@
         android:stretchMode="columnWidth"
         android:verticalSpacing="3dp"
         card:item_margin="4dp" />
-
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/vote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_content_add"
+        fab:fab_colorNormal="#1565C0"/>
 
 </RelativeLayout>

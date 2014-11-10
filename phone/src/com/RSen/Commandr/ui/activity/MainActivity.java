@@ -212,6 +212,12 @@ public class MainActivity extends ApptentiveActivity {
                 new MaterialDialog.Builder(this)
                         .title(R.string.about)
                         .content(R.string.about_message)
+                        .callback(new MaterialDialog.SimpleCallback() {
+                            @Override
+                            public void onPositive(MaterialDialog materialDialog) {
+                                materialDialog.dismiss();
+                            }
+                        })
                         .build()
                         .show();
 

@@ -17,6 +17,7 @@ import com.RSen.Commandr.ui.card.MostWantedCard;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.mediation.admob.AdMobExtras;
+import com.melnykov.fab.FloatingActionButton;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class MostWantedCommandsActivity extends ActionBarActivity {
         }
         CardGridArrayAdapter mCardArrayAdapter = new CardGridArrayAdapter(this, cards);
         final CardGridView listView = (CardGridView) findViewById(R.id.card_list_view);
-
+        ((FloatingActionButton)findViewById(R.id.vote)).attachToListView(listView);
         SwingBottomInAnimationAdapter animCardArrayAdapter = new SwingBottomInAnimationAdapter(mCardArrayAdapter);
         animCardArrayAdapter.setAbsListView(listView);
         listView.setExternalAdapter(animCardArrayAdapter, mCardArrayAdapter);

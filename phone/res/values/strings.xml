@@ -11,7 +11,7 @@
     <string name="setup_passthrough_example">Example: \"Note do the laundry\"</string>
     <string name="about_message">Commandr was initially developed by Ryan Senanayake when he was 16 years old. See more at www.RSenApps.com
     \n\nSpecial thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!\n\nThanks to the following libraries:\nCard Library by gabrielmariotti github.com/gabrielmariotti/cardslib\n
-    ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nAndroid Donations Lib by dschuermann github.com/dschuermann/android-donations-lib\nMaterial Dialogs by afollestad github.com/afollestad/material-dialogs</string>
+    ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nAndroid Donations Lib by dschuermann github.com/dschuermann/android-donations-lib\nMaterial Dialogs by afollestad github.com/afollestad/material-dialogs\nFloatingActionButton by makovkastar http://github.com/makovkastar/FloatingActionButton</string>
     <string name="fb_share_msg">Try out Commandr for Google Now, to add commands to Google Now, no root required! Now you can use Google Now to control your flashlight, toggle settings, control music playback, and much more!</string>
     <string name="vote_new_commands">Vote for New Commands</string>
     <string name="no_tasker_commands">Add commands within the Tasker app first.</string>

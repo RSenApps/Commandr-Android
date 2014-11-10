@@ -21,6 +21,7 @@ import com.apptentive.android.sdk.ApptentiveActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.mediation.admob.AdMobExtras;
+import com.melnykov.fab.FloatingActionButton;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 import com.parse.FindCallback;
 import com.parse.Parse;
@@ -74,6 +75,7 @@ public class VotingActivity extends ApptentiveActivity {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("VotingCommand");
         query.addDescendingOrder("votes");
         query.setLimit(1000);
+        ((FloatingActionButton) findViewById(R.id.vote)).hide();
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(final List<ParseObject> parseObjects, ParseException e) {
@@ -86,12 +88,14 @@ public class VotingActivity extends ApptentiveActivity {
                     }
                     final CardGridArrayAdapter mCardArrayAdapter = new CardGridArrayAdapter(VotingActivity.this, cards);
                     final CardGridView listView = (CardGridView) findViewById(R.id.card_list_view);
+                    ((FloatingActionButton)findViewById(R.id.vote)).attachToListView(listView);
 
                     final SwingBottomInAnimationAdapter animCardArrayAdapter = new SwingBottomInAnimationAdapter(mCardArrayAdapter);
                     animCardArrayAdapter.setAbsListView(listView);
                     listView.setExternalAdapter(animCardArrayAdapter, mCardArrayAdapter);
                     progress.setVisibility(View.GONE);
-                    Button b = (Button) findViewById(R.id.vote);
+                    FloatingActionButton b = (FloatingActionButton) findViewById(R.id.vote);
+                    b.show();
                     b.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
