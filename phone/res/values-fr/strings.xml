@@ -9,12 +9,9 @@
     <string name="setup_test_question">Ecrivez la commande pour "Mettre en pause la musique" ci-dessous :</string>
     <string name="setup_passthrough_first">Pour prendre une note normale, commencez juste par "note"</string>
     <string name="setup_passthrough_example">Exemple : "Note faire la lessive"</string>
-    <string name="about_message">Commandr a été initialement développé par Ryan Senanayake quand il avait 16 ans. Plus d\'informations sur www.RSenApps.com
-Special thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!
-Thanks to the following libraries: Card Library by gabrielmariotti github.com/gabrielmariotti/cardslib
-ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations
-AndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid
-SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
+    <string name="about_message">Commandr was initially developed by Ryan Senanayake when he was 16 years old. See more at www.RSenApps.com
+    \n\nSpecial thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!\n\nThanks to the following libraries:\nCard Library by gabrielmariotti github.com/gabrielmariotti/cardslib\n
+    ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nAndroid Donations Lib by dschuermann github.com/dschuermann/android-donations-lib\nMaterial Dialogs by afollestad github.com/afollestad/material-dialogs</string>
     <string name="fb_share_msg">Essayez Commandr pour Google Now pour ajouter des commandes dans Google Now ! Pas de root requis ! Maintenant vous pouvez utiliser Google Now pour controler la lampe de poche, changer des paramètres système, contrôler le lecteur de musique et plus encore !</string>
     <string name="vote_new_commands">Voter pour de nouvelles commandes</string>
     <string name="no_tasker_commands">Ajoutez d\'abord des commandes dans l\'appli Tasker.</string>
@@ -166,19 +163,42 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
     <string name="root_command_failed">Échec de la commande root</string>
     <string name="show_ads">Afficher les pubs</string>
     <string name="show_ads_description">Afin de m\'aider à payer la fac, merci de ne pas désactiver les pubs :)</string>
-    <string name="donation_paypal_item">Donation</string>
-    <string name="donate">Donate</string>
-    <string name="donate_description">Through Google Wallet, Paypal, or Flattr</string>
-    <string name="silence_ringer_phrase">silence ringer</string>
-    <string name="silence_ringer_title">Silence Ringer</string>
-    <string name="unsilence_ringer_title">Unsilence Ringer</string>
-    <string name="unsilence_ringer_phrase">unsilence ringer</string>
-    <string name="send_whatsapp_phrase">send whatsapp</string>
-    <string name="send_whatsapp_title">Send Whatsapp</string>
+    <string name="donation_paypal_item">Donner</string>
+    <string name="donate">Donner</string>
+    <string name="donate_description">Par Google Wallet, Paypal ou Flattr</string>
+    <string name="silence_ringer_phrase">Mettre en mode silencieux</string>
+    <string name="silence_ringer_title">Mettre en mode silencieux</string>
+    <string name="unsilence_ringer_title">Activer la sonnerie</string>
+    <string name="unsilence_ringer_phrase">Désactiver le mode silencieux</string>
+    <string name="send_whatsapp_phrase">Envoyer whatsapp</string>
+    <string name="send_whatsapp_title">Envoyer un message Whatsapp</string>
     <string name="message">message</string>
-    <string name="install_whatsapp">First install Whatsapp...</string>
-    <string name="enable_rotation_lock_phrase">enable rotation lock</string>
-    <string name="enable_rotation_lock_title">Enable Rotation Lock</string>
-    <string name="rotation_lock_off_phrase">disable rotation lock</string>
-    <string name="rotation_lock_off_title">Disable Rotation Lock</string>
+    <string name="install_whatsapp">D\'abord, installez Whatsapp...</string>
+    <string name="enable_rotation_lock_phrase">Désactiver la rotation automatique</string>
+    <string name="enable_rotation_lock_title">Désactiver la rotation automatique</string>
+    <string name="rotation_lock_off_phrase">Activer la rotation automatique</string>
+    <string name="rotation_lock_off_title">Activer la rotation automatique</string>
+    <string name="wifi_ap_on_title">Wireless Hotspot On</string>
+    <string name="wifi_ap_on_phrase">turn on wireless hotspot</string>
+    <string name="wifi_ap_off_title">Wireless Hotspot Off</string>
+    <string name="wifi_ap_off_phrase">turn off wireless hotspot</string>
+    <string name="xposed_title">Use Xposed (root only)</string>
+    <string name="xposed_summary">Only need to enable Xposed if you want to use Commandr from Android Wear without saying take a note before the command</string>
+    <string name="disable_accessibility">You can now disable the accessibility service...</string>
+    <string name="update_xposed">Please update to at least version 1.4 of Google Search API (linked in this post)</string>
+    <string name="install_xposed">Please first install the Xposed Module. The one linked on the main thread is not the most updated. Instead download the one in this post (1.4)</string>
+    <string name="sync_title">Enable Sync</string>
+    <string name="sync_phrases">Sync on</string>
+    <string name="sync_off_title">Sync off</string>
+    <string name="sync_off_phrases">Disable Sync</string>
+    <string name="good_night_title">Disable WiFi,mobile data and turn on vibration(Night mode)</string>
+    <string name="good_night_phrase">Goodnight</string>
+    <string name="airplane_title">Enable Airplane mode(root only)</string>
+    <string name="airplane_phrase">Airplane mode on</string>
+    <string name="airplane_off_title">Disable Airplane mode(root only)</string>
+    <string name="airplane_off_phrase">Airplane mode off</string>
+    <string name="clear_notifications_phrase">clear notifications</string>
+    <string name="clear_notifications_title">Clear Notifications (Root Only)</string>
+    <string name="suggest_new">Suggest New Command</string>
+    <string name="submit">Submit</string>
 </resources>

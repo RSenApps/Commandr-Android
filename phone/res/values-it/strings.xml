@@ -9,9 +9,9 @@
     <string name="setup_test_question">Digita di seguito il comando per \"metti in pausa la musica\":</string>
     <string name="setup_passthrough_first">Per prendere una nota normale, semplicemente inizia la frase con \"nota\"</string>
     <string name="setup_passthrough_example">Esempio: \"Nota fai il bucato\"</string>
-    <string name="about_message">Commandr fu inizialmente sviluppato da Ryan Senanayake quando aveva 16 anni. Per saperne di più visita www.RSenApps.com
-\n\nRingraziamenti speciali vanno a Sky Kelsey e al Team Apptentive così come ad Adriano Loiacono per il lavoro di progettazione grafica!\n\nGrazie alle seguenti librerie:\nCard Library di gabrielmariotti github.com/gabrielmariotti/cardslib\n
-ListViewAnimations di nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid di etsy github.com/etsy/AndroidStaggeredGrid\nSystemBarTint di\'+ jgilfelt github.com/jgilfelt/SystemBarTint</string>
+    <string name="about_message">Commandr was initially developed by Ryan Senanayake when he was 16 years old. See more at www.RSenApps.com
+    \n\nSpecial thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!\n\nThanks to the following libraries:\nCard Library by gabrielmariotti github.com/gabrielmariotti/cardslib\n
+    ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nAndroid Donations Lib by dschuermann github.com/dschuermann/android-donations-lib\nMaterial Dialogs by afollestad github.com/afollestad/material-dialogs</string>
     <string name="fb_share_msg">Prova Commandr per Google Now, per aggiungere comandi a Google Now, non richiede root! Ora puoi usare Google Now per controllare la tua torcia, impostazioni rapide, controllo della musica in riproduzione, e molto di più!</string>
     <string name="vote_new_commands">Vota per Nuovi Comandi</string>
     <string name="no_tasker_commands">Aggiungi comandi prima all\'interno dell\'app Tasker.</string>
@@ -162,20 +162,43 @@ ListViewAnimations di nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
     <string name="wolfram_redirect_failed">Reindirizzamento a Wolfram Alpha fallito!</string>
     <string name="root_command_failed">Comando Root fallito</string>
     <string name="show_ads">Mostra annunci</string>
-    <string name="show_ads_description">Cercare di aiutarmi a pagare il college se possibile. Per favore, non disattivateli :)</string>
-    <string name="donation_paypal_item">Donation</string>
-    <string name="donate">Donate</string>
-    <string name="donate_description">Through Google Wallet, Paypal, or Flattr</string>
-    <string name="silence_ringer_phrase">silence ringer</string>
-    <string name="silence_ringer_title">Silence Ringer</string>
-    <string name="unsilence_ringer_title">Unsilence Ringer</string>
-    <string name="unsilence_ringer_phrase">unsilence ringer</string>
-    <string name="send_whatsapp_phrase">send whatsapp</string>
-    <string name="send_whatsapp_title">Send Whatsapp</string>
-    <string name="message">message</string>
-    <string name="install_whatsapp">First install Whatsapp...</string>
-    <string name="enable_rotation_lock_phrase">enable rotation lock</string>
-    <string name="enable_rotation_lock_title">Enable Rotation Lock</string>
-    <string name="rotation_lock_off_phrase">disable rotation lock</string>
-    <string name="rotation_lock_off_title">Disable Rotation Lock</string>
+    <string name="show_ads_description">Cerco di aiutare a pagare il college, quindi se possibile, per favore, non disattivateli :)</string>
+    <string name="donation_paypal_item">Donazione</string>
+    <string name="donate">Dona</string>
+    <string name="donate_description">Attraverso Google Wallet, Paypal, o Flattr</string>
+    <string name="silence_ringer_phrase">silenzia suoneria</string>
+    <string name="silence_ringer_title">Silenzia Suoneria</string>
+    <string name="unsilence_ringer_title">Attiva suoneria</string>
+    <string name="unsilence_ringer_phrase">attiva suoneria</string>
+    <string name="send_whatsapp_phrase">invia whatsapp</string>
+    <string name="send_whatsapp_title">Invia Whatsapp</string>
+    <string name="message">messaggio</string>
+    <string name="install_whatsapp">Prima installa Whatsapp...</string>
+    <string name="enable_rotation_lock_phrase">attiva blocco rotazione</string>
+    <string name="enable_rotation_lock_title">Attiva Blocco Rotazione</string>
+    <string name="rotation_lock_off_phrase">disattiva blocco rotazione</string>
+    <string name="rotation_lock_off_title">Disattiva Blocco Rotazione</string>
+    <string name="wifi_ap_on_title">Hotspot Wireless On</string>
+    <string name="wifi_ap_on_phrase">attiva hotspot wireless</string>
+    <string name="wifi_ap_off_title">Hotspot Wireless Off</string>
+    <string name="wifi_ap_off_phrase">disattiva hotspot wireless</string>
+    <string name="xposed_title">Usa Xposed (solo root)</string>
+    <string name="xposed_summary">Bisogna solo attivare Xposed se vuoi usare Commandr da Android Wear senza dire "Nota a sè" prima del comando</string>
+    <string name="disable_accessibility">Ora puoi disabilitare i servizi di accessibilità...</string>
+    <string name="update_xposed">Please update to at least version 1.4 of Google Search API (linked in this post)</string>
+    <string name="install_xposed">Please first install the Xposed Module. The one linked on the main thread is not the most updated. Instead download the one in this post (1.4)</string>
+    <string name="sync_title">Enable Sync</string>
+    <string name="sync_phrases">Sync on</string>
+    <string name="sync_off_title">Sync off</string>
+    <string name="sync_off_phrases">Disable Sync</string>
+    <string name="good_night_title">Disable WiFi,mobile data and turn on vibration(Night mode)</string>
+    <string name="good_night_phrase">Goodnight</string>
+    <string name="airplane_title">Enable Airplane mode(root only)</string>
+    <string name="airplane_phrase">Airplane mode on</string>
+    <string name="airplane_off_title">Disable Airplane mode(root only)</string>
+    <string name="airplane_off_phrase">Airplane mode off</string>
+    <string name="clear_notifications_phrase">clear notifications</string>
+    <string name="clear_notifications_title">Clear Notifications (Root Only)</string>
+    <string name="suggest_new">Suggest New Command</string>
+    <string name="submit">Submit</string>
 </resources>

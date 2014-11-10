@@ -9,9 +9,9 @@
     <string name="setup_test_question">Typ het commando voor \"Pause Music\" hieronder:</string>
     <string name="setup_passthrough_first">Om een normale notitie te maken, begin gewoon met \"note\"</string>
     <string name="setup_passthrough_example">Voorbeeld: \"Note do the laundry\"</string>
-    <string name="about_message">Commandr is oorspronkelijk ontwikkeld door Ryan Senanayake toen hij 16 jaar oud was. Zie meer op www.RSenApps.com \n\nBijzondere dank gaat uit naar Sky Kelsey en the Apptentive Team als ook Adriano Loiacono voor zijn bijdrage aan het grafische ontwerp! \n\nDank aan de volgende libraries:\nCard Library door gabrielmariotti github.com/gabrielmariotti/cardslib\n
-ListViewAnimations by nhaarman
-github.com/nhaarman/ListviewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nSystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTinit</string>
+    <string name="about_message">Commandr was initially developed by Ryan Senanayake when he was 16 years old. See more at www.RSenApps.com
+    \n\nSpecial thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!\n\nThanks to the following libraries:\nCard Library by gabrielmariotti github.com/gabrielmariotti/cardslib\n
+    ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nAndroid Donations Lib by dschuermann github.com/dschuermann/android-donations-lib\nMaterial Dialogs by afollestad github.com/afollestad/material-dialogs</string>
     <string name="fb_share_msg">Probeer Commandr voor Google Now om commando\'s toe te voegen aan Google Now, zonder root! Gebruik Google Now om je flitser te bedienen, de knoppen van je instellingen om te zetten, om het afspelen van je muziek te regelen en veel meer!</string>
     <string name="vote_new_commands">Geef aan welke nieuwe commando\'s je wilt</string>
     <string name="no_tasker_commands">Voeg eerst een commando toe in de Tasker app.</string>
@@ -178,4 +178,27 @@ github.com/nhaarman/ListviewAnimations\nAndroidStaggeredGrid by etsy github.com/
     <string name="enable_rotation_lock_title">Enable Rotation Lock</string>
     <string name="rotation_lock_off_phrase">disable rotation lock</string>
     <string name="rotation_lock_off_title">Disable Rotation Lock</string>
+    <string name="wifi_ap_on_title">Wireless Hotspot On</string>
+    <string name="wifi_ap_on_phrase">turn on wireless hotspot</string>
+    <string name="wifi_ap_off_title">Wireless Hotspot Off</string>
+    <string name="wifi_ap_off_phrase">turn off wireless hotspot</string>
+    <string name="xposed_title">Use Xposed (root only)</string>
+    <string name="xposed_summary">Only need to enable Xposed if you want to use Commandr from Android Wear without saying take a note before the command</string>
+    <string name="disable_accessibility">You can now disable the accessibility service...</string>
+    <string name="update_xposed">Please update to at least version 1.4 of Google Search API (linked in this post)</string>
+    <string name="install_xposed">Please first install the Xposed Module. The one linked on the main thread is not the most updated. Instead download the one in this post (1.4)</string>
+    <string name="sync_title">Enable Sync</string>
+    <string name="sync_phrases">Sync on</string>
+    <string name="sync_off_title">Sync off</string>
+    <string name="sync_off_phrases">Disable Sync</string>
+    <string name="good_night_title">Disable WiFi,mobile data and turn on vibration(Night mode)</string>
+    <string name="good_night_phrase">Goodnight</string>
+    <string name="airplane_title">Enable Airplane mode(root only)</string>
+    <string name="airplane_phrase">Airplane mode on</string>
+    <string name="airplane_off_title">Disable Airplane mode(root only)</string>
+    <string name="airplane_off_phrase">Airplane mode off</string>
+    <string name="clear_notifications_phrase">clear notifications</string>
+    <string name="clear_notifications_title">Clear Notifications (Root Only)</string>
+    <string name="suggest_new">Suggest New Command</string>
+    <string name="submit">Submit</string>
 </resources>
