@@ -14,13 +14,11 @@ public class ShutdownNowRootOnly extends MostWantedCommand {
 
     private static String TITLE;
     private static String DEFAULT_PHRASE;
-    private Context context;
 
 
     public ShutdownNowRootOnly(Context ctx) {
         DEFAULT_PHRASE = ctx.getString(R.string.shutdown_phrases); //Google doesn't seem to ever put "shutdown" only "shut down"
         TITLE = ctx.getString(R.string.shutdown_title);
-        context = ctx;
 
     }
 

@@ -197,4 +197,6 @@
     <string name="airplane_phrase">Airplane mode on</string>
     <string name="airplane_off_title">Disable Airplane mode(root only)</string>
     <string name="airplane_off_phrase">Airplane mode off</string>
+    <string name="clear_notifications_phrase">clear notifications</string>
+    <string name="clear_notifications_title">Clear Notifications (Root Only)</string>
 </resources>
