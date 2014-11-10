@@ -45,7 +45,7 @@
         android:verticalSpacing="3dp"
         card:item_margin="4dp" />
     <com.melnykov.fab.FloatingActionButton
-        android:id="@+id/vote"
+        android:id="@+id/suggest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

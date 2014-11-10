@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -65,6 +67,7 @@ public class VotingActivity extends ApptentiveActivity {
 
         Parse.initialize(this, "giwroIjJIvqQCpTB23LsdDYe8HdHCxZwy0fkKksV", "H98VqurfJTM4J05D8Fmht3VyXdbTCb5ghBf8Jkjc");
 
+        ((FloatingActionButton)findViewById(R.id.suggest)).attachToListView(((AbsListView)findViewById(R.id.card_list_view)));
 
     }
 
@@ -75,7 +78,7 @@ public class VotingActivity extends ApptentiveActivity {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("VotingCommand");
         query.addDescendingOrder("votes");
         query.setLimit(1000);
-        ((FloatingActionButton) findViewById(R.id.vote)).hide();
+        ((FloatingActionButton) findViewById(R.id.suggest)).hide();
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(final List<ParseObject> parseObjects, ParseException e) {
@@ -88,13 +91,12 @@ public class VotingActivity extends ApptentiveActivity {
                     }
                     final CardGridArrayAdapter mCardArrayAdapter = new CardGridArrayAdapter(VotingActivity.this, cards);
                     final CardGridView listView = (CardGridView) findViewById(R.id.card_list_view);
-                    ((FloatingActionButton)findViewById(R.id.vote)).attachToListView(listView);
 
                     final SwingBottomInAnimationAdapter animCardArrayAdapter = new SwingBottomInAnimationAdapter(mCardArrayAdapter);
                     animCardArrayAdapter.setAbsListView(listView);
                     listView.setExternalAdapter(animCardArrayAdapter, mCardArrayAdapter);
                     progress.setVisibility(View.GONE);
-                    FloatingActionButton b = (FloatingActionButton) findViewById(R.id.vote);
+                    FloatingActionButton b = (FloatingActionButton) findViewById(R.id.suggest);
                     b.show();
                     b.setOnClickListener(new View.OnClickListener() {
                         @Override
