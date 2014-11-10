@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="material-dialogs-0.0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/phone/build/intermediates/exploded-aar/com.afollestad/material-dialogs/0.0.2/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/phone/build/intermediates/exploded-aar/com.afollestad/material-dialogs/0.0.2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

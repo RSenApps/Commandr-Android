@@ -25,8 +25,9 @@ import com.RSen.Commandr.core.MostWantedCommands;
 import com.RSen.Commandr.core.TaskerCommand;
 import com.RSen.Commandr.core.TaskerCommands;
 import com.RSen.Commandr.ui.fragment.SettingsFragment;
-import com.RSen.Commandr.util.QustomDialogBuilder;
 import com.RSen.Commandr.util.WearUtil;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.afollestad.materialdialogs.Theme;
 import com.apptentive.android.sdk.Apptentive;
 import com.apptentive.android.sdk.ApptentiveActivity;
 import com.google.android.gms.ads.AdRequest;
@@ -208,13 +209,12 @@ public class MainActivity extends ApptentiveActivity {
                 }
                 break;
             case R.id.about:
-                QustomDialogBuilder builder = new QustomDialogBuilder(this);
-                builder.setTitle(getString(R.string.about));
-                builder.setTitleColor("#CC0000");
-                builder.setDividerColor("#CC0000");
-                builder.setMessage(R.string.about_message);
-                builder.setPositiveButton("Done", null);
-                builder.show();
+                new MaterialDialog.Builder(this)
+                        .title(R.string.about)
+                        .content(R.string.about_message)
+                        .build()
+                        .show();
+
                 break;
         }
         return true;

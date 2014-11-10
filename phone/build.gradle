@@ -13,6 +13,7 @@ dependencies {
     compile 'com.android.support:support-v13:+'
     compile 'com.android.support:appcompat-v7:21.+'
     compile 'com.google.apis:google-api-services-gmail:v1-rev6-1.19.0'
+    compile 'com.afollestad:material-dialogs:0.0.2'
     wearApp project(':wear')
 }
 

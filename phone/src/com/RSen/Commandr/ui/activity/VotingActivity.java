@@ -15,7 +15,8 @@ import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.ui.card.MostWantedVotingCard;
-import com.RSen.Commandr.util.QustomDialogBuilder;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.afollestad.materialdialogs.Theme;
 import com.apptentive.android.sdk.ApptentiveActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -94,29 +95,28 @@ public class VotingActivity extends ApptentiveActivity {
                     b.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            QustomDialogBuilder builder = new QustomDialogBuilder(VotingActivity.this);
-                            builder.setTitle("Suggest New Command");
-                            builder.setTitleColor("#0099CC");
-                            builder.setDividerColor("#0099CC");
-                            final View v = ((LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE)).inflate(R.layout.suggest_command, null);
-                            builder.setCustomView(v, VotingActivity.this);
-                            builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    String name = ((EditText) v.findViewById(R.id.name)).getText().toString();
-                                    String detail = ((EditText) v.findViewById(R.id.detailSuggest)).getText().toString();
-                                    ParseObject votingCommand = new ParseObject("VotingCommand");
-                                    votingCommand.put("title", name);
-                                    votingCommand.put("detail", detail);
-                                    votingCommand.put("votes", 0);
-                                    votingCommand.saveInBackground();
-                                    mCardArrayAdapter.add(new MostWantedVotingCard(VotingActivity.this, votingCommand));
-                                    animCardArrayAdapter.notifyDataSetChanged();
-                                    Toast.makeText(VotingActivity.this, getString(R.string.suggestion_submitted), Toast.LENGTH_LONG).show();
-                                }
-                            });
-                            builder.setNegativeButton("Cancel", null);
-                            builder.show();
+                            new MaterialDialog.Builder(VotingActivity.this)
+                                    .title(getString(R.string.suggest_new))
+                                    .theme(Theme.LIGHT)  // the default is light, so you don't need this line
+                                    .customView(R.layout.suggest_command)
+                                    .positiveText(getString(R.string.submit))  // the default is 'OK'
+                                    .negativeText(R.string.cancel)  // leaving this line out will remove the negative button
+                                    .callback(new MaterialDialog.SimpleCallback() {
+                                        @Override
+                                        public void onPositive(MaterialDialog materialDialog) {
+                                            String name = ((EditText) materialDialog.getCustomView().findViewById(R.id.name)).getText().toString();
+                                            String detail = ((EditText) materialDialog.getCustomView().findViewById(R.id.detailSuggest)).getText().toString();
+                                            ParseObject votingCommand = new ParseObject("VotingCommand");
+                                            votingCommand.put("title", name);
+                                            votingCommand.put("detail", detail);
+                                            votingCommand.put("votes", 0);
+                                            votingCommand.saveInBackground();
+                                            mCardArrayAdapter.add(new MostWantedVotingCard(VotingActivity.this, votingCommand));
+                                            animCardArrayAdapter.notifyDataSetChanged();
+                                        }
+                                    })
+                                    .build()
+                                    .show();
                         }
                     });
 

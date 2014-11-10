@@ -64,7 +64,7 @@ public class DonationsActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.donations_activity);
-
+        setupActionBar();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         DonationsFragment donationsFragment;
         if (BuildConfig.DONATIONS_GOOGLE) {
@@ -94,7 +94,7 @@ public class DonationsActivity extends ActionBarActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentByTag("donationsFragment");
-        setupActionBar();
+
         if (fragment != null) {
             fragment.onActivityResult(requestCode, resultCode, data);
         }
