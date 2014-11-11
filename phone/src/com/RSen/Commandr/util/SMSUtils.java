@@ -610,6 +610,54 @@ public class SMSUtils {
         }
         return messages;
     }
+    public static SmsMmsMessage getRecentMessageFromSender(Context context, String sender) {
+
+        final String[] projection =
+                new String[]{"_id", "thread_id", "address", "date", "body"};
+        final String sortOrder = "date DESC";
+
+        // Create cursor
+        Cursor cursor = context.getContentResolver().query(
+                SMS_INBOX_CONTENT_URI,
+                projection,
+                "",
+                new String[] {},
+                sortOrder);
+
+        long messageId;
+        long threadId;
+        String address;
+        long timestamp;
+        String body;
+
+        if (cursor != null) {
+            try {
+
+                while (cursor.moveToNext()) {
+                    messageId = cursor.getLong(0);
+                    threadId = cursor.getLong(1);
+                    address = cursor.getString(2);
+                    timestamp = cursor.getLong(3);
+                    body = cursor.getString(4);
+                    ContactIdentification contactIdentification = getPersonIdFromPhoneNumber(context, address);
+                    if (contactIdentification != null) {
+                        if (contactIdentification.contactName != null)
+                        {
+                            if (contactIdentification.contactName.toLowerCase().contains(sender)) {
+                                return new SmsMmsMessage(
+                                        context, address, body, timestamp, threadId,
+                                        0, messageId, SmsMmsMessage.MESSAGE_TYPE_SMS);
+                            }
+                        }
+                    }
+                }
+
+            } finally {
+                cursor.close();
+            }
+        }
+        return null;
+    }
 
     /**
      *

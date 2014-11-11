@@ -58,7 +58,7 @@ public class TTSHelper extends UtteranceProgressListener implements TextToSpeech
         HashMap<String, String> map = new HashMap<String, String>();
         map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "UniqueID");
         tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, map);
-
+        Toast.makeText(context, toSpeak, Toast.LENGTH_LONG).show();
 
     }
 

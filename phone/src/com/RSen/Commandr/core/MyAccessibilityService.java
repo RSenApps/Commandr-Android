@@ -2,12 +2,17 @@ package com.RSen.Commandr.core;
 
 import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 
+import com.RSen.Commandr.ui.activity.MainActivity;
+import com.RSen.Commandr.ui.activity.SetupActivity;
 import com.RSen.Commandr.util.KeyguardUtil;
 
 public class MyAccessibilityService extends AccessibilityService {
@@ -59,6 +64,15 @@ public class MyAccessibilityService extends AccessibilityService {
         super.onServiceConnected();
         thisService = this;
         lastCommand = 0;
+        if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean("accessibility_enabled", false)) //make sure this only runs when the user explicitly enables it
+        {
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("accessibility_enabled", true).commit();
+            Intent openMainActivity= new Intent(this, MainActivity.class);
+            openMainActivity.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(openMainActivity);
+            //go back to setup activity after enabling
+        }
+
     }
 
     @Override

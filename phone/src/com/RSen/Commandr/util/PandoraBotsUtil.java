@@ -33,7 +33,6 @@ public class PandoraBotsUtil {
         }
 
         protected void onPostExecute(String response) {
-            Toast.makeText(context, response, Toast.LENGTH_LONG).show();
             PreferenceManager.getDefaultSharedPreferences(context).edit().putString("custid", custid).commit();
             Intent i = new Intent(context, TTSService.class);
             i.putExtra("toSpeak", response);

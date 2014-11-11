@@ -6,6 +6,8 @@ import com.RSen.Commandr.builtincommands.AirplaneCommand;
 import com.RSen.Commandr.builtincommands.AirplaneOffCommand;
 import com.RSen.Commandr.builtincommands.BluetoothCommand;
 import com.RSen.Commandr.builtincommands.BluetoothOffCommand;
+import com.RSen.Commandr.builtincommands.CarModeCommand;
+import com.RSen.Commandr.builtincommands.CarModeOffCommand;
 import com.RSen.Commandr.builtincommands.CellularDataCommand;
 import com.RSen.Commandr.builtincommands.CellularDataOffCommand;
 import com.RSen.Commandr.builtincommands.ChatbotCommand;
@@ -22,6 +24,7 @@ import com.RSen.Commandr.builtincommands.PauseMusicCommand;
 import com.RSen.Commandr.builtincommands.PlayPlaylistCommand;
 import com.RSen.Commandr.builtincommands.PreviousMusicCommand;
 import com.RSen.Commandr.builtincommands.RaiseVolumeCommand;
+import com.RSen.Commandr.builtincommands.ReadLastSMSFromContactCommand;
 import com.RSen.Commandr.builtincommands.ReadUnreadGmailCommand;
 import com.RSen.Commandr.builtincommands.ReadUnreadSMSCommand;
 import com.RSen.Commandr.builtincommands.RebootIntoRecoveryRootOnly;
@@ -70,14 +73,14 @@ public class MostWantedCommands {
             commands = new MostWantedCommand[]{new FlashlightCommand(context), new FlashlightOffCommand(context),
                     new WifiCommand(context), new WifiOffCommand(context), new GPSCommand(context), new GPSOffCommand(context), new BluetoothCommand(context),
                     new BluetoothOffCommand(context), new WifiAPCommand(context), new WifiAPOffCommand(context), new PauseMusicCommand(context),
-                    new ResumeMusicCommand(context), new NextMusicCommand(context), new PreviousMusicCommand(context), new ReadUnreadSMSCommand(context),
+                    new ResumeMusicCommand(context), new NextMusicCommand(context), new PreviousMusicCommand(context), new ReadUnreadSMSCommand(context), new ReadLastSMSFromContactCommand(context),
                     new PlayPlaylistCommand(context), new ChatbotCommand(context), new CellularDataCommand(context), new CellularDataOffCommand(context),
                     new ReadUnreadGmailCommand(context), new RaiseVolumeCommand(context), new LowerVolumeCommand(context), new SilenceRingerCommand(context),
                     new UnsilenceRingerCommand(context), new VolumePercentage(context), new UnlockCommand(context), new LockCommand(context),
                     new TakePictureCommand(context), new TakeSelfieCommand(context), new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context),
                     new RestartNowRootOnly(context), new ClearNotificationsCommand(context), new WolframRedirectCommand(context), new SendWhatsappCommand(context), new RotationLockOnCommand(context),
                     new RotationLockOffCommand(context), new SyncCommand(context), new SyncOffCommand(context), new GoodNightCommand(context), new AirplaneCommand(context),
-                    new AirplaneOffCommand(context)};
+                    new AirplaneOffCommand(context), new CarModeCommand(context), new CarModeOffCommand(context)};
         }
         return commands;
     }

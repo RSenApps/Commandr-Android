@@ -201,4 +201,12 @@
     <string name="clear_notifications_title">Clear Notifications (Root Only)</string>
     <string name="suggest_new">Suggest New Command</string>
     <string name="submit">Submit</string>
+    <string name="read_last_sms_phrase">last sms from, last text from</string>
+    <string name="last_sms_title">Read Last SMS From Contact</string>
+    <string name="no_messages_found">No messages found</string>
+    <string name="sender_name">sender name</string>
+    <string name="car_mode_phrase">enable car mode</string>
+    <string name="car_mode_title">Enable Car Mode (Req. Supporting App)</string>
+    <string name="disable_car_phrase">disable car mode</string>
+    <string name="disable_car_titl">Disable Car Mode</string>
 </resources>
