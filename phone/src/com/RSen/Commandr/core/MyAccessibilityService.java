@@ -64,9 +64,9 @@ public class MyAccessibilityService extends AccessibilityService {
         super.onServiceConnected();
         thisService = this;
         lastCommand = 0;
-        if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean("accessibility_enabled", false)) //make sure this only runs when the user explicitly enables it
+        if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean("setup", false)) //make sure this only runs when the user explicitly enables it
         {
-            PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("accessibility_enabled", true).commit();
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("setup", true).commit();
             Intent openMainActivity= new Intent(this, MainActivity.class);
             openMainActivity.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(openMainActivity);
