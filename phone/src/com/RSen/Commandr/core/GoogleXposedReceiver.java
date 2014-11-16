@@ -15,7 +15,7 @@ public class GoogleXposedReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		String queryText = intent.getStringExtra(GoogleSearchApi.KEY_QUERY_TEXT);
         if (queryText != null && PreferenceManager.getDefaultSharedPreferences(context).getBoolean("usexposed", false)) {
-           CommandInterpreter.interpret(context, queryText, false);
+           CommandInterpreter.interpret(context, queryText, true);
         }
 	}
 
