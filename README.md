@@ -41,8 +41,9 @@ Commandr would not be possible without the following open source libraries:
  - Card Library by gabrielmariotti http://www.github.com/gabrielmariotti/cardslib
  - ListViewAnimations by nhaarman http://www.github.com/nhaarman/ListViewAnimations
  - AndroidStaggeredGrid by etsy  http://www.github.com/etsy/AndroidStaggeredGrid
- - SystemBarTint by jgilfelt http://www.github.com/jgilfelt/SystemBarTint
  - Android Donations Lib by dschuermann http://www.github.com/dschuermann/android-donations-lib
+ - Material Dialogs by afollestad http://www.github.com/afollestad/material-dialogs
+ - FloatingActionButton by makovkastar http://github.com/makovkastar/FloatingActionButton
 
 License
 ================
