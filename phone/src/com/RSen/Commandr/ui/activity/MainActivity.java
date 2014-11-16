@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -57,7 +58,7 @@ import java.util.Set;
  * @version 1.0
  *          5/28/14
  */
-public class MainActivity extends ApptentiveActivity {
+public class MainActivity extends ActionBarActivity {
     public static final String PROPERTY_REG_ID = "registration_id";
     private static final String PROPERTY_APP_VERSION = "appVersion";
     String SENDER_ID = "849128011795";
@@ -89,7 +90,18 @@ public class MainActivity extends ApptentiveActivity {
             throw new RuntimeException("Could not get package name: " + e);
         }
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Apptentive.onStart(this);
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Apptentive.onStop(this);
+    }
     /**
      * Called when the activity is created, add the Settings fragment.
      */
@@ -134,7 +146,6 @@ public class MainActivity extends ApptentiveActivity {
 
         // Commit the transaction
         transaction.commit();
-        Apptentive.engage(this, "init");
 
         if (checkPlayServices()) {
             gcm = GoogleCloudMessaging.getInstance(this);
@@ -146,6 +157,7 @@ public class MainActivity extends ApptentiveActivity {
         } else {
 
         }
+
     }
 
     @Override
@@ -160,6 +172,7 @@ public class MainActivity extends ApptentiveActivity {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
             boolean ranApptentive = Apptentive.handleOpenedPushNotification(this);
+            Apptentive.engage(this, "init");
             if (ranApptentive) {
                 // Don't try to take any action here. Wait until the customer closes our UI.
                 return;

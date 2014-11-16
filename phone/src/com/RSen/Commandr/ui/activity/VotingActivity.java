@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
@@ -19,6 +20,7 @@ import com.RSen.Commandr.R;
 import com.RSen.Commandr.ui.card.MostWantedVotingCard;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
+import com.apptentive.android.sdk.Apptentive;
 import com.apptentive.android.sdk.ApptentiveActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -38,7 +40,7 @@ import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardGridArrayAdapter;
 import it.gmariotti.cardslib.library.view.CardGridView;
 
-public class VotingActivity extends ApptentiveActivity {
+public class VotingActivity extends ActionBarActivity {
     private ProgressBar progress;
 
     @Override
@@ -69,6 +71,17 @@ public class VotingActivity extends ApptentiveActivity {
 
         ((FloatingActionButton)findViewById(R.id.suggest)).attachToListView(((AbsListView)findViewById(R.id.card_list_view)));
 
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Apptentive.onStart(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Apptentive.onStop(this);
     }
 
     @Override

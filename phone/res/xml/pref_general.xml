@@ -10,7 +10,7 @@
         android:summary="@string/note_to_self_required_description"
         android:title="@string/note_to_self_required" />
     <CheckBoxPreference
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:key="closegoogle"
         android:summary="@string/return_previous_app_summary"
         android:title="@string/return_previous_app_title" />

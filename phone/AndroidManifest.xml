@@ -18,7 +18,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
     <uses-permission android:name="com.android.vending.BILLING" />
@@ -119,7 +118,7 @@
 
         <activity
             android:name="com.apptentive.android.sdk.ViewActivity"
-            android:theme="@style/Apptentive.Theme.Transparent" />
+            android:theme="@style/MyApptentiveTheme" />
 
         <receiver android:name="com.apptentive.android.sdk.comm.NetworkStateReceiver" >
             <intent-filter>

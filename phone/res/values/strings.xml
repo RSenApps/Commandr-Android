@@ -145,7 +145,7 @@
     <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases:</string>
     <string name="tasker_edit_activity_blurb">Commandr configured to listen for phrase: </string>
     <string name="return_previous_app_title">Return to Previous App</string>
-    <string name="return_previous_app_summary">Return to the previous app after a command or keep Google Now open</string>
+    <string name="return_previous_app_summary">Return to the previous app after a command (this does not work if you are using Google Now Launcher)</string>
     <string name="commandr_speaking">Commandr Speaking...</string>
     <string name="stop">Stop</string>
     <string name="unlock_phrases">unlock phone</string>

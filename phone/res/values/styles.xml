@@ -8,4 +8,14 @@
         <item name="colorAccent">#2196F3</item>
         <item name="colorControlNormal">#1565C0</item>
     </style>
+    <color name="apptentive_activity_frames">#99000000</color>
+
+    <style name="MyApptentiveTheme" parent="Theme.AppCompat.Light">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/apptentive_activity_frames</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
 </resources>
