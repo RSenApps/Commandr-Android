@@ -9,9 +9,9 @@
     <string name="setup_test_question">Digita di seguito il comando per \"metti in pausa la musica\":</string>
     <string name="setup_passthrough_first">Per prendere una nota normale, semplicemente inizia la frase con \"nota\"</string>
     <string name="setup_passthrough_example">Esempio: \"Nota fai il bucato\"</string>
-    <string name="about_message">Commandr was initially developed by Ryan Senanayake when he was 16 years old. See more at www.RSenApps.com
-    \n\nSpecial thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!\n\nThanks to the following libraries:\nCard Library by gabrielmariotti github.com/gabrielmariotti/cardslib\n
-    ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nAndroid Donations Lib by dschuermann github.com/dschuermann/android-donations-lib\nMaterial Dialogs by afollestad github.com/afollestad/material-dialogs</string>
+    <string name="about_message">Commandr fu inizialmente sviluppato da Ryan Senanayake quando aveva 16 anni. Per maggiori informazioni visita www.RSenApps.com
+\n\nRingraziamenti speciali vanno a Sky Kesley e al Team Apptentive così come Adriano Loiacono per il lavoro di progettazione grafica!\n\nGrazie alle seguenti librerie:\nCard Library by gabrielmariotti github.com/gabrielmariotti/cardslib\n
+ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nAndroid Donations Lib by dschuermann github.com/dschuermann/android-donations-lib\nMaterial Dialogs by afollestad github.com/afollestad/material-dialogs</string>
     <string name="fb_share_msg">Prova Commandr per Google Now, per aggiungere comandi a Google Now, non richiede root! Ora puoi usare Google Now per controllare la tua torcia, impostazioni rapide, controllo della musica in riproduzione, e molto di più!</string>
     <string name="vote_new_commands">Vota per Nuovi Comandi</string>
     <string name="no_tasker_commands">Aggiungi comandi prima all\'interno dell\'app Tasker.</string>
@@ -185,20 +185,20 @@
     <string name="xposed_title">Usa Xposed (solo root)</string>
     <string name="xposed_summary">Bisogna solo attivare Xposed se vuoi usare Commandr da Android Wear senza dire "Nota a sè" prima del comando</string>
     <string name="disable_accessibility">Ora puoi disabilitare i servizi di accessibilità...</string>
-    <string name="update_xposed">Please update to at least version 1.4 of Google Search API (linked in this post)</string>
-    <string name="install_xposed">Please first install the Xposed Module. The one linked on the main thread is not the most updated. Instead download the one in this post (1.4)</string>
-    <string name="sync_title">Enable Sync</string>
+    <string name="update_xposed">Per favore, aggiornate all\'ultima versione 1.4 di Google Search API (link nel post)</string>
+    <string name="install_xposed">Prima, per favore, installate il Modulo Xposed Quello linkato nel thread principale non è il più aggiornato. Scaricate invece la versione in questo post(1.4)</string>
+    <string name="sync_title">Attivare Sync</string>
     <string name="sync_phrases">Sync on</string>
     <string name="sync_off_title">Sync off</string>
-    <string name="sync_off_phrases">Disable Sync</string>
-    <string name="good_night_title">Disable WiFi,mobile data and turn on vibration(Night mode)</string>
-    <string name="good_night_phrase">Goodnight</string>
-    <string name="airplane_title">Enable Airplane mode(root only)</string>
-    <string name="airplane_phrase">Airplane mode on</string>
-    <string name="airplane_off_title">Disable Airplane mode(root only)</string>
-    <string name="airplane_off_phrase">Airplane mode off</string>
-    <string name="clear_notifications_phrase">clear notifications</string>
-    <string name="clear_notifications_title">Clear Notifications (Root Only)</string>
-    <string name="suggest_new">Suggest New Command</string>
-    <string name="submit">Submit</string>
+    <string name="sync_off_phrases">Disattivare Sync</string>
+    <string name="good_night_title">Disattiva WiFi, dati mobile e attiva vibrazione(modalità notte)</string>
+    <string name="good_night_phrase">Buona notte</string>
+    <string name="airplane_title">Attivare modalità Aereo(solo root)</string>
+    <string name="airplane_phrase">Modalità aereo on</string>
+    <string name="airplane_off_title">Disattivare modalità aereo(solo root)</string>
+    <string name="airplane_off_phrase">Modalità aereo off</string>
+    <string name="clear_notifications_phrase">rimuovi notifiche</string>
+    <string name="clear_notifications_title">Rimuovi notifiche(solo root)</string>
+    <string name="suggest_new">Suggerisci nuovi comandi</string>
+    <string name="submit">Invia</string>
 </resources>

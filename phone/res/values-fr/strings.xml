@@ -9,9 +9,12 @@
     <string name="setup_test_question">Ecrivez la commande pour "Mettre en pause la musique" ci-dessous :</string>
     <string name="setup_passthrough_first">Pour prendre une note normale, commencez juste par "note"</string>
     <string name="setup_passthrough_example">Exemple : "Note faire la lessive"</string>
-    <string name="about_message">Commandr was initially developed by Ryan Senanayake when he was 16 years old. See more at www.RSenApps.com
-    \n\nSpecial thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!\n\nThanks to the following libraries:\nCard Library by gabrielmariotti github.com/gabrielmariotti/cardslib\n
-    ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nAndroid Donations Lib by dschuermann github.com/dschuermann/android-donations-lib\nMaterial Dialogs by afollestad github.com/afollestad/material-dialogs</string>
+    <string name="about_message">Commandr a été initialement développé par Ryan Senanayake quand il avait 16 ans. Plus d\'informations sur www.RSenApps.com
+Special thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!
+Thanks to the following libraries: Card Library by gabrielmariotti github.com/gabrielmariotti/cardslib
+ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations
+AndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid
+SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
     <string name="fb_share_msg">Essayez Commandr pour Google Now pour ajouter des commandes dans Google Now ! Pas de root requis ! Maintenant vous pouvez utiliser Google Now pour controler la lampe de poche, changer des paramètres système, contrôler le lecteur de musique et plus encore !</string>
     <string name="vote_new_commands">Voter pour de nouvelles commandes</string>
     <string name="no_tasker_commands">Ajoutez d\'abord des commandes dans l\'appli Tasker.</string>
@@ -117,7 +120,7 @@
     <string name="unread_gmail_phrases">Lire gmail, lire message gmail</string>
     <string name="unread_gmail_title">Lire Gmail non lus</string>
     <string name="fetching_gmail">Récupération de Gmail...</string>
-    <string name="wolfram_redirect">Weiterleitung...</string>
+    <string name="wolfram_redirect">Redirection...</string>
     <string name="no_unread">Il n\'y a pas de messages non lus.</string>
     <string name="one_unread">Il y a un message non lu.</string>
     <string name="there_are">Il y a</string>
@@ -174,31 +177,31 @@
     <string name="send_whatsapp_title">Envoyer un message Whatsapp</string>
     <string name="message">message</string>
     <string name="install_whatsapp">D\'abord, installez Whatsapp...</string>
-    <string name="enable_rotation_lock_phrase">Désactiver la rotation automatique</string>
-    <string name="enable_rotation_lock_title">Désactiver la rotation automatique</string>
-    <string name="rotation_lock_off_phrase">Activer la rotation automatique</string>
-    <string name="rotation_lock_off_title">Activer la rotation automatique</string>
-    <string name="wifi_ap_on_title">Wireless Hotspot On</string>
-    <string name="wifi_ap_on_phrase">turn on wireless hotspot</string>
-    <string name="wifi_ap_off_title">Wireless Hotspot Off</string>
-    <string name="wifi_ap_off_phrase">turn off wireless hotspot</string>
+    <string name="enable_rotation_lock_phrase">Activer la rotation automatique</string>
+    <string name="enable_rotation_lock_title">Activer la rotation automatique</string>
+    <string name="rotation_lock_off_phrase">Désactiver la rotation automatique</string>
+    <string name="rotation_lock_off_title">Désactiver la rotation automatique</string>
+    <string name="wifi_ap_on_title">Recherche de connexion sans fils activée</string>
+    <string name="wifi_ap_on_phrase">Activer la recherche de connexion sans fils</string>
+    <string name="wifi_ap_off_title">Recherche de connexion sans fils désactivée</string>
+    <string name="wifi_ap_off_phrase">Désactiver la recherche de connexion sans fils</string>
     <string name="xposed_title">Use Xposed (root only)</string>
     <string name="xposed_summary">Only need to enable Xposed if you want to use Commandr from Android Wear without saying take a note before the command</string>
     <string name="disable_accessibility">You can now disable the accessibility service...</string>
     <string name="update_xposed">Please update to at least version 1.4 of Google Search API (linked in this post)</string>
     <string name="install_xposed">Please first install the Xposed Module. The one linked on the main thread is not the most updated. Instead download the one in this post (1.4)</string>
-    <string name="sync_title">Enable Sync</string>
-    <string name="sync_phrases">Sync on</string>
-    <string name="sync_off_title">Sync off</string>
-    <string name="sync_off_phrases">Disable Sync</string>
+    <string name="sync_title">Activer la synchronisation</string>
+    <string name="sync_phrases">Sync activée</string>
+    <string name="sync_off_title">Sync désactivée</string>
+    <string name="sync_off_phrases">Désactiver la synchronisation</string>
     <string name="good_night_title">Disable WiFi,mobile data and turn on vibration(Night mode)</string>
-    <string name="good_night_phrase">Goodnight</string>
-    <string name="airplane_title">Enable Airplane mode(root only)</string>
-    <string name="airplane_phrase">Airplane mode on</string>
-    <string name="airplane_off_title">Disable Airplane mode(root only)</string>
-    <string name="airplane_off_phrase">Airplane mode off</string>
-    <string name="clear_notifications_phrase">clear notifications</string>
-    <string name="clear_notifications_title">Clear Notifications (Root Only)</string>
-    <string name="suggest_new">Suggest New Command</string>
-    <string name="submit">Submit</string>
+    <string name="good_night_phrase">Bonne nuit</string>
+    <string name="airplane_title">Activer le mode avion (root uniquement)</string>
+    <string name="airplane_phrase">Mode avion activé</string>
+    <string name="airplane_off_title">Désactiver le mode avion (root uniquement)</string>
+    <string name="airplane_off_phrase">Mode avion désactivé</string>
+    <string name="clear_notifications_phrase">nettoyer les notifications</string>
+    <string name="clear_notifications_title">Nettoyer les notifications (root uniquement)</string>
+    <string name="suggest_new">Proposer de nouvelles commandes</string>
+    <string name="submit">Soumettre</string>
 </resources>

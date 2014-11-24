@@ -9,9 +9,8 @@
     <string name="setup_test_question">Gib das Kommando für \"Pausiere Musik\" hier ein:</string>
     <string name="setup_passthrough_first">Um eine normale Notiz zu erstellen, beginnen Sie einfach mit \"Notiz\"</string>
     <string name="setup_passthrough_example">Beispiel: \"Note Wäsche machen\"</string>
-    <string name="about_message">Commandr was initially developed by Ryan Senanayake when he was 16 years old. See more at www.RSenApps.com
-    \n\nSpecial thanks to Sky Kelsey and the Apptentive Team as well as Adriano Loiacono for the graphic design work!\n\nThanks to the following libraries:\nCard Library by gabrielmariotti github.com/gabrielmariotti/cardslib\n
-    ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid by etsy github.com/etsy/AndroidStaggeredGrid\nAndroid Donations Lib by dschuermann github.com/dschuermann/android-donations-lib\nMaterial Dialogs by afollestad github.com/afollestad/material-dialogs</string>
+    <string name="about_message">Commandr wurde ursprünglich von Ryan Senanayake entwickelt als er 16 Jahre alt war. Mehr dazu auf www.RSenApps.com\n\nSpezieller Dank geht an Sky Kelsey und das Apptentive Team sowie an Adriano Loiacono für das Grafikdesign!\n\nDanke außerdem an die folgenden Libraries:\nCard Library von gabrielmariotti github.com/gabrielmariotti/cardslib\n
+ListViewAnimations von nhaarman github.com/nhaarman/ListViewAnimations\nAndroidStaggeredGrid von etsy github.com/etsy/AndroidStaggeredGrid\nSystemBarTint von jgilfelt github.com/jgilfelt/SystemBarTint</string>
     <string name="fb_share_msg">Verwende Commandr für Google Now, um Google Now neue Sprachbefehle beizubringen (es wird kein Root benötigt)! Jetzt kannst du Google Now verwenden, um deine Einstellungen zu ändern, sowie deine Taschenlampe, deine Musik, und noch viel mehr zu kontrollieren!</string>
     <string name="vote_new_commands">Stimme für neue Sprachbefehle ab</string>
     <string name="no_tasker_commands">Füge neue Kommandos zuerst in der Tasker-App hinzu.</string>
@@ -173,7 +172,7 @@
     <string name="send_whatsapp_phrase">Sende WhatsApp</string>
     <string name="send_whatsapp_title">Sende WhatsApp</string>
     <string name="message">message</string>
-    <string name="install_whatsapp">First install Whatsapp...</string>
+    <string name="install_whatsapp">Installiere zuerst WhatsApp... </string>
     <string name="enable_rotation_lock_phrase">enable rotation lock</string>
     <string name="enable_rotation_lock_title">Enable Rotation Lock</string>
     <string name="rotation_lock_off_phrase">disable rotation lock</string>
