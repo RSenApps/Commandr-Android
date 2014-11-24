@@ -38,21 +38,26 @@ public class GoogleNowUtil {
     public static void resetGoogleNow(final Context context) {
         resetGoogleNowOnly(context);
         if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("closegoogle", true)) {
-            Handler handler = new Handler(new Handler.Callback() {
-                @Override
-                public boolean handleMessage(Message message) {
-                    try {
-                        MyAccessibilityService.getInstance().performGlobalAction(AccessibilityService.GLOBAL_ACTION_BACK);
-                    }
-                    catch (Exception e)
-                    {}
-                    return true;
-                }
-            });
-            handler.sendEmptyMessageDelayed(0, 1000);
-
+           returnPreviousApp();
         }
 
 
     }
+    public static void returnPreviousApp()
+    {
+        Handler handler = new Handler(new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message message) {
+                try {
+                    MyAccessibilityService.getInstance().performGlobalAction(AccessibilityService.GLOBAL_ACTION_BACK);
+                }
+                catch (Exception e)
+                {}
+                return true;
+            }
+        });
+        handler.sendEmptyMessageDelayed(0, 1000);
+    }
+
+
 }

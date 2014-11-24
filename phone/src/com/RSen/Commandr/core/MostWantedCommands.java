@@ -32,6 +32,7 @@ import com.RSen.Commandr.builtincommands.RestartNowRootOnly;
 import com.RSen.Commandr.builtincommands.ResumeMusicCommand;
 import com.RSen.Commandr.builtincommands.RotationLockOffCommand;
 import com.RSen.Commandr.builtincommands.RotationLockOnCommand;
+import com.RSen.Commandr.builtincommands.ScreenBrightnessCommand;
 import com.RSen.Commandr.builtincommands.SendWhatsappCommand;
 import com.RSen.Commandr.builtincommands.ShutdownNowRootOnly;
 import com.RSen.Commandr.builtincommands.SilenceRingerCommand;
@@ -39,6 +40,7 @@ import com.RSen.Commandr.builtincommands.SyncCommand;
 import com.RSen.Commandr.builtincommands.SyncOffCommand;
 import com.RSen.Commandr.builtincommands.TakePictureCommand;
 import com.RSen.Commandr.builtincommands.TakeSelfieCommand;
+import com.RSen.Commandr.builtincommands.ThankYouGoogleCommand;
 import com.RSen.Commandr.builtincommands.UnlockCommand;
 import com.RSen.Commandr.builtincommands.UnsilenceRingerCommand;
 import com.RSen.Commandr.builtincommands.VolumePercentage;
@@ -80,7 +82,7 @@ public class MostWantedCommands {
                     new TakePictureCommand(context), new TakeSelfieCommand(context), new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context),
                     new RestartNowRootOnly(context), new ClearNotificationsCommand(context), new WolframRedirectCommand(context), new SendWhatsappCommand(context), new RotationLockOnCommand(context),
                     new RotationLockOffCommand(context), new SyncCommand(context), new SyncOffCommand(context), new GoodNightCommand(context), new AirplaneCommand(context),
-                    new AirplaneOffCommand(context), new CarModeCommand(context), new CarModeOffCommand(context)};
+                    new AirplaneOffCommand(context), new CarModeCommand(context), new CarModeOffCommand(context), new ThankYouGoogleCommand(context),new ScreenBrightnessCommand(context)};
         }
         return commands;
     }
