@@ -24,7 +24,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class WearableListItemLayout extends LinearLayout implements WearableListView.Item {
+public class WearableListItemLayout extends LinearLayout implements WearableListView.OnCenterProximityListener {
 
     private final float mFadedTextAlpha;
     private final int mFadedCircleColor;
@@ -56,36 +56,22 @@ public class WearableListItemLayout extends LinearLayout implements WearableList
     }
 
     @Override
-    public float getProximityMinValue() {
-        return 1f;
+    public void onCenterPosition(boolean b) {
+
+        //Animation example to be ran when the view becomes the centered one
+        mCircle.animate().scaleX(1f).scaleY(1f).alpha(1);
+        mName.animate().scaleX(1f).scaleY(1f).alpha(1);
+
     }
 
     @Override
-    public float getProximityMaxValue() {
-        return 1.6f;
+    public void onNonCenterPosition(boolean b) {
+
+        //Animation example to be ran when the view is not the centered one anymore
+        mCircle.animate().scaleX(0.8f).scaleY(0.8f).alpha(0.6f);
+        mName.animate().scaleX(0.8f).scaleY(0.8f).alpha(0.6f);
+
     }
 
-    @Override
-    public float getCurrentProximityValue() {
-        return mScale;
-    }
 
-    @Override
-    public void setScalingAnimatorValue(float scale) {
-        mScale = scale;
-        mCircle.setScaleX(scale);
-        mCircle.setScaleY(scale);
-    }
-
-    @Override
-    public void onScaleUpStart() {
-        mName.setAlpha(1f);
-        ((GradientDrawable) mCircle.getDrawable()).setColor(mChosenCircleColor);
-    }
-
-    @Override
-    public void onScaleDownStart() {
-        ((GradientDrawable) mCircle.getDrawable()).setColor(mFadedCircleColor);
-        mName.setAlpha(mFadedTextAlpha);
-    }
 }
