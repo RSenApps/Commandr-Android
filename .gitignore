@@ -34,8 +34,7 @@ proguard/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
-
+Icon
 # Thumbnails
 ._*
 
@@ -62,41 +61,7 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 .classpath
-.idea/.name
-.idea/compiler.xml
-.idea/copyright/profiles_settings.xml
-.idea/encodings.xml
-.idea/gradle.xml
-.idea/libraries/library_1_0_5.xml
-.idea/libraries/library_1_7_3.xml
-.idea/libraries/library_2_4_0.xml
-.idea/libraries/library_2_6_0.xml
-.idea/libraries/library_extra_1_7_3.xml
-.idea/libraries/Parse_1_5_1.xml
-.idea/libraries/play_services_5_0_77.xml
-.idea/libraries/support_v13_19_1_0.xml
-.idea/libraries/support_v4_19_1_0.xml
-.idea/libraries/systembartint_1_0_3.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/scopes/scope_settings.xml
-.idea/vcs.xml
-.idea/workspace.xml
-.settings/org.eclipse.jdt.core.prefs
+.idea/
+.settings/
 apptentive-android-sdk/.settings/org.eclipse.jdt.core.prefs
 Commandr.ucls
-commandrkeystore.jks
-.idea/libraries/activation_1_1.xml
-.idea/libraries/activation_1_1.xml
-.idea/libraries/google_api_client_1_19_0.xml
-.idea/libraries/activation_1_1.xml
-.idea/libraries/google_api_client_1_19_0.xml
-.idea/libraries/google_api_services_gmail_v1_rev6_1_19_0.xml
-.idea/libraries/google_http_client_1_19_0.xml
-.idea/libraries/google_http_client_jackson2_1_19_0.xml
-.idea/libraries/google_oauth_client_1_19_0.xml
-.idea/libraries/guava_jdk5_13_0.xml
-.idea/libraries/jackson_core_2_1_3.xml
-.idea/libraries/jsr305_1_3_9.xml
-.idea/libraries/mail_1_4_7.xml
-.idea/workspace.xml___jb_old___
