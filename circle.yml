@@ -15,4 +15,4 @@ test:
     - ./gradlew assembleRelease crashlyticsUploadDistributionGoogleRelease -PdisablePreDex
 general:
   artifacts:
-    - "build/outputs/apk/app-release.apk" # relative to the build directory
+    - "build/outputs/apk/" # relative to the build directory
