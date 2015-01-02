@@ -1,0 +1,18 @@
+machine:
+  environment:
+    ANDROID_HOME: /home/ubuntu/android
+
+dependencies:
+  cache_directories:
+    - ~/.android
+    - ~/android
+  override:
+    - ./install-dependencies.sh
+    - ./gradlew -v
+    - ls /home/ubuntu/android/
+test:
+  override:
+    - ./gradlew assembleRelease crashlyticsUploadDistributionRelease -PdisablePreDex
+general:
+  artifacts:
+    - "app/build/outputs/apk/app-release.apk" # relative to the build directory

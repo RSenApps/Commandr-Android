@@ -7,7 +7,7 @@ dependencies {
     compile 'com.apptentive:apptentive-android:1.6.+@aar'
     compile project(':Donations')
     compile 'com.github.gabrielemariotti.cards:library:1.7.3'
-    compile 'com.google.android.gms:play-services:6.1.+'
+    compile 'com.google.android.gms:play-services:6.5.87'
     compile 'com.github.gabrielemariotti.cards:library-extra:1.7.3'
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     compile 'com.android.support:support-v13:+'
@@ -21,7 +21,7 @@ dependencies {
 android {
 
     compileSdkVersion 21
-    buildToolsVersion '21.0.1'
+    buildToolsVersion '21.1.2'
     defaultConfig {
         versionCode 16
         versionName '3.1'
@@ -61,9 +61,9 @@ android {
         signingConfigs {
             productionConfig {
                 storeFile file("commandrkeystore.jks")
-                storePassword new String(System.console().readPassword("\n\$ Enter keystore password: "))
+                storePassword System.getenv("pswd")
                 keyAlias "commandr"
-                keyPassword new String(System.console().readPassword("\n\$ Enter key password: "))
+                keyPassword System.getenv("pswd")
             }
         }
     } else {
@@ -80,13 +80,16 @@ android {
         debug {
         }
         release {
-            runProguard false
+            minifyEnabled false
             signingConfig signingConfigs.productionConfig
+            ext.betaDistributionEmails="ryanmsen@gmail.com"
             // proguardFile 'proguard-android.txt'
             applicationVariants.all { variant ->
-                def file = variant.outputFile
+                variant.outputs.each { output ->
+                    def file = output.outputFile
 
-                variant.outputFile = new File(file.parent, file.name.replace(".apk", "-" + defaultConfig.getVersionName() + ".apk")) // manifestParser.getVersionName(android.sourceSets.main.manifest.srcFile)
+                    output.outputFile = new File(file.parent, file.name.replace(".apk", "-" + defaultConfig.getVersionName() + ".apk")) // manifestParser.getVersionName(android.sourceSets.main.manifest.srcFile)
+                }
             }
         }
     }

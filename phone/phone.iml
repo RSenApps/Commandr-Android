@@ -10,7 +10,7 @@
       <configuration>
         <option name="SELECTED_BUILD_VARIANT" value="googleDebug" />
         <option name="ASSEMBLE_TASK_NAME" value="assembleGoogleDebug" />
-        <option name="COMPILE_JAVA_TASK_NAME" value="compileGoogleDebugJava" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileGoogleDebugSources" />
         <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleGoogleDebugTest" />
         <option name="SOURCE_GEN_TASK_NAME" value="generateGoogleDebugSources" />
         <option name="TEST_SOURCE_GEN_TASK_NAME" value="generateGoogleDebugTestSources" />
@@ -28,6 +28,7 @@
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/google/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/google/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/google/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/generated/google/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/googleDebug/assets" type="java-resource" />
@@ -40,6 +41,7 @@
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/test/google/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/test/google/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/test/google/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/generated/test/google/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/google/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/google/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/google/assets" type="java-resource" />
@@ -101,24 +103,24 @@
     <orderEntry type="library" exported="" name="google-api-services-gmail-v1-rev6-1.19.0" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-21.0.0" level="project" />
     <orderEntry type="library" exported="" name="floatingactionbutton-1.0.6" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-21.0.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-6.5.87" level="project" />
     <orderEntry type="library" exported="" name="Parse-1.5.1" level="project" />
     <orderEntry type="library" exported="" name="library-2.6.0" level="project" />
     <orderEntry type="library" exported="" name="jackson-core-2.1.3" level="project" />
     <orderEntry type="library" exported="" name="google-api-client-1.19.0" level="project" />
-    <orderEntry type="library" exported="" name="play-services-6.1.11" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="library-1.0.5" level="project" />
+    <orderEntry type="library" exported="" name="support-v13-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="library-1.7.3" level="project" />
     <orderEntry type="library" exported="" name="google-http-client-1.19.0" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-21.0.0" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-21.0.3" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="google-http-client-jackson2-1.19.0" level="project" />
     <orderEntry type="library" exported="" name="guava-jdk5-13.0" level="project" />
     <orderEntry type="library" exported="" name="material-dialogs-0.0.2" level="project" />
     <orderEntry type="library" exported="" name="library-extra-1.7.3" level="project" />
-    <orderEntry type="library" exported="" name="apptentive-android-1.6.5" level="project" />
+    <orderEntry type="library" exported="" name="apptentive-android-1.6.6" level="project" />
     <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
-    <orderEntry type="library" exported="" name="appcompat-v7-21.0.0" level="project" />
-    <orderEntry type="library" exported="" name="support-v13-21.0.0" level="project" />
     <orderEntry type="module" module-name="Donations" exported="" />
   </component>
 </module>
