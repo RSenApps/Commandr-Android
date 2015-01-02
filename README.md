@@ -1,5 +1,5 @@
 ![alt tag](http://commandr.rsenapps.com/commandrfeature.jpg)
-Commandr for Google Now (Android)
+Commandr for Google Now (Android) [![Circle CI](https://circleci.com/gh/RSenApps/Commandr-Android.svg?style=svg)](https://circleci.com/gh/RSenApps/Commandr-Android)
 ================
 
 Add commands to Google Now, no root required!
