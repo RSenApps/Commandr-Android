@@ -93,7 +93,7 @@
             android:parentActivityName=".ui.activity.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".ui.activity.MainActivity" />
         </activity>
         <activity
             android:name=".ui.activity.MostWantedCommandsActivity"
@@ -101,7 +101,7 @@
             android:parentActivityName=".ui.activity.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.RSen.Commandr.MainActivity" />
+                android:value=".ui.activity.MainActivity" />
         </activity>
         <activity
             android:name=".ui.activity.VotingActivity"
@@ -109,7 +109,7 @@
             android:parentActivityName=".ui.activity.MostWantedCommandsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.RSen.Commandr.MostWantedCommandsActivity" />
+                android:value=".ui.activity.MostWantedCommandsActivity" />
         </activity>
 
         <meta-data
@@ -219,7 +219,7 @@
             android:parentActivityName=".ui.activity.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.RSen.Commandr.MainActivity" />
+                android:value=".ui.activity.MainActivity" />
         </activity>
         <service android:name=".core.WearListenerService" >
             <intent-filter>
