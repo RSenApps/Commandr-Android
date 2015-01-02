@@ -1,4 +1,19 @@
+buildscript {
+    repositories {
+        maven { url 'http://download.crashlytics.com/maven' }
+    }
+
+    dependencies {
+        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'crashlytics'
+
+repositories {
+    maven { url 'http://download.crashlytics.com/maven' }
+}
+
 
 
 
@@ -16,6 +31,7 @@ dependencies {
     compile 'com.afollestad:material-dialogs:0.0.2'
     compile 'com.melnykov:floatingactionbutton:1.0.6'
     wearApp project(':wear')
+    compile 'com.crashlytics.android:crashlytics:1.+'
 }
 
 android {

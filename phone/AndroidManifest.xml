@@ -240,6 +240,7 @@
         <meta-data
             android:name="xposedminversion"
             android:value="30" />
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="eb7953bfff80cd7f28240687400a7a7e5d6da75f"/>
     </application>
 
 </manifest>

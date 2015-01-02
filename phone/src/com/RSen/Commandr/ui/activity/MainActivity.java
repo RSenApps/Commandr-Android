@@ -31,6 +31,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
 import com.apptentive.android.sdk.Apptentive;
 import com.apptentive.android.sdk.ApptentiveActivity;
+import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.mediation.admob.AdMobExtras;
@@ -108,6 +109,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Crashlytics.start(this);
 
         if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean("setup", false)) {
             Intent i = new Intent(this, SetupActivity.class);
