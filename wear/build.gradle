@@ -16,9 +16,9 @@ android {
         signingConfigs {
             productionConfig {
                 storeFile file("commandrkeystore.jks")
-                storePassword new String(System.console().readPassword("\n\$ Enter keystore password: "))
+                storePassword System.getenv("pswd")
                 keyAlias "commandr"
-                keyPassword new String(System.console().readPassword("\n\$ Enter key password: "))
+                keyPassword System.getenv("pswd")
             }
         }
     } else {
