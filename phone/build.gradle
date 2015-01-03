@@ -53,7 +53,7 @@ android {
         abortOnError false
     }
     dexOptions {
-        javaMaxHeapSize "3g"
+        javaMaxHeapSize "2g"
 
     }
     sourceSets {
