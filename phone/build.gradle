@@ -28,11 +28,12 @@ dependencies {
     compile 'com.github.gabrielemariotti.cards:library-extra:1.7.3'
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     compile 'com.android.support:support-v13:+'
-    compile 'com.android.support:appcompat-v7:21.+'
+    compile 'com.android.support:appcompat-v7:+'
     compile 'com.google.apis:google-api-services-gmail:v1-rev6-1.19.0'
     compile 'com.afollestad:material-dialogs:0.0.2'
     compile 'com.melnykov:floatingactionbutton:1.0.6'
     wearApp project(':wear')
+    compile 'com.android.support:multidex:1.0.0'
     compile 'com.crashlytics.android:crashlytics:1.+'
 }
 
@@ -45,7 +46,11 @@ android {
         versionName '3.1'
         minSdkVersion 16
         targetSdkVersion 21
-        multiDexEnabled = true
+        multiDexEnabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+
     }
     lintOptions {
         disable 'AndroidLintMissingTranslation'
