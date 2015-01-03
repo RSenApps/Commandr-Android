@@ -214,4 +214,6 @@
     <string name="screen_brightness_phrase">screen brightness</string>
     <string name="screen_brightness_title">Screen Brightness</string>
     <string name="invalid_input">Invalid input</string>
+    <string name="battery_status_phrase">battery status</string>
+    <string name="battery_status_title">Battery Status</string>
 </resources>

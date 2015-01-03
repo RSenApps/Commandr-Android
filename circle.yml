@@ -12,7 +12,7 @@ dependencies:
     - ls /home/ubuntu/android/
 test:
   override:
-    - ./gradlew assembleRelease crashlyticsUploadDistributionGoogleRelease
+    - ./gradlew assembleRelease crashlyticsUploadDistributionGoogleRelease -PdisablePreDex
 general:
   artifacts:
     - "phone/build/outputs/apk" # relative to the build directory

@@ -52,6 +52,10 @@ android {
         disable 'AndroidLintMissingTranslation'
         abortOnError false
     }
+    dexOptions {
+        javaMaxHeapSize "3g"
+
+    }
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'

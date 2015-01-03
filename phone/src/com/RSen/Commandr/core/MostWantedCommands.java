@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.RSen.Commandr.builtincommands.AirplaneCommand;
 import com.RSen.Commandr.builtincommands.AirplaneOffCommand;
+import com.RSen.Commandr.builtincommands.BatteryCommand;
 import com.RSen.Commandr.builtincommands.BluetoothCommand;
 import com.RSen.Commandr.builtincommands.BluetoothOffCommand;
 import com.RSen.Commandr.builtincommands.CarModeCommand;
@@ -82,7 +83,7 @@ public class MostWantedCommands {
                     new TakePictureCommand(context), new TakeSelfieCommand(context), new ShutdownNowRootOnly(context), new RebootIntoRecoveryRootOnly(context),
                     new RestartNowRootOnly(context), new ClearNotificationsCommand(context), new WolframRedirectCommand(context), new SendWhatsappCommand(context), new RotationLockOnCommand(context),
                     new RotationLockOffCommand(context), new SyncCommand(context), new SyncOffCommand(context), new GoodNightCommand(context), new AirplaneCommand(context),
-                    new AirplaneOffCommand(context), new CarModeCommand(context), new CarModeOffCommand(context), new ThankYouGoogleCommand(context),new ScreenBrightnessCommand(context)};
+                    new AirplaneOffCommand(context), new CarModeCommand(context), new CarModeOffCommand(context), new ThankYouGoogleCommand(context),new ScreenBrightnessCommand(context), new BatteryCommand(context)};
         }
         return commands;
     }
