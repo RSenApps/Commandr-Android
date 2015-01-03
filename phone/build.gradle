@@ -1,20 +1,30 @@
 buildscript {
     repositories {
+        mavenCentral()
         maven { url 'http://download.crashlytics.com/maven' }
     }
 
     dependencies {
+        classpath 'org.zooper.gradle:gradle-getlocalization-plugin:1.+'
         classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+
     }
 }
+
+
 apply plugin: 'com.android.application'
+apply plugin: 'android-getlocalization'
 apply plugin: 'crashlytics'
 
 repositories {
     maven { url 'http://download.crashlytics.com/maven' }
 }
 
-
+getlocalization {
+    user = "rsenapps"
+    password = System.getenv("getlocalizationpswd")
+    project = "commandr"
+}
 
 
 
@@ -35,6 +45,7 @@ dependencies {
     wearApp project(':wear')
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.crashlytics.android:crashlytics:1.+'
+
 }
 
 android {
@@ -103,6 +114,7 @@ android {
         debug {
         }
         release {
+
             minifyEnabled false
             signingConfig signingConfigs.productionConfig
             ext.betaDistributionEmails="ryanmsen@gmail.com"
