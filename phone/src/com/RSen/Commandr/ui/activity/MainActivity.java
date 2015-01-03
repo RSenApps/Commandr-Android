@@ -137,18 +137,18 @@ public class MainActivity extends ActionBarActivity {
             adView.setVisibility(View.GONE);
         }
         // Create new fragment and transaction
+        if (savedInstanceState == null) {
+            SettingsFragment newFragment = new SettingsFragment();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
-        SettingsFragment newFragment = new SettingsFragment();
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            // Replace whatever is in the fragment_container view with this fragment,
+            // and add the transaction to the back stack
 
-        // Replace whatever is in the fragment_container view with this fragment,
-        // and add the transaction to the back stack
+            transaction.add(R.id.fragment_container, newFragment);
 
-        transaction.add(R.id.fragment_container, newFragment);
-
-        // Commit the transaction
-        transaction.commit();
-
+            // Commit the transaction
+            transaction.commit();
+        }
         if (checkPlayServices()) {
             gcm = GoogleCloudMessaging.getInstance(this);
             regid = getRegistrationId(this);
