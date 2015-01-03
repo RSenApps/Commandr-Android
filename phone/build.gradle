@@ -22,7 +22,12 @@ repositories {
 
 getlocalization {
     user = "rsenapps"
-    password = GET_LOCALIZATION_PSWD
+    try {
+        password = GET_LOCALIZATION_PSWD
+    }
+    catch (Exception e) {
+        password = ""
+    }
     project = "commandr"
 }
 
