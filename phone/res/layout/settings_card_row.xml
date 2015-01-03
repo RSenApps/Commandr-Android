@@ -37,11 +37,11 @@
 
             <ImageButton
                 android:id="@+id/button"
-                style="?android:borderlessButtonStyle"
+                android:background="@null"
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/ic_action_content_edit"/>
+                android:src="@drawable/ic_content_create"/>
 
         </RelativeLayout>
 
