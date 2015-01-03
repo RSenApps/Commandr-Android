@@ -30,7 +30,9 @@ Fix an issue with how commands are intercepted:
 Add better integration with Tasker:
  - See TaskerCommands in core
  
-Please email me at RSenApps@gmail.com if you have any questions!
+Feel free to add yourself to the email list in phone/build.gradle to automatically be sent beta releases once it passes the build server.
+
+Please email me at Ryan@RSenApps.com if you have any questions!
 
 Acknowledgements
 ================
