@@ -10,7 +10,6 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
     }
     final Console console = System.console();
     if (console != null) {
@@ -36,7 +35,6 @@ android {
         debug {
         }
         release {
-            minifyEnabled false
             signingConfig signingConfigs.productionConfig
         }
     }

@@ -48,10 +48,6 @@ android {
         targetSdkVersion 21
         multiDexEnabled true
     }
-    dexOptions {
-        javaMaxHeapSize "4g"
-
-    }
     lintOptions {
         disable 'AndroidLintMissingTranslation'
         abortOnError false
