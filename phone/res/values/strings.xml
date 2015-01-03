@@ -210,7 +210,7 @@
     <string name="disable_car_phrase">disable car mode</string>
     <string name="disable_car_titl">Disable Car Mode</string>
     <string name="thank_you_google_phrase">thank you google</string>
-    <string name="thank_you_google_title"><![CDATA[Close & Return to Previous App]]></string>
+    <string name="thank_you_google_title">Close &amp; Return to Previous App</string>
     <string name="screen_brightness_phrase">screen brightness</string>
     <string name="screen_brightness_title">Screen Brightness</string>
     <string name="invalid_input">Invalid input</string>

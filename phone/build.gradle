@@ -22,7 +22,7 @@ repositories {
 
 getlocalization {
     user = "rsenapps"
-    password = System.getenv("getlocalizationpswd")
+    password = GET_LOCALIZATION_PSWD
     project = "commandr"
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Translation 'es'->[es], progress 95%, master 'strings.xml' -->
+<!-- Translation 'es'->[es], progress 89%, master 'strings.xml' -->
 <resources>
   <string name="app_name">Commandr para Google Now</string>
   <string name="title_activity_most_wanted_commands">Comandos Integrados</string>
@@ -209,8 +209,20 @@
   <string name="disable_car_phrase">disable car mode</string>
   <string name="disable_car_titl">Apagar modo auto</string>
   <string name="thank_you_google_phrase">Gracias Google</string>
-  <string name="thank_you_google_title">Cerrar y volver a la app anterior</string>
+  <string name="thank_you_google_title">Close &amp; Return to Previous App</string>
   <string name="screen_brightness_phrase">brillo de pantalla</string>
   <string name="screen_brightness_title">Brillo de Pantalla</string>
   <string name="invalid_input">Entrada invalida</string>
+  <string name="battery_status_phrase">battery status</string>
+  <string name="battery_status_title">Battery Status</string>
+  <string name="title_activity_audio_capture">AudioCaptureActivity</string>
+  <string name="play">Play</string>
+  <string name="recording">Recording</string>
+  <string name="start">Start</string>
+  <string name="capture_audio_phras">capture audio</string>
+  <string name="audio_capture_title">Audio Capture</string>
+  <string name="seconds">seconds</string>
+  <string name="ready">Ready</string>
+  <string name="audio_recording_successful">Audio recorded successfully</string>
+  <string name="playing_audio">Playing audio</string>
 </resources>
