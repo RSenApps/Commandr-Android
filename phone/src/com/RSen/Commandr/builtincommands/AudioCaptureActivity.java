@@ -33,7 +33,6 @@ public class AudioCaptureActivity extends Activity {
     private TextView display;
     MediaPlayer m;
     CountDownTimer timer;
-    boolean dontFinishTimer = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +67,6 @@ public class AudioCaptureActivity extends Activity {
         {
             display.setText(getString(R.string.recording) + " - " + seconds + " " + getString(R.string.seconds));
             start(start);
-            dontFinishTimer = false;
             timer = new CountDownTimer(seconds * 1000, 1000) {//CountDownTimer(edittext1.getText()+edittext2.getText()) also parse it to long
 
                 public void onTick(long millisUntilFinished) {
@@ -76,9 +74,8 @@ public class AudioCaptureActivity extends Activity {
                 }
 
                 public void onFinish() {
-                    if(dontFinishTimer) {
-                        stop(stop);
-                    }
+                     stop(stop);
+
                 }
             }.start();
 
@@ -122,7 +119,6 @@ public class AudioCaptureActivity extends Activity {
     public void stop(View view) {
         try {
             if (timer != null) {
-                dontFinishTimer = true;
                 timer.cancel();
             }
             myAudioRecorder.stop();
