@@ -148,6 +148,7 @@ public class AudioCaptureActivity extends Activity {
         m.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                m.reset();
                 play.setEnabled(true);
             }
         });
