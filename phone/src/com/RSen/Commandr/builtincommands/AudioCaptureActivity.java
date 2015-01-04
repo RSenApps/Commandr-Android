@@ -142,9 +142,15 @@ public class AudioCaptureActivity extends Activity {
     public void play(View view) throws IllegalArgumentException,
             SecurityException, IllegalStateException, IOException{
 
-
+        play.setEnabled(false);
         m.setDataSource(outputFile);
         m.prepare();
+        m.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                play.setEnabled(true);
+            }
+        });
         m.start();
         Toast.makeText(getApplicationContext(), getString(R.string.playing_audio), Toast.LENGTH_LONG).show();
 
