@@ -287,6 +287,8 @@ public class TakePictureActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
+        timerCancelled = true;
+        timer.cancel();
         if (camera != null) {
             if (inPreview) {
                 camera.stopPreview();
@@ -296,8 +298,7 @@ public class TakePictureActivity extends Activity {
             camera = null;
             inPreview = false;
         }
-        timerCancelled = true;
-        timer.cancel();
+
     }
     private Camera.Size getBestPreviewSize(int width, int height,
                                            Camera.Parameters parameters) {
