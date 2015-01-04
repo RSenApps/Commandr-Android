@@ -89,7 +89,11 @@ public class AudioCaptureActivity extends Activity {
     protected void onPause() {
         super.onPause();
         stop(stop);
-        timer.cancel();
+        try {
+            timer.cancel();
+        }
+        catch (Exception e)
+        {}
         try {
            m.release();
         }
