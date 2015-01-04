@@ -121,8 +121,10 @@ public class AudioCaptureActivity extends Activity {
 
     public void stop(View view) {
         try {
-            dontFinishTimer = true;
-            timer.cancel();
+            if (timer != null) {
+                dontFinishTimer = true;
+                timer.cancel();
+            }
             myAudioRecorder.stop();
             myAudioRecorder.release();
             myAudioRecorder = null;
