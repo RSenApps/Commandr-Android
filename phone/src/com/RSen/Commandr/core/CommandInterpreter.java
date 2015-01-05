@@ -15,7 +15,11 @@ import com.RSen.Commandr.tasker.TaskerPlugin;
  */
 public class CommandInterpreter {
     //continuous from accessibility, don't always show no command found...
-    public static boolean interpret(Context context, String interceptedCommand, boolean continuous) {
+    public static boolean interpret(Context context, String interceptedCommand, boolean continuous)
+    {
+        return interpret(context, interceptedCommand, false);
+    }
+    public static boolean interpret(Context context, String interceptedCommand, boolean continuous, boolean dontResetGoogleNow) {
         boolean commandExecuted = false;
         Intent taskerActionPlugin = new Intent("com.twofortyfouram.locale.intent.action.REQUEST_QUERY").putExtra("com.twofortyfouram.locale.intent.extra.ACTIVITY",
                 EditActivity.class.getName());
@@ -29,9 +33,9 @@ public class CommandInterpreter {
             if (interceptedCommand == null || interceptedCommand.equals("TEST")) {
                 return false;
             }
-            commandExecuted = MostWantedCommands.execute(context, interceptedCommand);
+            commandExecuted = MostWantedCommands.execute(context, interceptedCommand, dontResetGoogleNow);
 
-            if (TaskerCommands.execute(context, interceptedCommand)) {
+            if (TaskerCommands.execute(context, interceptedCommand, dontResetGoogleNow)) {
                 commandExecuted = true;
             }
             if (!commandExecuted) {

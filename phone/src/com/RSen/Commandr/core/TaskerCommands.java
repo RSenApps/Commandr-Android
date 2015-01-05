@@ -140,6 +140,11 @@ public class TaskerCommands {
         return returnList;
     }
 
+
+    public static boolean execute(final Context context, String interceptedCommand)
+    {
+        return execute(context, interceptedCommand, false);
+    }
     /**
      * Executes the matching Tasker Command for a given command phrase
      *
@@ -147,7 +152,7 @@ public class TaskerCommands {
      * @param interceptedCommand The command phrase to execute
      * @return True if command executed, otherwise false
      */
-    public static boolean execute(final Context context, String interceptedCommand) {
+    public static boolean execute(final Context context, String interceptedCommand, boolean dontResetGoogleNow) {
         if (taskerCommands == null) {
             load(context);
         }
@@ -158,7 +163,9 @@ public class TaskerCommands {
                     String[] activationPhrases = cmd.activationName.toLowerCase().split(",");
                     for (String activationPhrase : activationPhrases) {
                         if (interceptedCommand.toLowerCase().trim().equals(activationPhrase.trim()) && cmd.isEnabled) {
-                            GoogleNowUtil.resetGoogleNow(context);
+                            if (!dontResetGoogleNow) {
+                                GoogleNowUtil.resetGoogleNow(context);
+                            }
                             Handler handler = new Handler(new Handler.Callback() {
                                 @Override
                                 public boolean handleMessage(Message message) {

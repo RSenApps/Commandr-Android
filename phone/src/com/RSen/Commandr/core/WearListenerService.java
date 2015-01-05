@@ -15,7 +15,7 @@ public class WearListenerService extends WearableListenerService {
         super.onMessageReceived(messageEvent);
         if("/command".equals(messageEvent.getPath())) {
              String command = new String (messageEvent.getData());
-            CommandInterpreter.interpret(this, command, false);
+            CommandInterpreter.interpret(this, command, false, true);
         }
     }
 }

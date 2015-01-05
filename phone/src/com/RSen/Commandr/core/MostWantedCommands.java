@@ -89,8 +89,11 @@ public class MostWantedCommands {
         }
         return commands;
     }
-
-    public static boolean execute(Context context, String phrase) {
+    public static boolean execute (Context context, String phrase)
+    {
+        return execute(context, phrase, false);
+    }
+    public static boolean execute(Context context, String phrase, boolean dontResetGoogleNow) {
         boolean commandExecuted = false;
         for (MostWantedCommand command : getCommands(context)) {
             if (command.isEnabled(context)) {
@@ -100,7 +103,7 @@ public class MostWantedCommands {
                         if (activationPhrase.toLowerCase().trim().equals(phrase.toLowerCase().trim())) {
                             command.execute(context, "");
                             commandExecuted = true;
-                            if (!command.isHandlingGoogleNowReset()) {
+                            if (!command.isHandlingGoogleNowReset() && !dontResetGoogleNow) {
                                 GoogleNowUtil.resetGoogleNow(context);
                             }
                         }
@@ -108,7 +111,7 @@ public class MostWantedCommands {
                         if (phrase.toLowerCase().trim().startsWith(activationPhrase.toLowerCase().trim())) {
                             command.execute(context, phrase.toLowerCase().trim().substring(activationPhrase.trim().length()).trim());
                             commandExecuted = true;
-                            if (!command.isHandlingGoogleNowReset()) {
+                            if (!command.isHandlingGoogleNowReset() && !dontResetGoogleNow) {
                                 GoogleNowUtil.resetGoogleNow(context);
                             }
                         }
