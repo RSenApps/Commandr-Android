@@ -122,7 +122,7 @@ android {
 
             minifyEnabled false
             signingConfig signingConfigs.productionConfig
-            ext.betaDistributionEmails="ryanmsen@gmail.com"
+            ext.betaDistributionEmails="ryanmsen@gmail.com, kristian@tigersoul.se"
             // proguardFile 'proguard-android.txt'
             applicationVariants.all { variant ->
                 variant.outputs.each { output ->
