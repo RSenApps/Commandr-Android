@@ -226,4 +226,5 @@
     <string name="ready">Ready</string>
     <string name="audio_recording_successful">Audio recorded successfully</string>
     <string name="playing_audio">Playing audio</string>
+    <string name="phrase_toast"><![CDATA[Use commas to separate phrases. Use &amp;s to check for multiple phrases out of order. For example: \"best, test\" will pass for \"blah test blah best blah\"]]></string>
 </resources>

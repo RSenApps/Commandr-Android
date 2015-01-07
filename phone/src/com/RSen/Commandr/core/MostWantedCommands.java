@@ -99,23 +99,37 @@ public class MostWantedCommands {
             if (command.isEnabled(context)) {
                 String[] activationPhrases = command.getPhrase(context).split(",");
                 for (String activationPhrase : activationPhrases) {
-                    if (command.getPredicateHint() == null) {
-                        if (activationPhrase.toLowerCase().trim().equals(phrase.toLowerCase().trim())) {
+                    boolean commandFound = true;
+                    int commandLength = 0;
+                    for (String activationPhrasePart : activationPhrase.split("&"))
+                    {
+                        commandLength += activationPhrasePart.trim().length();
+                        if (!phrase.toLowerCase().trim().contains(activationPhrasePart.toLowerCase().trim()))
+                        {
+                            commandFound = false;
+                            break;
+                        }
+                    }
+                    if (commandFound)
+                    {
+                        if (command.getPredicateHint() == null)
+                        {
                             command.execute(context, "");
                             commandExecuted = true;
                             if (!command.isHandlingGoogleNowReset() && !dontResetGoogleNow) {
                                 GoogleNowUtil.resetGoogleNow(context);
                             }
                         }
-                    } else {
-                        if (phrase.toLowerCase().trim().startsWith(activationPhrase.toLowerCase().trim())) {
-                            command.execute(context, phrase.toLowerCase().trim().substring(activationPhrase.trim().length()).trim());
+                        else {
+                            command.execute(context, phrase.toLowerCase().trim().substring(commandLength).trim());
                             commandExecuted = true;
                             if (!command.isHandlingGoogleNowReset() && !dontResetGoogleNow) {
                                 GoogleNowUtil.resetGoogleNow(context);
                             }
                         }
                     }
+
+
                 }
 
             }

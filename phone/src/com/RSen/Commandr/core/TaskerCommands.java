@@ -162,7 +162,16 @@ public class TaskerCommands {
                 for (final TaskerCommand cmd : taskerCommands) {
                     String[] activationPhrases = cmd.activationName.toLowerCase().split(",");
                     for (String activationPhrase : activationPhrases) {
-                        if (interceptedCommand.toLowerCase().trim().equals(activationPhrase.trim()) && cmd.isEnabled) {
+                        boolean commandFound = true;
+                        for (String activationPhrasePart : activationPhrase.split("&"))
+                        {
+                            if (!activationPhrase.toLowerCase().trim().contains(activationPhrasePart.toLowerCase().trim()))
+                            {
+                                commandFound = false;
+                                break;
+                            }
+                        }
+                        if (commandFound && cmd.isEnabled) {
                             if (!dontResetGoogleNow) {
                                 GoogleNowUtil.resetGoogleNow(context);
                             }

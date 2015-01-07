@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.core.MostWantedCommand;
@@ -25,6 +26,7 @@ public class EditPhraseDialog {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
         input.setLayoutParams(lp);
+        Toast.makeText(context, context.getString(R.string.phrase_toast), Toast.LENGTH_LONG).show();
         new MaterialDialog.Builder((Activity) context)
                 .title(command.getTitle())
                 .theme(Theme.LIGHT)  // the default is light, so you don't need this line
