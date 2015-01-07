@@ -45,7 +45,7 @@ public class TakePictureActivity extends Activity {
     private static boolean frontFacingCamera;
     private boolean inPreview = false;
     private boolean cameraConfigured=false;
-
+    private boolean safeToTakePicture = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,26 +63,27 @@ public class TakePictureActivity extends Activity {
         // Create an instance of Camera
         camera = getCameraInstance(frontFacingCamera);
         countdownTV = (TextView) findViewById(R.id.countdown);
-        startPreview();
+
 
     }
 
-    private boolean timerCancelled = false;
     CountDownTimer timer = new CountDownTimer(3000, 1000) {
 
         @Override
         public void onTick(long l) {
             countdownTV.setText(((int) l / 1000) + "");
-            timerCancelled = false;
 
         }
 
         @Override
         public void onFinish() {
-            if (!timerCancelled && camera != null) {
-                countdownTV.setText(getString(R.string.smile));
-                shootSound();
-                camera.takePicture(null, null, mPicture);
+            if (safeToTakePicture) {
+                if (camera != null) {
+                    countdownTV.setText(getString(R.string.smile));
+                    shootSound();
+                    camera.takePicture(null, null, mPicture);
+                    safeToTakePicture = false;
+                }
             }
         }
     };
@@ -109,6 +110,7 @@ public class TakePictureActivity extends Activity {
             Date date = new Date();
 
             insertImage(getContentResolver(), BitmapFactory.decodeByteArray(data, 0, data.length, null), "Commandr " + dateFormat.format(date), getString(R.string.taken_with_commandr));
+            safeToTakePicture = true;
             finish();
             GoogleNowUtil.resetGoogleNow(TakePictureActivity.this);
 
@@ -287,7 +289,6 @@ public class TakePictureActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        timerCancelled = true;
         timer.cancel();
         if (camera != null) {
             if (inPreview) {
@@ -380,7 +381,7 @@ public class TakePictureActivity extends Activity {
 
     SurfaceHolder.Callback surfaceCallback=new SurfaceHolder.Callback() {
         public void surfaceCreated(SurfaceHolder holder) {
-            timer.start();
+
         }
 
         public void surfaceChanged(SurfaceHolder holder, int format,
@@ -407,7 +408,9 @@ public class TakePictureActivity extends Activity {
                 setCameraDisplayOrientation(TakePictureActivity.this, 0, camera);
                 initPreview(width, height);
                 startPreview();
-
+                safeToTakePicture = true;
+                timer.cancel();
+                timer.start();
             } catch (Exception e) {
             }
         }
