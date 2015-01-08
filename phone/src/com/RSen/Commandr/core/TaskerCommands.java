@@ -165,7 +165,7 @@ public class TaskerCommands {
                         boolean commandFound = true;
                         for (String activationPhrasePart : activationPhrase.split("&"))
                         {
-                            if (!activationPhrase.toLowerCase().trim().contains(activationPhrasePart.toLowerCase().trim()))
+                            if (!interceptedCommand.toLowerCase().trim().contains(activationPhrasePart.toLowerCase().trim()))
                             {
                                 commandFound = false;
                                 break;
