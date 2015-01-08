@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Translation 'ru'->[ru], progress 80%, master 'strings.xml' -->
+<!-- Translation 'ru'->[ru], progress 79%, master 'strings.xml' -->
 <resources>
   <string name="app_name">Commandr для Google Now</string>
   <string name="title_activity_most_wanted_commands">Встроенные команды</string>
@@ -226,4 +226,7 @@ ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
   <string name="ready">Ready</string>
   <string name="audio_recording_successful">Audio recorded successfully</string>
   <string name="playing_audio">Playing audio</string>
+  <string name="phrase_toast">Use commas to separate phrases. Use &amp;amp;s to check for multiple phrases out of order. For example: \"best, test\" will pass for \"blah test blah best blah\"</string>
+  <string name="navigate_waze_phrase">navigate waze</string>
+  <string name="navigate_waze_title">Navigate with Waze</string>
 </resources>

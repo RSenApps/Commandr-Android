@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Translation 'fr-CA'->[fr-CA], progress 93%, master 'strings.xml' -->
+<!-- Translation 'fr-CA'->[fr-CA], progress 98%, master 'strings.xml' -->
 <resources>
   <string name="app_name">Commandr pour Google Now</string>
   <string name="title_activity_most_wanted_commands">Commandes intégrées</string>
@@ -166,7 +166,7 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
   <string name="root_command_failed">Échec de la commande root</string>
   <string name="show_ads">Afficher les pubs</string>
   <string name="show_ads_description">Afin de m\'aider à payer la fac, merci de ne pas désactiver les pubs :)</string>
-  <string name="donation_paypal_item">Donner</string>
+  <string name="donation_paypal_item">Don</string>
   <string name="donate">Donner</string>
   <string name="donate_description">Par Google Wallet, Paypal ou Flattr</string>
   <string name="silence_ringer_phrase">Mettre en mode silencieux</string>
@@ -204,8 +204,8 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
   <string name="clear_notifications_title">Nettoyer les notifications (root uniquement)</string>
   <string name="suggest_new">Proposer de nouvelles commandes</string>
   <string name="submit">Soumettre</string>
-  <string name="read_last_sms_phrase">last sms from, last text from</string>
-  <string name="last_sms_title">Read Last SMS From Contact</string>
+  <string name="read_last_sms_phrase">dernier sms de, dernier texte de</string>
+  <string name="last_sms_title">Lire le Dernier SMS De Contact</string>
   <string name="no_messages_found">Pas de messages trouvés</string>
   <string name="sender_name">Nom de l\'expéditeur</string>
   <string name="car_mode_phrase">active le mode voiture</string>
@@ -217,16 +217,19 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
   <string name="screen_brightness_phrase">luminosité de l\'écran</string>
   <string name="screen_brightness_title">Luminosité de l\'écran</string>
   <string name="invalid_input">Saisie incorrecte</string>
-  <string name="battery_status_phrase">battery status</string>
-  <string name="battery_status_title">Battery Status</string>
-  <string name="title_activity_audio_capture">AudioCaptureActivity</string>
-  <string name="play">Play</string>
-  <string name="recording">Recording</string>
-  <string name="start">Start</string>
+  <string name="battery_status_phrase">informations sur la batterie</string>
+  <string name="battery_status_title">Informations sur la Batterie</string>
+  <string name="title_activity_audio_capture">Activité de la Capture Audio</string>
+  <string name="play">Écouter</string>
+  <string name="recording">Enregistrer</string>
+  <string name="start">Démarrer</string>
   <string name="capture_audio_phras">capture audio</string>
-  <string name="audio_capture_title">Audio Capture</string>
-  <string name="seconds">seconds</string>
-  <string name="ready">Ready</string>
-  <string name="audio_recording_successful">Audio recorded successfully</string>
-  <string name="playing_audio">Playing audio</string>
+  <string name="audio_capture_title">Capture Audio</string>
+  <string name="seconds">secondes</string>
+  <string name="ready">Prêt</string>
+  <string name="audio_recording_successful">Enregistrement audio réussi</string>
+  <string name="playing_audio">Écouter audio</string>
+  <string name="phrase_toast">Use commas to separate phrases. Use &amp;amp;s to check for multiple phrases out of order. For example: \"best, test\" will pass for \"blah test blah best blah\"</string>
+  <string name="navigate_waze_phrase">navigate waze</string>
+  <string name="navigate_waze_title">Navigate with Waze</string>
 </resources>
