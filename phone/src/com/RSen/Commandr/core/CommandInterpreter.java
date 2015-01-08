@@ -17,7 +17,7 @@ public class CommandInterpreter {
     //continuous from accessibility, don't always show no command found...
     public static boolean interpret(Context context, String interceptedCommand, boolean continuous)
     {
-        return interpret(context, interceptedCommand, false);
+        return interpret(context, interceptedCommand, continuous, false);
     }
     public static boolean interpret(Context context, String interceptedCommand, boolean continuous, boolean dontResetGoogleNow) {
         boolean commandExecuted = false;

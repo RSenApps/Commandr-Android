@@ -46,6 +46,7 @@ import com.RSen.Commandr.builtincommands.ThankYouGoogleCommand;
 import com.RSen.Commandr.builtincommands.UnlockCommand;
 import com.RSen.Commandr.builtincommands.UnsilenceRingerCommand;
 import com.RSen.Commandr.builtincommands.VolumePercentage;
+import com.RSen.Commandr.builtincommands.WazeNavigateCommand;
 import com.RSen.Commandr.builtincommands.WifiAPCommand;
 import com.RSen.Commandr.builtincommands.WifiAPOffCommand;
 import com.RSen.Commandr.builtincommands.WifiCommand;
@@ -85,7 +86,7 @@ public class MostWantedCommands {
                     new RestartNowRootOnly(context), new ClearNotificationsCommand(context), new WolframRedirectCommand(context), new SendWhatsappCommand(context), new RotationLockOnCommand(context),
                     new RotationLockOffCommand(context), new SyncCommand(context), new SyncOffCommand(context), new GoodNightCommand(context), new AirplaneCommand(context),
                     new AirplaneOffCommand(context), new CarModeCommand(context), new CarModeOffCommand(context), new ThankYouGoogleCommand(context),new ScreenBrightnessCommand(context), new BatteryCommand(context)
-            , new AudioCaptureCommand(context)};
+            , new AudioCaptureCommand(context), new WazeNavigateCommand(context)};
         }
         return commands;
     }
@@ -115,18 +116,16 @@ public class MostWantedCommands {
                         if (command.getPredicateHint() == null)
                         {
                             command.execute(context, "");
-                            commandExecuted = true;
-                            if (!command.isHandlingGoogleNowReset() && !dontResetGoogleNow) {
-                                GoogleNowUtil.resetGoogleNow(context);
-                            }
+
                         }
                         else {
                             command.execute(context, phrase.toLowerCase().trim().substring(commandLength).trim());
-                            commandExecuted = true;
-                            if (!command.isHandlingGoogleNowReset() && !dontResetGoogleNow) {
-                                GoogleNowUtil.resetGoogleNow(context);
-                            }
                         }
+                        commandExecuted = true;
+                        if (!command.isHandlingGoogleNowReset() && !dontResetGoogleNow) {
+                            GoogleNowUtil.resetGoogleNow(context);
+                        }
+                        break;
                     }
 
 
