@@ -66,6 +66,11 @@ public final class QueryReceiver extends BroadcastReceiver {
                         }
                     }
                     if (matchFound) {
+                        if ( TaskerPlugin.Condition.hostSupportsVariableReturn( intent.getExtras() ) ) {
+                            Bundle varsBundle = new Bundle();
+                            varsBundle.putString("%commandr_text", lastPhrase.trim());
+                            TaskerPlugin.addVariableBundle( getResultExtras( true ), varsBundle );
+                        }
                         setResultCode(LocaleIntent.RESULT_CONDITION_SATISFIED);
                     } else {
                         setResultCode(LocaleIntent.RESULT_CONDITION_UNSATISFIED);
