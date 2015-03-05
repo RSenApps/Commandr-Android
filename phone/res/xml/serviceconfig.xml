@@ -4,7 +4,7 @@
     android:accessibilityEventTypes="typeViewTextSelectionChanged|typeWindowContentChanged"
     android:accessibilityFeedbackType="feedbackGeneric"
     android:canRetrieveWindowContent="true"
-    android:accessibilityFlags="flagIncludeNotImportantViews|flagReportViewIds"
+    android:accessibilityFlags="flagIncludeNotImportantViews"
     android:description="@string/accessibility_description"
     android:notificationTimeout="100"
     android:packageNames="com.google.android.googlequicksearchbox"
