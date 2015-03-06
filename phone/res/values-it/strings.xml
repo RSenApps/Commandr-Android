@@ -143,8 +143,7 @@ ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
   <string name="tasker_edit_activity_label">Plugin di Commandr</string>
   <string name="commandr_configured_successfully">Commandr configurato con successo</string>
   <string name="tasker_edit_activity_prompt">Che testo deve cercare Commandr? Puoi separare più frasi con una virgola:</string>
-  <string name="tasker_edit_activity_blurb">Commandr è configurato per ascoltare la frase:</string>
-  <string name="return_previous_app_title">Ritorna all\'app precedente</string>
+    <string name="return_previous_app_title">Ritorna all\'app precedente</string>
   <string name="return_previous_app_summary">Torna all\'app precendete dopo un comando(ciò non funziona se state usando il llauncher Google Now)</string>
   <string name="commandr_speaking">Commandr sta parlando&#8230;</string>
   <string name="stop">Stop</string>

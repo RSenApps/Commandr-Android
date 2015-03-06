@@ -142,8 +142,7 @@
   <string name="tasker_edit_activity_label">Plugin de Commandr</string>
   <string name="commandr_configured_successfully">Commandr configurado exitosamente</string>
   <string name="tasker_edit_activity_prompt">¿Qué texto debe buscar Commandr? Puede buscar varias frases separandolas con comas</string>
-  <string name="tasker_edit_activity_blurb">Commandr configurado para escuchar frase:</string>
-  <string name="return_previous_app_title">Regresar a la aplicación anterior</string>
+    <string name="return_previous_app_title">Regresar a la aplicación anterior</string>
   <string name="return_previous_app_summary">Volver a la aplicación anterior tras un comando (No funcionará si usas Google Now Launcher)</string>
   <string name="commandr_speaking">Commandr está hablando&#8230;</string>
   <string name="stop">Detener</string>

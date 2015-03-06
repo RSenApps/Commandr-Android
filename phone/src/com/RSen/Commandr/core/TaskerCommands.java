@@ -3,14 +3,15 @@ package com.RSen.Commandr.core;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
 
 import com.RSen.Commandr.R;
 import com.RSen.Commandr.tasker.TaskerIntent;
+import com.RSen.Commandr.util.ActivationCheck;
 import com.RSen.Commandr.util.GoogleNowUtil;
-import com.RSen.Commandr.util.WearUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,6 +20,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.regex.MatchResult;
 
 /**
  * @author Ryan Senanayake
@@ -61,7 +63,7 @@ public class TaskerCommands {
                 }
             }
             if (!commandAlreadyAdded) {
-                taskerCommands.add(0, new TaskerCommand(command, command));
+                taskerCommands.add(0, new TaskerCommand(command, false, command));
             }
         }
         //remove old commands
@@ -160,31 +162,43 @@ public class TaskerCommands {
         if (TaskerIntent.testStatus(context).equals(TaskerIntent.Status.OK)) {
             if (taskerCommands != null) {
                 for (final TaskerCommand cmd : taskerCommands) {
-                    String[] activationPhrases = cmd.activationName.toLowerCase().split(",");
-                    for (String activationPhrase : activationPhrases) {
-                        boolean commandFound = true;
-                        for (String activationPhrasePart : activationPhrase.split("&"))
-                        {
-                            if (!interceptedCommand.toLowerCase().trim().contains(activationPhrasePart.toLowerCase().trim()))
-                            {
-                                commandFound = false;
-                                break;
+                    boolean commandFound = false;
+                    String phraseResult = "";
+                    ArrayList<String> regexResult = null;
+                    if (!cmd.isRegex) {
+                        phraseResult = ActivationCheck.phraseActivation(interceptedCommand, cmd.activationName.trim().toLowerCase());
+                        if (phraseResult != null){
+                            commandFound = true;
+                        }
+                    } else {
+                        MatchResult mr = ActivationCheck.regexActivation(interceptedCommand, cmd.activationName.trim());
+                        if (mr != null){
+                            commandFound = true;
+                            regexResult = new ArrayList<>();
+                            for (int i=0;i<=mr.groupCount();i++){
+                                regexResult.add(mr.group(i));
                             }
                         }
-                        if (commandFound && cmd.isEnabled) {
-                            if (!dontResetGoogleNow) {
-                                GoogleNowUtil.resetGoogleNow(context);
-                            }
-                            Handler handler = new Handler(new Handler.Callback() {
-                                @Override
-                                public boolean handleMessage(Message message) {
-                                    cmd.execute(context, "");
-                                    return true;
-                                }
-                            });
-                            handler.sendEmptyMessageDelayed(0, 2000);
-                            commandExecuted = true;
+                    }
+                    if (commandFound && cmd.isEnabled) {
+                        if (!dontResetGoogleNow) {
+                            GoogleNowUtil.resetGoogleNow(context);
                         }
+                        Bundle resultBundle = new Bundle();
+                        resultBundle.putString("phraseResult",phraseResult);
+                        resultBundle.putStringArrayList("regexResult",regexResult);
+                        Message m = Message.obtain();
+                        m.setData(resultBundle);
+                        Handler handler = new Handler(new Handler.Callback() {
+                            @Override
+                            public boolean handleMessage(Message message) {
+                                Bundle data = message.getData();
+                                cmd.execute(context, data.getString("phraseResult"),data.getStringArrayList("regexResult"));
+                                return true;
+                            }
+                        });
+                        handler.sendEmptyMessageDelayed(0, 2000);
+                        commandExecuted = true;
                     }
 
                 }

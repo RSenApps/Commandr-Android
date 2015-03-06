@@ -143,8 +143,7 @@ github.com/nhaarman/ListviewAnimations\nAndroidStaggeredGrid by etsy github.com/
   <string name="tasker_edit_activity_label">Commandr Plugin</string>
   <string name="commandr_configured_successfully">Commandr succesvol geconfigureerd</string>
   <string name="tasker_edit_activity_prompt">Naar welke tekst zou Commandr moeten zoeken? Je kunt verschillende tekstfragmenten met komma\'s scheiden:</string>
-  <string name="tasker_edit_activity_blurb">Commandr is ingesteld om naar het volgende fragment te luisteren:</string>
-  <string name="return_previous_app_title">Ga terug naar de vorige App</string>
+    <string name="return_previous_app_title">Ga terug naar de vorige App</string>
   <string name="return_previous_app_summary">Return to the previous app after a command (this does not work if you are using Google Now Launcher)</string>
   <string name="commandr_speaking">Commandr praat&#8230;</string>
   <string name="stop">Stop</string>

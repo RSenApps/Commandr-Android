@@ -36,6 +36,15 @@ public abstract class MostWantedCommand extends Command {
         PreferenceManager.getDefaultSharedPreferences(context).edit().putString("phrase" + getTitle(), phrase).commit();
     }
 
+    public boolean isRegex(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("regex" + getTitle(), false);
+    }
+
+    public void setRegex(Context context, boolean is_regex) {
+        WearUtil.updateCommandList(context);
+        PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("regex" + getTitle(), is_regex).commit();
+    }
+
     //commands that launch their own activity must handle resetting google now
     public boolean isHandlingGoogleNowReset() {
         return false;
