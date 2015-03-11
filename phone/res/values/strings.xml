@@ -229,4 +229,6 @@
     <string name="phrase_toast"><![CDATA[Use commas to separate phrases. Use &s to check for multiple phrases out of order. For example: "best & test" will pass for "blah test blah best blah"]]></string>
     <string name="navigate_waze_phrase">navigate waze</string>
     <string name="navigate_waze_title">Navigate with Waze</string>
+    <string name="tweet">Tweet</string>
+    <string name="tweet_phrase">Tweet</string>
 </resources>
