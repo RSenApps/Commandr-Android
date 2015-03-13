@@ -146,7 +146,6 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
     <string name="tasker_edit_activity_label">Plugin Commandr</string>
     <string name="commandr_configured_successfully">Réussite de la configuration de Commandr</string>
     <string name="tasker_edit_activity_prompt">Quel texte Commandr doit-il chercher ? Vous pouvez séparer par des virgules plusieurs phrases :</string>
-    <string name="tasker_edit_activity_blurb">Commandr configuré pour écouter les phrases :</string>
     <string name="return_previous_app_title">Retourner à l\'application précédente</string>
     <string name="return_previous_app_summary">Retourner à l\'application précédente après une commande ou garder Google Now ouvert</string>
     <string name="commandr_speaking">Commandr parle...</string>

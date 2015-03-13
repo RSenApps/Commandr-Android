@@ -143,8 +143,7 @@ ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
   <string name="tasker_edit_activity_label">Плагины Commandr</string>
   <string name="commandr_configured_successfully">Commandr успешно настроен</string>
   <string name="tasker_edit_activity_prompt">Какой текст должен искать Commandr? Вы можете запятой отделить несколько фраз:</string>
-  <string name="tasker_edit_activity_blurb">Commandr настроен для прослушивания фразы:</string>
-  <string name="return_previous_app_title">Вернуться к предыдущему приложению</string>
+    <string name="return_previous_app_title">Вернуться к предыдущему приложению</string>
   <string name="return_previous_app_summary">Return to the previous app after a command (this does not work if you are using Google Now Launcher)</string>
   <string name="commandr_speaking">Commandr говорит &#8230;</string>
   <string name="stop">Стоп.</string>

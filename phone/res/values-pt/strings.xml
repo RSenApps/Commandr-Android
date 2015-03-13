@@ -143,7 +143,6 @@
     <string name="tasker_edit_activity_label">Commandr Plugin</string>
     <string name="commandr_configured_successfully">Commandr configurado com sucesso</string>
     <string name="tasker_edit_activity_prompt">O Commandr deveria procurar qual texto? Você pode digitar várias frases separadas por vírgulas:</string>
-    <string name="tasker_edit_activity_blurb">Commandr configurado para ouvir a frase:</string>
     <string name="return_previous_app_title">Voltar para o App Anterior</string>
     <string name="return_previous_app_summary">Retornar para o aplicativo anterior após um comando ou manter o Google Now aberto</string>
     <string name="commandr_speaking">Commandr Falando...</string>

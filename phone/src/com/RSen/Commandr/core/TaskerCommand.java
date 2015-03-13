@@ -7,6 +7,8 @@ import com.RSen.Commandr.R;
 import com.RSen.Commandr.tasker.TaskerIntent;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.regex.MatchResult;
 
 /**
  * @author Ryan Senanayake
@@ -23,6 +25,7 @@ public class TaskerCommand extends Command implements Serializable {
     /**
      * The command that activates this command
      */
+    public boolean isRegex;
     public String activationName;
     /**
      * The name of the Tasker command to activate
@@ -36,16 +39,25 @@ public class TaskerCommand extends Command implements Serializable {
      * @param activationName    The command phrase that activates the command
      * @param taskerCommandName The Tasker command name.
      */
-    public TaskerCommand(String activationName, String taskerCommandName) {
-        this.activationName = activationName.toLowerCase().trim();
+    public TaskerCommand(String activationName, boolean isRegex,String taskerCommandName) {
+        this.activationName = activationName.trim();
+        this.isRegex = isRegex;
         this.taskerCommandName = taskerCommandName;
     }
 
     @Override
-    public void execute(Context context, String predicate) {
+    public void execute(Context context, String activatedPhrase) {
+        execute(context,activatedPhrase,null);
+    }
+
+    public void execute(Context context, String activatedPhrase, ArrayList<String> activatedRegex) {
         if (TaskerIntent.testStatus(context).equals(TaskerIntent.Status.OK)) {
             try {
                 TaskerIntent i = new TaskerIntent(taskerCommandName);
+                i.addLocalVariable("%commandr_text",activatedPhrase);
+                for (int j=0;j<activatedRegex.size();j++){
+                    i.addLocalVariable("%commandr_"+j,activatedRegex.get(j));
+                }
                 context.sendBroadcast(i);
             } catch (Exception e) {
             }

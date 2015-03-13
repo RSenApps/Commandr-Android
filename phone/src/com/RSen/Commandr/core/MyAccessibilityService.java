@@ -10,6 +10,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.RSen.Commandr.ui.activity.MainActivity;
 import com.RSen.Commandr.ui.activity.SetupActivity;
@@ -85,13 +86,32 @@ public class MyAccessibilityService extends AccessibilityService {
         return thisService;
     }
 
+    private String accessibilityNodeInfoRecursion(AccessibilityNodeInfo ani){
+        if (ani==null) return null;
+        if (ani.getClassName().toString().equals("com.google.android.search.searchplate.SimpleSearchText")&& ani.getText()!=null) {
+            return ani.getText().toString();
+        }
+        String result = null;
+        for(int i=0;i<ani.getChildCount();i++){
+            result = accessibilityNodeInfoRecursion(ani.getChild(i));
+            if (result!=null) {
+                break;
+            }
+        }
+        return result;
+
+    }
     @Override
     public void onAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
         try {
             if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean("usexposed", false)) {
-                String command = accessibilityEvent.getText().get(0).toString();
-                if (CommandInterpreter.interpret(this, command, true) && (lastCommand + timeOut) < accessibilityEvent.getEventTime()) {
-                    lastCommand = accessibilityEvent.getEventTime();
+                AccessibilityNodeInfo ani = accessibilityEvent.getSource();
+                String command = accessibilityNodeInfoRecursion(ani);
+                if (command!=null) {
+                    if ((lastCommand + timeOut) < accessibilityEvent.getEventTime() && CommandInterpreter.interpret(this, command, true)) {
+                        lastCommand = accessibilityEvent.getEventTime();
+                    }
+                    Log.v("command",command);
                 }
             }
         } catch (Exception e) {

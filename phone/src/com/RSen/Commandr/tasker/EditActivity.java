@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.CheckBox;
 
 import com.RSen.Commandr.R;
 
@@ -34,11 +35,14 @@ public final class EditActivity extends Activity {
 
         setContentView(R.layout.tasker_edit_activity);
         final EditText phraseEdit = (EditText) findViewById(R.id.editText);
+        final CheckBox isRegex = (CheckBox) findViewById(R.id.regexCheck);
         if (null == savedInstanceState) {
             if (PluginBundleManager.isBundleValid(localeBundle)) {
                 final String savedPhrase =
                         localeBundle.getString(PluginBundleManager.BUNDLE_EXTRA_STRING_PHRASE);
+                final boolean savedRegex = localeBundle.getBoolean(PluginBundleManager.BUNDLE_EXTRA_REGEX);
                 phraseEdit.setText(savedPhrase);
+                isRegex.setChecked(savedRegex);
             }
         }
         findViewById(R.id.done).setOnClickListener(new View.OnClickListener() {
@@ -55,14 +59,14 @@ public final class EditActivity extends Activity {
                  * stored in the Bundle, as Locale's classloader will not recognize it).
                  */
                 final Bundle resultBundle =
-                        PluginBundleManager.generateBundle(getApplicationContext(), phraseEdit.getText().toString());
+                        PluginBundleManager.generateBundle(getApplicationContext(), phraseEdit.getText().toString(),isRegex.isChecked());
                 resultIntent.putExtra(LocaleIntent.EXTRA_BUNDLE, resultBundle);
 
                 /*
                  * The blurb is concise status text to be displayed in the host's UI.
                  */
                 resultIntent.putExtra(LocaleIntent.EXTRA_STRING_BLURB,
-                        getString(R.string.tasker_edit_activity_blurb) + phraseEdit.getText().toString());
+                        getString(isRegex.isChecked()?R.string.tasker_edit_activity_blurb_regex:R.string.tasker_edit_activity_blurb) + phraseEdit.getText().toString());
 
                 setResult(RESULT_OK, resultIntent);
                 finish();

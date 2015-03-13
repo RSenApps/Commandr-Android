@@ -3,6 +3,7 @@ package com.RSen.Commandr.ui.dialog;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -21,7 +22,10 @@ public class EditPhraseDialog {
 
 
         final EditText input = new EditText(context);
+        final CheckBox is_regex = new CheckBox(context);
         input.setText(command.getPhrase(context));
+        is_regex.setText(context.getString(R.string.regex));
+        is_regex.setChecked(command.isRegex(context));
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
@@ -36,6 +40,7 @@ public class EditPhraseDialog {
                     @Override
                     public void onPositive(MaterialDialog materialDialog) {
                         command.setPhrase(context, input.getText().toString());
+                        command.setRegex(context,is_regex.isChecked());
                         card.refreshCard();
                     }
                 })

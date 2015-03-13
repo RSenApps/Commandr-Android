@@ -142,8 +142,9 @@
     <string name="lower_volume_title">Lower Volume</string>
     <string name="tasker_edit_activity_label">Commandr Plugin</string>
     <string name="commandr_configured_successfully">Commandr configured successfully</string>
-    <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases:</string>
-    <string name="tasker_edit_activity_blurb">Commandr configured to listen for phrase: </string>
+    <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases or use regular expression:</string>
+    <string name="tasker_edit_activity_blurb">Phrase: </string>
+    <string name="tasker_edit_activity_blurb_regex">Regex: </string>
     <string name="return_previous_app_title">Return to Previous App</string>
     <string name="return_previous_app_summary">Return to the previous app after a command (this does not work if you are using Google Now Launcher)</string>
     <string name="commandr_speaking">Commandr Speaking...</string>
@@ -226,7 +227,8 @@
     <string name="ready">Ready</string>
     <string name="audio_recording_successful">Audio recorded successfully</string>
     <string name="playing_audio">Playing audio</string>
-    <string name="phrase_toast"><![CDATA[Use commas to separate phrases. Use &s to check for multiple phrases out of order. For example: "best & test" will pass for "blah test blah best blah"]]></string>
+    <string name="phrase_toast"><![CDATA[Without regular expressions, use commas to separate phrases. Use &s to check for multiple phrases out of order. For example: "best & test" will pass for "blah test blah best blah"]]></string>
     <string name="navigate_waze_phrase">navigate waze</string>
     <string name="navigate_waze_title">Navigate with Waze</string>
+    <string name="regex">The input above is a regular expression</string>
 </resources>

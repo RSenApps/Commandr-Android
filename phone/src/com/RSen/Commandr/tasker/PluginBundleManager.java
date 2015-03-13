@@ -25,6 +25,8 @@ public final class PluginBundleManager {
     public static final String BUNDLE_EXTRA_STRING_PHRASE =
             "com.RSen.Commandr.extra.STRING_PHRASE"; //$NON-NLS-1$
 
+    public static final String BUNDLE_EXTRA_REGEX =
+            "com.RSen.Commandr.extra.REGEX"; //$NON-NLS-1$
 
     /**
      * Method to verify the content of the bundle are correct.
@@ -64,9 +66,10 @@ public final class PluginBundleManager {
      * @param context Application context.
      * @return A plug-in bundle.
      */
-    public static Bundle generateBundle(final Context context, final String phrase) {
+    public static Bundle generateBundle(final Context context, final String phrase,final boolean is_regex) {
         final Bundle result = new Bundle();
         result.putString(BUNDLE_EXTRA_STRING_PHRASE, phrase);
+        result.putBoolean(BUNDLE_EXTRA_REGEX,is_regex);
         return result;
     }
 

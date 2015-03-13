@@ -17,6 +17,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.RSen.Commandr.util.ActivationCheck;
+
+import java.util.ArrayList;
+import java.util.regex.MatchResult;
+
 /**
  * This is the "query" BroadcastReceiver for a Locale Plug-in condition.
  */
@@ -44,31 +49,39 @@ public final class QueryReceiver extends BroadcastReceiver {
             try {
                 final String lastPhrase = TaskerPlugin.Event.retrievePassThroughData(intent).getString("interceptedCommand");
                 final String searchPhrase = bundle.getString(PluginBundleManager.BUNDLE_EXTRA_STRING_PHRASE);
+                final boolean isRegex =  bundle.getBoolean(PluginBundleManager.BUNDLE_EXTRA_REGEX, false);
 
                 if (TaskerPlugin.Event.retrievePassThroughMessageID(intent) == -1)
                     setResultCode(LocaleIntent.RESULT_CONDITION_UNKNOWN);
                 else {
-                    String[] activationPhrases = searchPhrase.split(",");
-                    boolean matchFound = false;
-                    for (String activationPhrase : activationPhrases) {
-                        boolean commandFound = true;
-                        for (String activationPhrasePart : activationPhrase.split("&"))
-                        {
-                            if (!lastPhrase.toLowerCase().trim().contains(activationPhrasePart.toLowerCase().trim()))
-                            {
-                                commandFound = false;
-                                break;
+
+                    boolean commandFound = false;
+                    String phraseResult = "";
+                    ArrayList<String> regexResult = null;
+                    if (!isRegex) { //todo: doplnit reakci na regex, join to utils
+                        phraseResult = ActivationCheck.phraseActivation(lastPhrase, searchPhrase.trim().toLowerCase());
+                        if (phraseResult != null){
+                            commandFound = true;
+                        }
+                    } else {
+                        MatchResult mr = ActivationCheck.regexActivation(lastPhrase,searchPhrase.trim());
+                        if (mr != null){
+                            commandFound = true;
+                            regexResult = new ArrayList<>();
+                            for (int i=0;i<=mr.groupCount();i++){
+                                regexResult.add(mr.group(i));
                             }
                         }
-                        if (commandFound) {
-                            matchFound = true;
-                            break;
-                        }
                     }
-                    if (matchFound) {
+                    if (commandFound) {
                         if ( TaskerPlugin.Condition.hostSupportsVariableReturn( intent.getExtras() ) ) {
                             Bundle varsBundle = new Bundle();
                             varsBundle.putString("%commandr_text", lastPhrase.trim());
+                            if (regexResult!=null){
+                                for (int j=0;j<regexResult.size();j++){
+                                    varsBundle.putString("%commandr_"+j,regexResult.get(j));
+                                }
+                            }
                             TaskerPlugin.addVariableBundle( getResultExtras( true ), varsBundle );
                         }
                         setResultCode(LocaleIntent.RESULT_CONDITION_SATISFIED);

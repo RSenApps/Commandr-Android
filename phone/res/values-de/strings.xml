@@ -142,8 +142,7 @@ ListViewAnimations von nhaarman github.com/nhaarman/ListViewAnimations\nAndroidS
   <string name="tasker_edit_activity_label">Commandr Plugin</string>
   <string name="commandr_configured_successfully">Commandr erfolgreich konfiguriert</string>
   <string name="tasker_edit_activity_prompt">Auf welche Texte sollte Commandr achten? Sie können die Sätze mit einem Komma trennen:</string>
-  <string name="tasker_edit_activity_blurb">Commandr konfiguriert, für den Satz zu hören:</string>
-  <string name="return_previous_app_title">Zurück zur vorherigen App</string>
+    <string name="return_previous_app_title">Zurück zur vorherigen App</string>
   <string name="return_previous_app_summary">Nach einem Kommando zurück zur vorherigen App gehen (funktioniert nicht, wenn du den Google Now Launcher verwendest)</string>
   <string name="commandr_speaking">Commandr spricht&#8230;</string>
   <string name="stop">Stopp</string>
