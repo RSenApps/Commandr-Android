@@ -231,4 +231,6 @@
     <string name="navigate_waze_phrase">navigate waze</string>
     <string name="navigate_waze_title">Navigate with Waze</string>
     <string name="regex">The input above is a regular expression</string>
+    <string name="tweet">Tweet</string>
+    <string name="tweet_phrase">Tweet</string>
 </resources>
