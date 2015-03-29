@@ -45,7 +45,7 @@ public class DonationsActivity extends ActionBarActivity {
     /**
      * PayPal
      */
-    private static final String PAYPAL_USER = "rsenapps@gmail.com";
+    private static final String PAYPAL_USER = "ryanmsen@gmail.com";
     private static final String PAYPAL_CURRENCY_CODE = "USD";
 
     /**
