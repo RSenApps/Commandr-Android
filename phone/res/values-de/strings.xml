@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Translation 'de'->[de], progress 97%, master 'strings.xml' -->
+<!-- Translation 'de'->[de], progress 95%, master 'strings.xml' -->
 <resources>
   <string name="app_name">Commandr für Google Now</string>
   <string name="title_activity_most_wanted_commands">Vorgegebene Befehle</string>
@@ -141,8 +141,10 @@ ListViewAnimations von nhaarman github.com/nhaarman/ListViewAnimations\nAndroidS
   <string name="lower_volume_title">Geringere Lautstärke</string>
   <string name="tasker_edit_activity_label">Commandr Plugin</string>
   <string name="commandr_configured_successfully">Commandr erfolgreich konfiguriert</string>
-  <string name="tasker_edit_activity_prompt">Auf welche Texte sollte Commandr achten? Sie können die Sätze mit einem Komma trennen:</string>
-    <string name="return_previous_app_title">Zurück zur vorherigen App</string>
+  <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases or use regular expression:</string>
+  <string name="tasker_edit_activity_blurb">Phrase: </string>
+  <string name="tasker_edit_activity_blurb_regex">Regex: </string>
+  <string name="return_previous_app_title">Zurück zur vorherigen App</string>
   <string name="return_previous_app_summary">Nach einem Kommando zurück zur vorherigen App gehen (funktioniert nicht, wenn du den Google Now Launcher verwendest)</string>
   <string name="commandr_speaking">Commandr spricht&#8230;</string>
   <string name="stop">Stopp</string>
@@ -224,7 +226,10 @@ ListViewAnimations von nhaarman github.com/nhaarman/ListViewAnimations\nAndroidS
   <string name="ready">Bereit</string>
   <string name="audio_recording_successful">Aufnahme erfolgreich</string>
   <string name="playing_audio">Aufnahme wird abgspielt..</string>
-  <string name="phrase_toast">Use commas to separate phrases. Use &amp;amp;s to check for multiple phrases out of order. For example: \"best, test\" will pass for \"blah test blah best blah\"</string>
+  <string name="phrase_toast">Without regular expressions, use commas to separate phrases. Use &amp;s to check for multiple phrases out of order. For example: "best &amp; test" will pass for "blah test blah best blah"</string>
   <string name="navigate_waze_phrase">navigate waze</string>
   <string name="navigate_waze_title">Navigate with Waze</string>
+  <string name="regex">The input above is a regular expression</string>
+  <string name="tweet">Tweet</string>
+  <string name="tweet_phrase">Tweet</string>
 </resources>

@@ -58,8 +58,8 @@ android {
     compileSdkVersion 21
     buildToolsVersion '21.1.2'
     defaultConfig {
-        versionCode 20
-        versionName '3.3.1'
+        versionCode 21
+        versionName '3.4'
         minSdkVersion 16
         targetSdkVersion 21
         multiDexEnabled true

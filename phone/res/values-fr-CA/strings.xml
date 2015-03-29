@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Translation 'fr-CA'->[fr-CA], progress 98%, master 'strings.xml' -->
+<!-- Translation 'fr-CA'->[fr-CA], progress 96%, master 'strings.xml' -->
 <resources>
   <string name="app_name">Commandr pour Google Now</string>
   <string name="title_activity_most_wanted_commands">Commandes intégrées</string>
@@ -145,8 +145,9 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
   <string name="lower_volume_title">Baisser le volume</string>
   <string name="tasker_edit_activity_label">Plugin Commandr</string>
   <string name="commandr_configured_successfully">Réussite de la configuration de Commandr</string>
-  <string name="tasker_edit_activity_prompt">Quel texte Commandr doit-il chercher ? Vous pouvez séparer par des virgules plusieurs phrases :</string>
-  <string name="tasker_edit_activity_blurb">Commandr configuré pour écouter les phrases :</string>
+  <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases or use regular expression:</string>
+  <string name="tasker_edit_activity_blurb">Phrase: </string>
+  <string name="tasker_edit_activity_blurb_regex">Regex: </string>
   <string name="return_previous_app_title">Retourner à l\'application précédente</string>
   <string name="return_previous_app_summary">Retourner à l\'application précédente après une commande (cela ne marche pas si vous utilisez le lanceur Google Now)</string>
   <string name="commandr_speaking">Commandr parle&#8230;</string>
@@ -229,7 +230,10 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
   <string name="ready">Prêt</string>
   <string name="audio_recording_successful">Enregistrement audio réussi</string>
   <string name="playing_audio">Écouter audio</string>
-  <string name="phrase_toast">Use commas to separate phrases. Use &amp;amp;s to check for multiple phrases out of order. For example: \"best, test\" will pass for \"blah test blah best blah\"</string>
-  <string name="navigate_waze_phrase">navigate waze</string>
-  <string name="navigate_waze_title">Navigate with Waze</string>
+  <string name="phrase_toast">Without regular expressions, use commas to separate phrases. Use &amp;s to check for multiple phrases out of order. For example: "best &amp; test" will pass for "blah test blah best blah"</string>
+  <string name="navigate_waze_phrase">Naviguer waze</string>
+  <string name="navigate_waze_title">Naviguer avec waze</string>
+  <string name="regex">The input above is a regular expression</string>
+  <string name="tweet">Tweet</string>
+  <string name="tweet_phrase">Tweet</string>
 </resources>

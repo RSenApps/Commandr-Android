@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Translation 'es'->[es], progress 88%, master 'strings.xml' -->
+<!-- Translation 'es'->[es], progress 86%, master 'strings.xml' -->
 <resources>
   <string name="app_name">Commandr para Google Now</string>
   <string name="title_activity_most_wanted_commands">Comandos Integrados</string>
@@ -141,8 +141,10 @@
   <string name="lower_volume_title">Bajar Volumen</string>
   <string name="tasker_edit_activity_label">Plugin de Commandr</string>
   <string name="commandr_configured_successfully">Commandr configurado exitosamente</string>
-  <string name="tasker_edit_activity_prompt">¿Qué texto debe buscar Commandr? Puede buscar varias frases separandolas con comas</string>
-    <string name="return_previous_app_title">Regresar a la aplicación anterior</string>
+  <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases or use regular expression:</string>
+  <string name="tasker_edit_activity_blurb">Phrase: </string>
+  <string name="tasker_edit_activity_blurb_regex">Regex: </string>
+  <string name="return_previous_app_title">Regresar a la aplicación anterior</string>
   <string name="return_previous_app_summary">Volver a la aplicación anterior tras un comando (No funcionará si usas Google Now Launcher)</string>
   <string name="commandr_speaking">Commandr está hablando&#8230;</string>
   <string name="stop">Detener</string>
@@ -224,7 +226,10 @@
   <string name="ready">Ready</string>
   <string name="audio_recording_successful">Audio recorded successfully</string>
   <string name="playing_audio">Playing audio</string>
-  <string name="phrase_toast">Use commas to separate phrases. Use &amp;amp;s to check for multiple phrases out of order. For example: \"best, test\" will pass for \"blah test blah best blah\"</string>
+  <string name="phrase_toast">Without regular expressions, use commas to separate phrases. Use &amp;s to check for multiple phrases out of order. For example: "best &amp; test" will pass for "blah test blah best blah"</string>
   <string name="navigate_waze_phrase">navigate waze</string>
   <string name="navigate_waze_title">Navigate with Waze</string>
+  <string name="regex">The input above is a regular expression</string>
+  <string name="tweet">Tweet</string>
+  <string name="tweet_phrase">Tweet</string>
 </resources>
