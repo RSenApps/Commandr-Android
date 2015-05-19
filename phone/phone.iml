@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="Commandr-Android" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":phone" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="Commandr-Android" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
@@ -12,8 +12,9 @@
         <option name="SELECTED_TEST_ARTIFACT" value="_android_test_" />
         <option name="ASSEMBLE_TASK_NAME" value="assembleGoogleDebug" />
         <option name="COMPILE_JAVA_TASK_NAME" value="compileGoogleDebugSources" />
-        <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleGoogleDebugTest" />
         <option name="SOURCE_GEN_TASK_NAME" value="generateGoogleDebugSources" />
+        <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleGoogleDebugTest" />
+        <option name="COMPILE_JAVA_TEST_TASK_NAME" value="compileGoogleDebugTestSources" />
         <option name="TEST_SOURCE_GEN_TASK_NAME" value="generateGoogleDebugTestSources" />
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/res" />
@@ -103,25 +104,25 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="google-api-services-gmail-v1-rev6-1.19.0" level="project" />
     <orderEntry type="library" exported="" name="crashlytics-1.1.13" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="google-http-client-1.19.0" level="project" />
     <orderEntry type="library" exported="" name="floatingactionbutton-1.0.6" level="project" />
-    <orderEntry type="library" exported="" name="support-v13-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="play-services-6.5.87" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="library-1.7.3" level="project" />
     <orderEntry type="library" exported="" name="Parse-1.5.1" level="project" />
     <orderEntry type="library" exported="" name="library-1.0.5" level="project" />
     <orderEntry type="library" exported="" name="jsr305-1.3.9" level="project" />
-    <orderEntry type="library" exported="" name="apptentive-android-1.6.6" level="project" />
+    <orderEntry type="library" exported="" name="apptentive-android-1.6.7" level="project" />
     <orderEntry type="library" exported="" name="library-2.6.0" level="project" />
     <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="material-dialogs-0.0.2" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="jackson-core-2.1.3" level="project" />
     <orderEntry type="library" exported="" name="library-extra-1.7.3" level="project" />
-    <orderEntry type="library" exported="" name="appcompat-v7-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="multidex-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="google-http-client-jackson2-1.19.0" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
+    <orderEntry type="library" exported="" name="support-v13-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-21.0.0" level="project" />
     <orderEntry type="library" exported="" name="google-oauth-client-1.19.0" level="project" />
     <orderEntry type="library" exported="" name="guava-jdk5-13.0" level="project" />
@@ -129,4 +130,3 @@
     <orderEntry type="module" module-name="Donations" exported="" />
   </component>
 </module>
-

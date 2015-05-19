@@ -88,7 +88,7 @@ public class MyAccessibilityService extends AccessibilityService {
 
     private String accessibilityNodeInfoRecursion(AccessibilityNodeInfo ani){
         if (ani==null) return null;
-        if (ani.getClassName().toString().equals("com.google.android.search.searchplate.SimpleSearchText")&& ani.getText()!=null) {
+        if (ani.getClassName().toString().equals("com.google.android.search.searchplate.SimpleSearchText") || ani.getClassName().toString().equals("com.google.android.apps.gsa.searchplate.SimpleSearchText")&& ani.getText()!=null) {
             return ani.getText().toString();
         }
         String result = null;

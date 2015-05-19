@@ -58,10 +58,10 @@ android {
     compileSdkVersion 21
     buildToolsVersion '21.1.2'
     defaultConfig {
-        versionCode 21
-        versionName '3.4'
+        versionCode 22
+        versionName '3.4.1'
         minSdkVersion 16
-        targetSdkVersion 21
+        targetSdkVersion 22
         multiDexEnabled true
     }
     lintOptions {
