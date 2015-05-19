@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Translation 'it'->[it], progress 96%, master 'strings.xml' -->
+<!-- Translation 'it'->[it], progress 100%, master 'strings.xml' -->
 <resources>
   <string name="app_name">Commandr per Google Now</string>
   <string name="title_activity_most_wanted_commands">Comandi integrati</string>
@@ -142,9 +142,9 @@ ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
   <string name="lower_volume_title">Abbassa il volume</string>
   <string name="tasker_edit_activity_label">Plugin di Commandr</string>
   <string name="commandr_configured_successfully">Commandr configurato con successo</string>
-  <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases or use regular expression:</string>
-  <string name="tasker_edit_activity_blurb">Phrase: </string>
-  <string name="tasker_edit_activity_blurb_regex">Regex: </string>
+  <string name="tasker_edit_activity_prompt">Che testo dovrebbe cercare Commandr? Puoi separare frasi multiple con la virgola o usare espressioni regolari:</string>
+  <string name="tasker_edit_activity_blurb">Frase:</string>
+  <string name="tasker_edit_activity_blurb_regex">Espressione regolare:</string>
   <string name="return_previous_app_title">Ritorna all\'app precedente</string>
   <string name="return_previous_app_summary">Torna all\'app precendete dopo un comando(ciò non funziona se state usando il llauncher Google Now)</string>
   <string name="commandr_speaking">Commandr sta parlando&#8230;</string>
@@ -227,10 +227,10 @@ ListViewAnimations by nhaarman github.com/nhaarman/ListViewAnimations\nAndroidSt
   <string name="ready">Pronto</string>
   <string name="audio_recording_successful">Audio registrato con successo</string>
   <string name="playing_audio">Riproduzione audio</string>
-  <string name="phrase_toast">Without regular expressions, use commas to separate phrases. Use &amp;s to check for multiple phrases out of order. For example: "best &amp; test" will pass for "blah test blah best blah"</string>
+  <string name="phrase_toast">Senza espressioni regolari, usa la virogla per separare le frasi. Usa &amp;s per vedere frasi non comuni. Per esempio: "migliore &amp; testo" passerà per "blah testo blah migliore blah "</string>
   <string name="navigate_waze_phrase">Naviga mediante waze</string>
   <string name="navigate_waze_title">Navigare con Waze</string>
-  <string name="regex">The input above is a regular expression</string>
+  <string name="regex">L\'input seguente è un\'espressione regolare</string>
   <string name="tweet">Tweet</string>
   <string name="tweet_phrase">Tweet</string>
 </resources>

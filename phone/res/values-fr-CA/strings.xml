@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Translation 'fr-CA'->[fr-CA], progress 96%, master 'strings.xml' -->
+<!-- Translation 'fr-CA'->[fr-CA], progress 100%, master 'strings.xml' -->
 <resources>
   <string name="app_name">Commandr pour Google Now</string>
   <string name="title_activity_most_wanted_commands">Commandes intégrées</string>
-  <string name="no_third_party_support">Google Now ne supporte pas les applications tiers. à la place, Commandr doit écouter l\'interface \"Note to Self\"</string>
+  <string name="no_third_party_support">Google Now ne supporte pas les applications tiers. à la place, Commandr doit écouter l\'interface \"Note à moi-même\"</string>
   <string name="setup_test_first">Pour utiliser une commande vous devez d\'abord dire \"note à moi même\"</string>
   <string name="example_setup_test">Exemple: \"Note à moi même allumer la lampe de poche\"</string>
   <string name="setup_test_question">Ecrivez la commande pour "Mettre en pause la musique" ci-dessous :</string>
@@ -145,9 +145,9 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
   <string name="lower_volume_title">Baisser le volume</string>
   <string name="tasker_edit_activity_label">Plugin Commandr</string>
   <string name="commandr_configured_successfully">Réussite de la configuration de Commandr</string>
-  <string name="tasker_edit_activity_prompt">What text should Commandr look for? You can comma-separate multiple phrases or use regular expression:</string>
-  <string name="tasker_edit_activity_blurb">Phrase: </string>
-  <string name="tasker_edit_activity_blurb_regex">Regex: </string>
+  <string name="tasker_edit_activity_prompt">Quel texte Commandr doit chercher ? Vous pouvez séparer différentes phrases par des virgules ou utiliser des expressions régulières :</string>
+  <string name="tasker_edit_activity_blurb">Phrase :</string>
+  <string name="tasker_edit_activity_blurb_regex">Regex :</string>
   <string name="return_previous_app_title">Retourner à l\'application précédente</string>
   <string name="return_previous_app_summary">Retourner à l\'application précédente après une commande (cela ne marche pas si vous utilisez le lanceur Google Now)</string>
   <string name="commandr_speaking">Commandr parle&#8230;</string>
@@ -214,7 +214,7 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
   <string name="disable_car_phrase">désactive le mode voiture</string>
   <string name="disable_car_titl">Désactive le Mode Voiture</string>
   <string name="thank_you_google_phrase">Merci Google</string>
-  <string name="thank_you_google_title">Close &amp; Return to Previous App</string>
+  <string name="thank_you_google_title">Fermer &amp; Retourner à l\'application précédente</string>
   <string name="screen_brightness_phrase">luminosité de l\'écran</string>
   <string name="screen_brightness_title">Luminosité de l\'écran</string>
   <string name="invalid_input">Saisie incorrecte</string>
@@ -230,10 +230,10 @@ SystemBarTint by jgilfelt github.com/jgilfelt/SystemBarTint</string>
   <string name="ready">Prêt</string>
   <string name="audio_recording_successful">Enregistrement audio réussi</string>
   <string name="playing_audio">Écouter audio</string>
-  <string name="phrase_toast">Without regular expressions, use commas to separate phrases. Use &amp;s to check for multiple phrases out of order. For example: "best &amp; test" will pass for "blah test blah best blah"</string>
+  <string name="phrase_toast">Sans une expression régulière, utiliser les virgules pour séparer les phrases. Utiliser "&amp;" pour vérifier pour plusieurs phrases qui ne sont pas en ordre. Par exemple : "best &amp; test" sera remplacé par "blah test blah best blah"</string>
   <string name="navigate_waze_phrase">Naviguer waze</string>
   <string name="navigate_waze_title">Naviguer avec waze</string>
-  <string name="regex">The input above is a regular expression</string>
+  <string name="regex">L\'entrée ci-dessus est une expression régulière</string>
   <string name="tweet">Tweet</string>
   <string name="tweet_phrase">Tweet</string>
 </resources>

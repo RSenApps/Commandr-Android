@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Translation 'pt-BR'->[Ljava.lang.String;@1d2d4d7a, progress 79%, master 'strings.xml' -->
+<!-- Translation 'pt-BR'->[Ljava.lang.String;@2664efe1, progress 79%, master 'strings.xml' -->
 <resources>
   <string name="app_name">Commandr para o Google Now</string>
   <string name="title_activity_most_wanted_commands">Comandos existentes</string>

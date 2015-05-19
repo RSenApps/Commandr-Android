@@ -18,6 +18,8 @@ apply plugin: 'crashlytics'
 
 repositories {
     maven { url 'http://download.crashlytics.com/maven' }
+    maven { url 'https://dl.bintray.com/drummer-aidan/maven' }
+
 }
 
 getlocalization {
@@ -45,7 +47,7 @@ dependencies {
     compile 'com.android.support:support-v13:+'
     compile 'com.android.support:appcompat-v7:+'
     compile 'com.google.apis:google-api-services-gmail:v1-rev6-1.19.0'
-    compile 'com.afollestad:material-dialogs:0.0.2'
+    compile 'com.afollestad:material-dialogs:0.7.4.1'
     compile 'com.melnykov:floatingactionbutton:1.0.6'
     wearApp project(':wear')
     compile 'com.android.support:multidex:1.0.0'
@@ -55,8 +57,8 @@ dependencies {
 
 android {
 
-    compileSdkVersion 21
-    buildToolsVersion '21.1.2'
+    compileSdkVersion 22
+    buildToolsVersion '22.0.1'
     defaultConfig {
         versionCode 22
         versionName '3.4.1'
