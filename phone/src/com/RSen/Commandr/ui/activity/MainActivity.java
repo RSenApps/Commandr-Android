@@ -227,7 +227,7 @@ public class MainActivity extends ActionBarActivity {
                 new MaterialDialog.Builder(this)
                         .title(R.string.about)
                         .content(R.string.about_message)
-                        .callback(new MaterialDialog.SimpleCallback() {
+                        .callback(new MaterialDialog.ButtonCallback() {
                             @Override
                             public void onPositive(MaterialDialog materialDialog) {
                                 materialDialog.dismiss();

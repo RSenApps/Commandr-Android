@@ -34,9 +34,9 @@ public class EditPhraseDialog {
         new MaterialDialog.Builder((Activity) context)
                 .title(command.getTitle())
                 .theme(Theme.LIGHT)  // the default is light, so you don't need this line
-                .customView(input)
+                .customView(input, false)
                 .positiveText(R.string.set)  // the default is 'OK'
-                .callback(new MaterialDialog.SimpleCallback() {
+                .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog materialDialog) {
                         command.setPhrase(context, input.getText().toString());

@@ -28,9 +28,9 @@ public class EditPhraseTaskerDialog {
                 .title(command.taskerCommandName)
                 .content("Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.")
                 .theme(Theme.LIGHT)  // the default is light, so you don't need this line
-                .customView(input)
+                .customView(input, false)
                 .positiveText(R.string.set)  // the default is 'OK'
-                .callback(new MaterialDialog.SimpleCallback() {
+                .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog materialDialog) {
 

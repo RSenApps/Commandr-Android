@@ -117,10 +117,10 @@ public class VotingActivity extends ActionBarActivity {
                             new MaterialDialog.Builder(VotingActivity.this)
                                     .title(getString(R.string.suggest_new))
                                     .theme(Theme.LIGHT)  // the default is light, so you don't need this line
-                                    .customView(R.layout.suggest_command)
+                                    .customView(R.layout.suggest_command, true)
                                     .positiveText(getString(R.string.submit))  // the default is 'OK'
                                     .negativeText(R.string.cancel)  // leaving this line out will remove the negative button
-                                    .callback(new MaterialDialog.SimpleCallback() {
+                                    .callback(new MaterialDialog.ButtonCallback() {
                                         @Override
                                         public void onPositive(MaterialDialog materialDialog) {
                                             String name = ((EditText) materialDialog.getCustomView().findViewById(R.id.name)).getText().toString();
