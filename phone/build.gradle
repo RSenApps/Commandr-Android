@@ -19,7 +19,6 @@ apply plugin: 'crashlytics'
 repositories {
     maven { url 'http://download.crashlytics.com/maven' }
     maven { url 'https://dl.bintray.com/drummer-aidan/maven' }
-
 }
 
 getlocalization {
@@ -53,9 +52,32 @@ dependencies {
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.crashlytics.android:crashlytics:1.+'
 
+    compile project(':seebyemessengerapicommunication')
+
 }
 
 android {
+
+    /**
+     * Looking for Permission
+     */
+    def manifestConstantsFile = file(project(':seebyemessengerapicommunication').getProjectDir().getPath() + "/manifestConstants.txt")
+    def PERMISSION_MESSENGERAPI = ""
+    def ACTION_MESSENGERAPI = ""
+    if (manifestConstantsFile.canRead())
+    {
+        def Properties props = new Properties()
+
+        props.load(new FileInputStream(manifestConstantsFile))
+
+        PERMISSION_MESSENGERAPI = props['PERMISSION_MESSENGERAPI']
+        ACTION_MESSENGERAPI = props['ACTION_MESSENGERAPI']
+    }
+    else
+    {
+        throw new GradleException("Could not read manifestConstants.txt!")
+    }
+
 
     compileSdkVersion 22
     buildToolsVersion '22.0.1'
@@ -119,8 +141,10 @@ android {
     }
     buildTypes {
         debug {
+            manifestPlaceholders = [PERMISSION_MESSENGERAPI: PERMISSION_MESSENGERAPI, ACTION_MESSENGERAPI: ACTION_MESSENGERAPI]
         }
         release {
+            manifestPlaceholders = [PERMISSION_MESSENGERAPI: PERMISSION_MESSENGERAPI, ACTION_MESSENGERAPI: ACTION_MESSENGERAPI]
 
             minifyEnabled false
             signingConfig signingConfigs.productionConfig

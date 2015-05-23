@@ -1,2 +1,3 @@
 include ':apptentive-android-sdk', ':wear', ':phone'
 include ':Donations'
+include ':seebyemessengerapicommunication'
