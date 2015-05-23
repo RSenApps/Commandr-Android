@@ -14,6 +14,8 @@ import com.RSen.Commandr.core.MostWantedCommand;
  *         FlashlightCommand.java
  * @version 1.0
  *          5/28/14
+ *
+ * @deprecated No longer needed.. Seebye Messenger API allows to offer a better integration
  */
 public class SendWhatsappCommand extends MostWantedCommand {
 

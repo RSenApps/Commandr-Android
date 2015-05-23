@@ -1,0 +1,3 @@
+#Tue Apr 14 18:40:12 CEST 2015
+PERMISSION_MESSENGERAPI=com.seebye.messengerapi.permission.INTERACTION
+ACTION_MESSENGERAPI=com.seebye.messengerapi.INTERACTION
