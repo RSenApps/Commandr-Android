@@ -20,15 +20,16 @@ import com.seebye.messengerapi.api.constants.ResponseType;
 import com.seebye.messengerapi.api.utils.PackageUtils;
 
 import java.util.ArrayList;
-import java.util.Map;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author Ryan Senanayake
+ * @author Seebye
  *         Commandr for Google Now
- *         FlashlightCommand.java
+ *         MAPISendWhatsappCommand.java
  * @version 1.0
- *          5/28/14
+ *          23.05.15
  */
 public class MAPISendWhatsappCommand extends MostWantedCommand
     implements MAPIReceiver.ResponseCallback
@@ -47,9 +48,6 @@ public class MAPISendWhatsappCommand extends MostWantedCommand
         context = ctx;
     }
 
-    /**
-     * Execute this command (turn on flashlight)
-     */
     @Override
     public void execute(Context context, String predicate) {
 
@@ -85,6 +83,15 @@ public class MAPISendWhatsappCommand extends MostWantedCommand
     private void interpretMessage(ArrayList<Contact> aContacts, String predicate)
     {
         boolean bFound = false;
+
+        Collections.sort(aContacts, new Comparator<Contact>()
+        {
+            @Override
+            public int compare(Contact lhs, Contact rhs)
+            {
+                return rhs.getDisplayname().length() - lhs.getDisplayname().length();
+            }
+        });
 
         for(int i = 0; i < aContacts.size()
                     && !bFound;
