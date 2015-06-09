@@ -1,20 +1,15 @@
 package com.seebye.messengerapi.api;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
 
 import com.seebye.messengerapi.api.constants.SPKey;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 /**
- * Created by Nico on 29.05.13.
+ * Created by Seebye on 29.05.13.
+ * This file is needed for the communication between Commandr and Seebye Messenger API
  */
 public class sp
 {

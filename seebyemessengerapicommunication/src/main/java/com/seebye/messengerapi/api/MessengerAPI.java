@@ -11,10 +11,10 @@ import com.seebye.messengerapi.api.constants.MessageType;
 import com.seebye.messengerapi.api.constants.Messenger;
 import com.seebye.messengerapi.api.constants.SPKey;
 import com.seebye.messengerapi.api.utils.PackageUtils;
-import com.seebye.messengerapi.api.utils.WhatsAppUtils;
 
 /**
- * Created by Nico on 11.04.2015.
+ * Created by Seebye on 11.04.2015.
+ * This file is needed for the communication between Commandr and Seebye Messenger API
  */
 public class MessengerAPI
 {
@@ -33,8 +33,7 @@ public class MessengerAPI
 	public static Request requestSecret()
 	{
 		App.getSPAPI().set(SPKey.WAITING_FOR_SECRET, true);
-		return new Request.Builder(Action.requestSecret)
-				.add(Extra.SECRET_OLD, App.getSPAPI().getStr(SPKey.SECRET))
+		return new Request.Builder(Action.requestSecret).add(Extra.SECRET_OLD, App.getSPAPI().getStr(SPKey.SECRET))
 				.createWithoutCheckHash();
 	}
 
@@ -56,14 +55,6 @@ public class MessengerAPI
 	public static boolean isEnabled()
 	{
 		return App.getSPAPI().getBool(SPKey.ENABLED);
-	}
-
-	/**
-	 * Determines whether we received the secret which is needed to communicate with the API.
-	 */
-	public static boolean isSecretAvailable()
-	{
-		return !App.getSPAPI().getStr(SPKey.SECRET).equals("");
 	}
 
 	/**
@@ -133,117 +124,6 @@ public class MessengerAPI
 	{
 		return new Request.Builder(Action.getContacts)
 				.add(Extra.MESSENGER, nMessengers)
-				.create();
-	}
-
-	/**
-	 * Loads the amount of messages the api read along.
-	 *
-	 * @param messenger			The messenger which should be used.
-	 * @param strIDMessenger	The ID of the contact, given by the messenger.
-	 *
-	 * @return The id of the broadcast.
-	 * @throws Exception
-	 */
-	public static Request getMessageAmount(@NonNull Messenger messenger, @NonNull String strIDMessenger) throws Exception
-	{
-		checkIDMessenger(strIDMessenger);
-
-		return new Request.Builder(Action.getMessageCount)
-				.add(Extra.MESSENGER, messenger.getFlag())
-				.add(Extra.ID_MESSENGER, strIDMessenger)
-				.create();
-	}
-
-	/**
-	 * Loads the last messages of the contact from the passed messenger with the passed id.
-	 *
-	 * @param messenger			The messenger which should be used.
-	 * @param strIDMessenger	The ID of the contact, given by the messenger.
-	 * @param nAmount			The amount of messages to load. Max: 100
-	 * @param nSkip				The amount of messages to skip.
-	 *
-	 * @return The id of the broadcast.
-	 * @throws Exception
-	 */
-	public static Request getLastMessages(@NonNull Messenger messenger, @NonNull String strIDMessenger, int nAmount, int nSkip) throws
-			Exception
-	{
-		checkIDMessenger(strIDMessenger);
-
-		if(nAmount <= 0 || nSkip < 0)
-		{
-			throw new Exception("nAmount or/and nSkip is/are invalid.");
-		}
-
-		return new Request.Builder(Action.getLastMessages)
-				.add(Extra.MESSENGER, messenger.getFlag())
-				.add(Extra.ID_MESSENGER, strIDMessenger)
-				.add(Extra.AMOUNT, nAmount)
-				.add(Extra.SKIP, nSkip)
-				.create();
-	}
-
-
-	/**
-	 * Determines the location of the profile image.
-	 * !! There's no guarantee that the file will exist
-	 * !! Do NOT change or delete the images.
-	 *
-	 * @param messenger			The messenger which should be used.
-	 * @param strIDMessenger	The ID of the contact, given by the messenger.
-	 *
-	 * @return The absolute path of the image
-	 */
-	public static String getContactProfileImage(@NonNull Messenger messenger, @NonNull String strIDMessenger)
-	{
-		StringBuilder strBuilderPath = new StringBuilder();
-
-		switch(messenger)
-		{
-			case WHATSAPP:
-				strBuilderPath.append(WhatsAppUtils.getProfileImagePath(strIDMessenger));
-				break;
-		}
-
-		return strBuilderPath.toString();
-	}
-
-
-	/**
-	 * Asks the API to sync the contact image of the contact with the passed ID.
-	 *
-	 * @param messenger			The messenger which should be used.
-	 * @param strIDMessenger	The ID of the contact, given by the messenger.
-	 *
-	 * @return The id of the broadcast.
-	 * @throws Exception
-	 */
-	public static Request syncContactImage(@NonNull Messenger messenger, @NonNull String strIDMessenger) throws
-			Exception
-	{
-		checkIDMessenger(strIDMessenger);
-
-		return new Request.Builder(Action.syncContactImage)
-				.add(Extra.MESSENGER, messenger.getFlag())
-				.add(Extra.ID_MESSENGER, strIDMessenger)
-				.create();
-	}
-
-
-	/**
-	 * Asks the API to sync all contact images from the passed messenger.
-	 *
-	 * @param messenger			The messenger which should be used.
-	 *
-	 * @return The id of the broadcast.
-	 * @throws Exception
-	 */
-	public static Request syncContactImages(@NonNull Messenger messenger) throws
-			Exception
-	{
-		return new Request.Builder(Action.syncAllContactImages)
-				.add(Extra.MESSENGER, messenger.getFlag())
 				.create();
 	}
 }

@@ -43,7 +43,7 @@ public class MAPISendWhatsappCommand extends MostWantedCommand
     private ConcurrentHashMap<Long, String>  m_mapPredicate = new ConcurrentHashMap<Long, String>();
 
     public MAPISendWhatsappCommand(Context ctx) {
-        DEFAULT_PHRASE = ctx.getString(R.string.send_whatsapp_phrase);
+        DEFAULT_PHRASE = ctx.getString(isMAPIAvailable() ? R.string.send_whatsapp_phrase_mapi : R.string.send_whatsapp_phrase);
         TITLE = ctx.getString(R.string.send_whatsapp_title);
         context = ctx;
     }
@@ -215,11 +215,18 @@ public class MAPISendWhatsappCommand extends MostWantedCommand
     @Override
     public void onResponseReceived(long lBroadcastID, int nRequestActionID, @NonNull ResponseType responseType, @NonNull Action action, @NonNull Bundle extras)
     {
-        String strPredicate = m_mapPredicate.get(lBroadcastID);
-
-        if(strPredicate != null && responseType == ResponseType.SUCCESS)
+        try
         {
-            interpretMessage(Contact.fromBundle(extras), strPredicate);
+            String strPredicate = m_mapPredicate.remove(lBroadcastID);
+
+            if(strPredicate != null && responseType == ResponseType.SUCCESS)
+            {
+                interpretMessage(Contact.fromBundle(extras), strPredicate);
+            }
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
         }
     }
 }

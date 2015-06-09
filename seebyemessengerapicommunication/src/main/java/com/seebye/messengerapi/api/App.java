@@ -1,21 +1,17 @@
 package com.seebye.messengerapi.api;
 
-import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.util.Log;
 
 import com.seebye.messengerapi.api.constants.General;
 import com.seebye.messengerapi.api.constants.SPKey;
-import com.seebye.messengerapi.api.utils.LogUtils;
-import com.seebye.messengerapi.api.utils.LuckyUtils;
-import com.seebye.messengerapi.api.utils.PackageUtils;
 import com.seebye.messengerapi.api.utils.SecureRandom;
 
 /**
- * Created by Nico on 11.04.2015.
+ * Created by Seebye on 11.04.2015.
+ * This file is needed for the communication between Commandr and Seebye Messenger API
  */
 public class App extends android.support.multidex.MultiDexApplication
 //Application
@@ -27,8 +23,6 @@ public class App extends android.support.multidex.MultiDexApplication
 	{
 		super.onCreate();
 		s_instance = this;
-
-		new LuckyCheck().start();
 
 		if(isModule())
 		{
@@ -64,7 +58,6 @@ public class App extends android.support.multidex.MultiDexApplication
 			setup();
 		}
 
-		LogUtils.i("request secret..");
 		App.getSPAPI().set(SPKey.SECRET_REQUEST_ID, MessengerAPI.requestSecret().sendMoreExplicit().getID());
 	}
 
@@ -110,16 +103,6 @@ public class App extends android.support.multidex.MultiDexApplication
 					getSPAPI().set(SPKey.ENABLED, false);
 				}
 			}
-		}
-	}
-
-	// we don't know the duration to search after LP in the log file so we're going to do it inside a thread
-	private class LuckyCheck extends Thread
-	{
-		@Override
-		public void run()
-		{
-			LuckyUtils.checkXposedLog();
 		}
 	}
 }

@@ -2,6 +2,7 @@ package com.seebye.messengerapi.api.constants;
 
 /**
  * Created by Nico on 11.04.2015.
+ * This file is needed for the communication between Commandr and Seebye Messenger API
  */
 public enum Action
 {
@@ -12,22 +13,20 @@ public enum Action
 	, requestSendMessage
 
 	, getContacts
-	, getMessageCount
-	, getLastMessages
-	, getContactImage
-	, syncContactImage
-	, syncAllContactImages
 
-	, informNewMessage
-	, informConversationOpened
-	,
-	informEmojiButtonPressed
-	, informAppComponentVisible
+	, REMOVED
 	;
 
 
 	public static Action fromOrdinal(int nOrdinal)
 	{
-		return Action.values()[nOrdinal];
+		try
+		{
+			return Action.values()[nOrdinal];
+		}
+		catch(Exception e)
+		{
+			return REMOVED;
+		}
 	}
 }

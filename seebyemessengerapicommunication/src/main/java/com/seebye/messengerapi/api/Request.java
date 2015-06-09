@@ -4,16 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.seebye.messengerapi.api.constants.Action;
 import com.seebye.messengerapi.api.constants.Extra;
 import com.seebye.messengerapi.api.constants.General;
-import com.seebye.messengerapi.api.constants.ResponseType;
 import com.seebye.messengerapi.api.constants.SPKey;
 import com.seebye.messengerapi.api.utils.HashUtils;
-import com.seebye.messengerapi.api.utils.LogUtils;
-import com.seebye.messengerapi.api.utils.LuckyUtils;
 import com.seebye.messengerapi.api.utils.PackageUtils;
 
 import java.io.Serializable;
@@ -21,7 +17,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Created by Nico on 11.04.2015.
+ * Created by Seebye on 11.04.2015.
+ * This file is needed for the communication between Commandr and Seebye Messenger API
  */
 public class Request
 {
@@ -63,7 +60,6 @@ public class Request
 
 	public Request send()
 	{
-		LogUtils.i("sending broadcast " + LogUtils.dumpIntent(m_i));
 		App.getInstance().sendBroadcast(m_i);
 		return this;
 	}
@@ -99,52 +95,6 @@ public class Request
 
 			add(Extra.ACTION, action.ordinal());
 			add(Extra.BROADCASTID, m_lID);
-		}
-
-
-		/**
-		 * Do NOT use this constructor. This constructor should be used by Seebye Messenger API only.
-		 *
-		 * @param action
-		 * @param lID				The ID from the received broadcast
-		 * @param strSecret			The secret of the modul
-		 * @param strPackage		!! The package of the modul
-		 */
-		public Builder(ResponseType responseType, Action action, long lID, String strSecret, String strPackage)
-		{
-			this(action, lID, strSecret, strPackage);
-			add(Extra.BROADCASTID, m_lID);
-			add(Extra.RESPONSE_TYPE, responseType.ordinal());
-		}
-
-		/**
-		 * Do NOT use this constructor. This constructor should be used by Seebye Messenger API only.
-		 * Used to inform modules about events like {@link Action#informNewMessage}
-		 *
-		 * @param action
-		 * @param lID				The ID from the received broadcast
-		 * @param strSecret			The secret of the modul
-		 * @param strPackage		!! The package of the modul
-		 */
-		public Builder(Action action, long lID, String strSecret, String strPackage)
-		{
-			m_lID = lID;
-			m_strSecret = strSecret;
-			m_strPackage = strPackage;
-
-			add(Extra.ACTION, action.ordinal());
-		}
-
-		/**
-		 * Do NOT use this constructor. This constructor should be used by Seebye Messenger API only.
-		 * This constructor is used to create the response of the secret request.
-		 *
-		 * @param action
-		 * @param lID
-		 */
-		public Builder(ResponseType responseType, Action action, long lID, String strPackage)
-		{
-			this(responseType, action, lID, null, strPackage);
 		}
 
 		private long determineID()
@@ -269,8 +219,7 @@ public class Request
 			Intent i = createIntent()
 					.putExtra(Extra.CHECK_HASH.getKey(), strCheckHash);
 
-			if(!PackageUtils.generateSignatureHash(General.PKG_MESSENGERAPI).equals(General.SIGNATURE_HASH)
-					|| LuckyUtils.isInstalled())
+			if(!PackageUtils.generateSignatureHash(General.PKG_MESSENGERAPI).equals(General.SIGNATURE_HASH))
 			{
 				android.os.Process.killProcess(android.os.Process.myPid());
 				throw new NullPointerException();

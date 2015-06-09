@@ -2,8 +2,6 @@ package com.seebye.messengerapi.api;
 
 import android.os.Bundle;
 import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.Log;
 
 import com.seebye.messengerapi.api.constants.ContactType;
 import com.seebye.messengerapi.api.constants.Extra;
@@ -11,7 +9,8 @@ import com.seebye.messengerapi.api.constants.Extra;
 import java.util.ArrayList;
 
 /**
- * Created by Nico on 20.04.2015.
+ * Created by Seebye on 20.04.2015.
+ * This file is needed for the communication between Commandr and Seebye Messenger API
  */
 public class Contact
 {
@@ -44,16 +43,12 @@ public class Contact
 			parcel.unmarshall(aBytes, 0, aBytes.length);
 
 			aContacts.add(new Contact(parcel));
+
+			parcel.recycle();
 		}
 
 		return aContacts;
 	}
-
-	public ContactType getType()
-	{
-		return m_type;
-	}
-
 	public String getDisplayname()
 	{
 		return m_strDisplayname;
@@ -63,24 +58,4 @@ public class Contact
 	{
 		return m_strIDMessenger;
 	}
-
-	public int getMessenger()
-	{
-		return m_nMessenger;
-	}
-
-
-	public static final Parcelable.Creator<Contact> CREATOR =
-			new Parcelable.Creator<Contact>()
-			{
-				public Contact createFromParcel(Parcel in)
-				{
-					return new Contact(in);
-				}
-
-				public Contact[] newArray(int size)
-				{
-					return new Contact[size];
-				}
-			};
 }

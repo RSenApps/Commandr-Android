@@ -1,7 +1,8 @@
 package com.seebye.messengerapi.api.utils;
 
 /**
- * Created by Nico on 15.04.2015.
+ * Created by Seebye on 15.04.2015.
+ * This file is needed for the communication between Commandr and Seebye Messenger API
  */
 public class HexUtils
 {

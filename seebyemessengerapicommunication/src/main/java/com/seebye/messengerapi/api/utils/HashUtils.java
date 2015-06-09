@@ -5,7 +5,8 @@ import java.security.NoSuchAlgorithmException;
 
 
 /**
- * Created by Nico on 11.04.2015.
+ * Created by Seebye on 11.04.2015.
+ * This file is needed for the communication between Commandr and Seebye Messenger API
  */
 public class HashUtils
 {

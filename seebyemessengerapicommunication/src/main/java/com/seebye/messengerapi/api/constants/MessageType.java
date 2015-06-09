@@ -1,9 +1,8 @@
 package com.seebye.messengerapi.api.constants;
 
-import com.seebye.messengerapi.api.utils.BitUtils;
-
 /**
- * Created by Nico on 12.04.2015.
+ * Created by Seebye on 12.04.2015.
+ * This file is needed for the communication between Commandr and Seebye Messenger API
  */
 public enum MessageType
 {

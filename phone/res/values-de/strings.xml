@@ -171,6 +171,7 @@ ListViewAnimations von nhaarman github.com/nhaarman/ListViewAnimations\nAndroidS
   <string name="unsilence_ringer_title">Rufton</string>
   <string name="unsilence_ringer_phrase">Stummschaltung aufheben</string>
   <string name="send_whatsapp_phrase">Sende WhatsApp</string>
+  <string name="send_whatsapp_phrase_mapi">sende whatsapp, sende an, senden an, schicke an, schicken an, schickte an, schickten an</string>
   <string name="send_whatsapp_title">Sende WhatsApp</string>
   <string name="message">message</string>
   <string name="install_whatsapp">Installiere zuerst WhatsApp&#8230; </string>
