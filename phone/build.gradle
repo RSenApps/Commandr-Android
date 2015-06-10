@@ -53,6 +53,8 @@ dependencies {
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.crashlytics.android:crashlytics:1.+'
 
+    compile project(':seebyemessengerapicommunication')
+
 }
 
 android {

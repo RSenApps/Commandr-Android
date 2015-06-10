@@ -1,0 +1,97 @@
+
+apply plugin: 'com.android.library'
+
+// see: https://github.com/shamanland/simple-string-obfuscator/blob/master/SimpleStringObfuscator.java
+def obfuscateString(str)
+{
+    Random r = new Random()
+    byte[] b = str.getBytes()
+    int c = b.length
+    String strRet = ""
+    //PrintStream o = System.out
+
+    strRet += ("(new Object() {")
+    strRet += ("int t;")
+    strRet += ("public String a() {")
+    strRet += ("byte[] buf = new byte[")
+    strRet += (c)
+    strRet += ("];")
+
+    b.eachWithIndex { item, i ->
+        int t = r.nextInt()
+        int f = r.nextInt(24) + 1
+
+        t = (t & ~(0xff << f)) | (item << f)
+
+        strRet += ("t = ")
+        strRet += (t)
+        strRet += (";")
+        strRet += ("buf[")
+        strRet += (i)
+        strRet += ("] = (byte) (t >>> ")
+        strRet += (f)
+        strRet += (");")
+    }
+
+    strRet += ("return new String(buf);")
+    strRet += ("}}.a())")
+
+    return strRet
+}
+
+android {
+    // https://github.com/seebye/Seebye-Messenger-API
+
+    compileSdkVersion 22
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+    //    minSdkVersion 18
+    //    targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+
+    def PKG_MESSENGERAPI_KEY = "PKG_MESSENGERAPI"
+    def PKG_MESSENGERAPI_VALUE = obfuscateString("com.seebye.messengerapi")
+    def SIGNATURE_HASH_MAPI_KEY = "SIGNATURE_HASH_MAPI"
+    def SIGNATURE_HASH_MAPI_VALUE = obfuscateString("8b4357deb75cf0b905c404b1eafb94d9805bad771ae396d06f58895dcaa36f41")
+
+
+    def ACTION_MESSENGERAPI_KEY = "ACTION_MESSENGERAPI"
+    def ACTION_MESSENGERAPI_VALUE = obfuscateString("com.seebye.messengerapi.INTERACTION")
+
+    def PERMISSION_MESSENGERAPI_KEY = "PERMISSION_MESSENGERAPI"
+    def PERMISSION_MESSENGERAPI_VALUE = obfuscateString("com.seebye.messengerapi.permission.INTERACTION")
+
+    buildTypes {
+
+        debug
+        {
+            buildConfigField "String", ACTION_MESSENGERAPI_KEY, ACTION_MESSENGERAPI_VALUE
+            buildConfigField "String", PERMISSION_MESSENGERAPI_KEY, obfuscateString(PERMISSION_MESSENGERAPI_VALUE)
+
+            buildConfigField "String", PKG_MESSENGERAPI_KEY, PKG_MESSENGERAPI_VALUE
+            buildConfigField "String", SIGNATURE_HASH_MAPI_KEY, SIGNATURE_HASH_MAPI_VALUE
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+
+
+            buildConfigField "String", ACTION_MESSENGERAPI_KEY, ACTION_MESSENGERAPI_VALUE
+            buildConfigField "String", PERMISSION_MESSENGERAPI_KEY, obfuscateString(PERMISSION_MESSENGERAPI_VALUE)
+
+            buildConfigField "String", PKG_MESSENGERAPI_KEY, PKG_MESSENGERAPI_VALUE
+            buildConfigField "String", SIGNATURE_HASH_MAPI_KEY, SIGNATURE_HASH_MAPI_VALUE
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:+'
+    compile 'com.android.support:multidex:1.0.0'
+}
